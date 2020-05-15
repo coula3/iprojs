@@ -1,22 +1,29 @@
 class UsersController < ApplicationController
 
-  # GET: /users
-  get "/users" do
-    erb :"/users/index.html"
-  end
-
-  # GET: /users/new
+  
   get "/signup" do
     erb :"/users/signup.html"
   end
-
-  # POST: /users
+  
   post "/signup" do
     user = User.new(params)
     user.save
     session[:id] = user.id
     binding.pry
     redirect "/projects"
+  end
+  
+  get "/signin" do
+    erb :"/users/signin.html"
+  end
+
+  post "/signin" do
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      session[:id] = user.id
+      redirect "/projects"
+      # binding.pry
+    end
   end
 
   # GET: /users/5
