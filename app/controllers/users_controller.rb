@@ -1,5 +1,7 @@
-class UsersController < ApplicationController
+require 'rack-flash'
 
+class UsersController < ApplicationController
+  use Rack::Flash
   
   get "/signup" do
     erb :"/users/signup.html"
@@ -57,11 +59,7 @@ class UsersController < ApplicationController
 
     old_object.update(new_params)
     
+    flash[:message] = "Your profile has been successfully updated"
     redirect "/users/#{current_user.id}"
-  end
-
-  # DELETE: /users/5/delete
-  delete "/users/:id/delete" do
-    redirect "/users"
   end
 end
