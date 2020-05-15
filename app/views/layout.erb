@@ -15,6 +15,12 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="nav">
+        <% if logged_in? %>
+          <a href="/projects">My Projects</a>
+          <a href="/signout">Sign out</a>
+        <% end %>
+      </div>
 
         <%= yield %>
 
