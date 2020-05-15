@@ -32,8 +32,9 @@ class UsersController < ApplicationController
     erb :"/users/bye.html"
   end
 
-  # GET: /users/5
   get "/users/:id" do
+    # binding.pry
+    @user = User.find_by(id: params[:id])
     erb :"/users/show.html"
   end
 
