@@ -6,13 +6,17 @@ class UsersController < ApplicationController
   end
 
   # GET: /users/new
-  get "/users/new" do
-    erb :"/users/new.html"
+  get "/signup" do
+    erb :"/users/signup.html"
   end
 
   # POST: /users
-  post "/users" do
-    redirect "/users"
+  post "/signup" do
+    user = User.new(params)
+    user.save
+    session[:id] = user.id
+    binding.pry
+    redirect "/projects"
   end
 
   # GET: /users/5
