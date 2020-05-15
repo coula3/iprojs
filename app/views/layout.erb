@@ -17,10 +17,11 @@
     <div class="wrapper">
       <div class="nav">
         <% if logged_in? %>
+          <a href="/users/<%=session[:id]%>">My Profile</a>
           <a href="/projects">My Projects</a>
           <a href="/signout">Sign out</a>
         <% end %>
-      </div>
+      </div><br>
 
         <%= yield %>
 
