@@ -38,14 +38,26 @@ class UsersController < ApplicationController
     erb :"/users/show.html"
   end
 
-  # GET: /users/5/edit
   get "/users/:id/edit" do
+    @user = User.find_by(id: params[:id])
     erb :"/users/edit.html"
   end
 
-  # PATCH: /users/5
   patch "/users/:id" do
-    redirect "/users/:id"
+    id = params[:id]
+    new_params = Hash.new
+    old_object = User.find(id)
+    new_params[:first_name] = params[:first_name]
+    new_params[:last_name] = params[:last_name]
+    new_params[:last_name] = params[:last_name]
+    new_params[:organization] = params[:organization]
+    new_params[:dob] = params[:dob]
+    new_params[:gender] = params[:gender]
+    new_params[:email] = params[:email]
+
+    old_object.update(new_params)
+    
+    redirect "/users/#{current_user.id}"
   end
 
   # DELETE: /users/5/delete
