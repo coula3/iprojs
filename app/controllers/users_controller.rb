@@ -21,9 +21,15 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:id] = user.id
-      redirect "/projects"
       # binding.pry
+      redirect "/projects"
     end
+  end
+
+  get "/signout" do
+    session.clear
+    # binding.pry
+    erb :"/users/bye.html"
   end
 
   # GET: /users/5
