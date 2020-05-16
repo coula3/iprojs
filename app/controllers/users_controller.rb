@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 
   get "/users/:id/edit" do
     @user = User.find_by(id: params[:id])
+    @other_gender = ["Male", "Female", "Non-Binary"].delete_if {|gender| gender == current_user.gender}
     erb :"/users/edit.html"
   end
 
@@ -49,17 +50,29 @@ class UsersController < ApplicationController
     id = params[:id]
     new_params = Hash.new
     old_object = User.find(id)
-    new_params[:first_name] = params[:first_name]
-    new_params[:last_name] = params[:last_name]
-    new_params[:last_name] = params[:last_name]
-    new_params[:organization] = params[:organization]
-    new_params[:dob] = params[:dob]
-    new_params[:gender] = params[:gender]
-    new_params[:email] = params[:email]
-
-    old_object.update(new_params)
+    old_object.changed?
     
-    flash[:message] = "Your profile has been successfully updated"
-    redirect "/users/#{current_user.id}"
+    new_params["first_name"] = params[:first_name]
+    new_params["last_name"] = params[:last_name]
+    new_params["organization"] = params[:organization]
+    new_params["dob"] = params[:dob]
+    new_params["gender"] = params[:gender]
+    new_params["email"] = params[:email]
+    
+    old_object.first_name = new_params["first_name"]
+    old_object.last_name = new_params["last_name"]
+    old_object.organization = new_params["organization"]
+    old_object.dob = new_params["dob"]
+    old_object.gender = new_params["gender"]
+    old_object.email = new_params["email"]
+    # binding.pry
+    if old_object.changed?
+      old_object.update(new_params)
+      flash[:message] = "Your profile has been successfully updated"
+      redirect "/users/#{current_user.id}"
+    else
+      flash[:message] = "You have not made any change to your profile data"
+      redirect "/users/#{current_user.id}/edit"
+    end
   end
 end
