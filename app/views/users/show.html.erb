@@ -6,9 +6,12 @@
 
 <%@user%>
 
-<p><label>First Name</label><%=@user.first_name%></p>
-<p><label>Last Name</label><%=@user.last_name%></p>
-<p><label>Organization</label><%=@user.organization%></p>
-<p><label>Date of Birth</label><%=@user.dob%></p>
-<p><label>Gender</label><%=@user.gender%></p>
-<p><label>eMail</label><%=@user.email%></p>
+<p><label>First Name: </label><%=@user.first_name%></p>
+<p><label>Last Name: </label><%=@user.last_name%></p>
+<p><label>Organization: </label><%=@user.organization%></p>
+<p><label>Date of Birth: </label><%= @user.dob %></p>
+<p><label>Gender: </label><%=@user.gender%></p>
+<p><label>eMail: </label><%=@user.email%></p>
+
+<br>
+<a href="/users/<%=current_user.id%>/edit">Edit Profile</a>
