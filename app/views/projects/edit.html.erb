@@ -4,8 +4,8 @@
 <% @other_nature = ["Colloboration", "Individual"].delete_if {|n| n == @project.nature} %>
 <% @other_phases = ["Planning", "Development", "Testing", "Completed", "Production"].delete_if {|phase| phase == @project.phase} %>
 
-<form action="/projects" method="POST">
-    <input type=hidden id=hidden name="_method" value="patch">
+<form action="/projects/<%=@project.id%>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="patch">
     <p><label>Title </label><input type="text" id="title" name="title" value="<%=@project.title%>"></p>
     <p><label>Domain </label><input type="text" id="domain" name="domain" value="<%=@project.domain%>"></p>
 
