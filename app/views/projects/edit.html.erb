@@ -1,1 +1,51 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Project</h1>
+
+<% @other_class = ["CLI", "Web Based"].delete_if {|c| c == @project.classification} %>
+<% @other_nature = ["Colloboration", "Individual"].delete_if {|n| n == @project.nature} %>
+<% @other_phases = ["Planning", "Development", "Testing", "Completed", "Production"].delete_if {|phase| phase == @project.phase} %>
+
+<form action="/projects" method="POST">
+    <input type=hidden id=hidden name="_method" value="patch">
+    <p><label>Title </label><input type="text" id="title" name="title" value="<%=@project.title%>"></p>
+    <p><label>Domain </label><input type="text" id="domain" name="domain" value="<%=@project.domain%>"></p>
+
+    <p><label for="classification">Classification </label>
+    <select name="classification">
+        <%=i = 0 %>
+        <% until i == @other_class.size %>
+            <option value="<%=@other_class[i]%>" selected><%=@other_class[i]%></option> 
+            <%=i += 1%>
+        <% end %>
+        <option value="<%=@project.classification%>" selected><%=@project.classification%></option>
+    </select></p>
+
+    <p><label for="nature">Nature </label>
+    <select name="nature">
+        <%=i = 0 %>
+        <% until i == @other_nature.size %>
+            <option value="<%=@other_nature[i]%>" selected><%=@other_nature[i]%></option> 
+            <%=i += 1%>
+        <% end %>
+        <option value="<%=@project.nature%>" selected><%=@project.nature%></option>
+    </select></p>
+
+    <p><label>Language(s) </label><input type="text" id="languages" name="languages" value="<%=@project.languages%>"></p>
+    <p><label>Library(ies) </label><textarea id="libraries" name="libraries" value="<%=@project.libraries%>"></textarea></p>
+
+    <p><label for="phase">Phase </label>
+    <select name="phase">
+        <%=i = 0 %>
+        <% until i == @other_phases.size %>
+            <option value="<%=@other_phases[i]%>" selected><%=@other_phases[i]%></option> 
+            <%=i += 1%>
+        <% end %>
+        <option value="<%=@project.phase%>" selected><%=@project.phase%></option>
+    </select></p>
+    
+    <p><label>Start Date </label><input type="date" id="start_date" name="start_date" value="<%=@project.start_date.to_s.gsub(" 00:00:00 UTC", "")%>"></p>
+    <p><label>Planned Completion Date </label><input type="date" id="planned_end_date" name="planned_end_date" value="<%=@project.planned_end_date.to_s.gsub(" 00:00:00 UTC", "")%>"></p>
+    <p><label>Actual Completion Date </label><input type="date" id="actual_end_date" name="actual_end_date" value="<%= @project.actual_end_date.to_s.gsub(" 00:00:00 UTC", "")%>"></p>
+    <p><label>Notes </label><textarea id="notes" name="notes"></textarea></p>
+
+    <input type="submit" value="Save">
+</form>
