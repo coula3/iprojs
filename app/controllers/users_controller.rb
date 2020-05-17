@@ -29,8 +29,8 @@ class UsersController < ApplicationController
   end
 
   get "/signout" do
+    @first_name = current_user.first_name
     session.clear
-    # binding.pry
     erb :"/users/bye.html"
   end
 
