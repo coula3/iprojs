@@ -33,8 +33,10 @@ class ProjectsController < ApplicationController
     redirect "/projects/:id"
   end
 
-  # DELETE: /projects/5/delete
   delete "/projects/:id/delete" do
+    project = Project.find_by(id: params[:id])
+    # binding.pry
+    project.destroy
     redirect "/projects"
   end
 end
