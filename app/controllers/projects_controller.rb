@@ -1,17 +1,15 @@
 class ProjectsController < ApplicationController
 
-  # GET: /projects
+  
   get "/projects" do
     @projects = current_user.projects
     erb :"/projects/index.html"
   end
 
-  # GET: /projects/new
   get "/projects/new" do
     erb :"/projects/new.html"
   end
 
-  # POST: /projects
   post "/projects" do
     project = current_user.projects.build(params)
     project.save
@@ -19,8 +17,9 @@ class ProjectsController < ApplicationController
     redirect "/projects"
   end
 
-  # GET: /projects/5
   get "/projects/:id" do
+    @project = Project.find_by(id: params[:id])
+    # binding.pry
     erb :"/projects/show.html"
   end
 

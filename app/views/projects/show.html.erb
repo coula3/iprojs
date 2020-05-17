@@ -1,1 +1,13 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h2><label>Title: </label><%= @project.title %></h2>
+
+<br>
+    <p><label>Domain </label><%=@project.domain%></p>
+    <p><label>Classification </label><%=@project.classification%></p>
+    <p><label>Type </label><%=@project.nature%></p>
+    <p><label>Language(s) </label><%=@project.languages%></p>
+    <p><label>Library(ies) </label><%=@project.libraries%></p>
+    <p><label>Phase </label><%=@project.phase%></p>
+    <p><label>Start Date </label><%=@project.start_date%></p>
+    <p><label>Planned End Date </label><%=@project.planned_end_date%></p>
+    <p><label>Actual End Date </label><%=@project.actual_end_date%></p>
+    <p><label>Notes </label><%=@project.notes%></p>
