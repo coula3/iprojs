@@ -1,5 +1,5 @@
 <h1>My Projects</h1>
 
 <% @projects.each.with_index(1) do |project, index|%>
-    <p><a href="/projects/<%= index %>"><%= index %></a> <%=project.title%></p>
+    <p><a href="/projects/<%= project.id %>"><%= index %></a> <%=project.title%></p>
 <%end%>
