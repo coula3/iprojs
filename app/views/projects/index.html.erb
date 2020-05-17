@@ -8,8 +8,8 @@
     </tr>
     <% @projects.each.with_index(1) do |project, index|%>
         </tr>
-            <td style="margin-right: 5px"><a href="/projects/<%= project.id %>" title="View Project Details"><%= index %></a> </td>
-            <td style="margin-right: 5px"><%=project.title%></td>
+            <td style="margin-right: 5px"><%= index %></a> </td>
+            <td style="margin-right: 5px"><a href="/projects/<%= project.id %>" title="View Project Details"><%=project.title%></td>
             <td style="margin-right: 5px"><%=project.phase%></td>
         </tr>
     <%end%>
