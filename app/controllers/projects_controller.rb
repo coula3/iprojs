@@ -23,12 +23,12 @@ class ProjectsController < ApplicationController
     erb :"/projects/show.html"
   end
 
-  # GET: /projects/5/edit
   get "/projects/:id/edit" do
+    @project = Project.find_by(id: params[:id])
+    # binding.pry
     erb :"/projects/edit.html"
   end
 
-  # PATCH: /projects/5
   patch "/projects/:id" do
     redirect "/projects/:id"
   end
