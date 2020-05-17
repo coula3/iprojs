@@ -3,20 +3,20 @@
 <form action="/projects" method="POST">
     <p><label>Title </label><input type="text" id="title" name="title"></p>
     <p><label>Domain </label><input type="text" id="domain" name="domain"></p>
-    <p><label for="classfication">Classification </label>
-    <select id="classfication">
-        <option value="Command Line Application">Command Line Application</option>
+    <p><label for="classification">Classification </label>
+    <select name="classification">
+        <option value="CLI">CLI</option>
         <option value="Web Based" selected>Web Based</option>
     </select></p>
     <p><label for="nature">Type </label>
-    <select id="nature">
+    <select name="nature">
         <option value="Collaboration" selected> Collaboration </option>
         <option value="Individual" > Individual </option>
     </select></p>
     <p><label>Languages </label><input type="text" id="languages" name="languages"></p>
     <p><label>Libraries </label><textarea id="libraries" name="libraries"></textarea></p>
     <p><label for="phase">Phase </label>
-    <select id="phase">
+    <select name="phase">
         <option value="Planning" selected> Planning </option>
         <option value="Development" > Development </option>
         <option value="Testing" > Testing </option>
