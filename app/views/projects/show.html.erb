@@ -1,22 +1,34 @@
 <h2><label>Title: </label><%= @project.title %></h2>
 
+<% if @project.start_date%>
+    <% start_date = @project.start_date.strftime("%B %d, %Y")%>
+<%end%>
+
+<% if @project.planned_end_date%>
+    <% planned_end_date = @project.planned_end_date.strftime("%B %d, %Y")%>
+<%end%>
+
+<% if @project.actual_end_date%>
+    <% actual_end_date = @project.actual_end_date.strftime("%B %d, %Y")%>
+<%end%>
+
 <br>
-    <p><label>Domain </label><%=@project.domain%></p>
-    <p><label>Classification </label><%=@project.classification%></p>
-    <p><label>Type </label><%=@project.nature%></p>
-    <p><label>Language(s) </label><%=@project.languages%></p>
-    <p><label>Library(ies) </label><%=@project.libraries%></p>
-    <p><label>Phase </label><%=@project.phase%></p>
-    <p><label>Start Date </label><%=@project.start_date.strftime("%B %d, %Y") %></p>
-    <p><label>Planned End Date </label><%=@project.planned_end_date.strftime("%B %d, %Y") %></p>
-    <p><label>Actual End Date </label><%=@project.actual_end_date.strftime("%B %d, %Y") %></p>
-    <p><label>Notes </label><%=@project.notes%></p>
+<p><label>Domain </label><%=@project.domain%></p>
+<p><label>Classification </label><%=@project.classification%></p>
+<p><label>Type </label><%=@project.nature%></p>
+<p><label>Language(s) </label><%=@project.languages%></p>
+<p><label>Library(ies) </label><%=@project.libraries%></p>
+<p><label>Phase </label><%=@project.phase%></p>
+<p><label>Start Date </label><%= start_date %></p>
+<p><label>Planned End Date </label><%= planned_end_date %></p>
+<p><label>Actual End Date </label><%= actual_end_date %></p>
+<p><label>Notes </label><%=@project.notes%></p>
 
-    <br><br>
-    <a href="/projects">Return to My Projects</a>
-    <a href="/projects/<%=@project.id%>/edit">Edit Project</a><br><br>
+<br><br>
+<a href="/projects">Return to My Projects</a>
+<a href="/projects/<%=@project.id%>/edit">Edit Project</a><br><br>
 
-    <form action="/projects/<%=@project.id%>/delete" method="POST">
-        <input type="hidden" id=hidden name="_method" value="delete">
-        <input type="submit" value="Delete Project">
-    </form>
+<form action="/projects/<%=@project.id%>/delete" method="POST">
+    <input type="hidden" id=hidden name="_method" value="delete">
+    <input type="submit" value="Delete Project">
+</form>
