@@ -12,9 +12,9 @@ class ProjectsController < ApplicationController
 
   # POST: /projects
   post "/projects" do
-    project = current_user.projects.build
+    project = current_user.projects.build(params)
     project.save
-    binding.pry
+  
     redirect "/projects"
   end
 
