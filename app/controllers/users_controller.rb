@@ -24,7 +24,8 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:id] = user.id
       # binding.pry
-      redirect "/projects"
+      # redirect "/projects"
+      erb :"projects/menu.html"
     end
   end
 
