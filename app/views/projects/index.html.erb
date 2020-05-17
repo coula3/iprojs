@@ -1,5 +1,16 @@
-<h1>My Projects</h1>
+<h2>My Projects</h2>
 
-<% @projects.each.with_index(1) do |project, index|%>
-    <p><a href="/projects/<%= project.id %>"><%= index %></a> <%=project.title%></p>
-<%end%>
+<table style="width:80%">
+    <tr>
+        <th>&nbsp;</th>
+        <th style="text-align: left">Title</th>
+        <th style="text-align: left">Phase</th>
+    </tr>
+    <% @projects.each.with_index(1) do |project, index|%>
+        </tr>
+            <td style="margin-right: 5px"><a href="/projects/<%= project.id %>" title="View Project Details"><%= index %></a> </td>
+            <td style="margin-right: 5px"><%=project.title%></td>
+            <td style="margin-right: 5px"><%=project.phase%></td>
+        </tr>
+    <%end%>
+</table>
