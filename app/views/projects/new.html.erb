@@ -1,1 +1,16 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>Create A New Project</h1>
+
+<form action="/projects" method="POST">
+    <p><label>Title </label><input type="text" id="title" name="title"></p>
+    <p><label>Domain </label><input type="text" id="domain" name="domain"></p>
+    <p><label>Classification </label><input type="text" id="classification" name="classification"></p>
+    <p><label>Type </label><input type="text" id="nature" name="nature"></p>
+    <p><label>Languages </label><input type="text" id="languages" name="languages"></p>
+    <p><label>Phase </label><input type="text" id="phase" name="phase"></p>
+    <p><label>Notes </label><textarea id="notes" name="notes"></textarea></p>
+    <p><label>Start Date </label><input type="date" id="start_date" name="start_date"></p>
+    <p><label>Planned Completion Date </label><input type="date" id="planned_end_date" name="planned_end_date"></p>
+    <p><label>Actual Completion Date </label><input type="date" id="actual_end_date" name="actual_end_date"></p>
+
+    <input type="submit" value="Create Project">
+</form>
