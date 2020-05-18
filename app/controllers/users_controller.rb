@@ -7,15 +7,16 @@ class UsersController < ApplicationController
     if current_user
       redirect "/projects"
     else
-      @user = current_user.first_name
       erb :"/users/signup.html"
     end
   end
   
   post "/signup" do
-    user = User.new(params)
+    # user = User.new(params)
+    user = User.new(first_name: params[:first_name].downcase, last_name: params[:last_name].downcase, organization: params[:organization].titlecase, dob: params[:dob], gender: params[:gender], email: params[:email].downcase, password: params[:password])
     user.save
     session[:id] = user.id
+    @user = current_user.first_name
     erb :"/about.html"
   end
   
@@ -59,6 +60,7 @@ class UsersController < ApplicationController
   end
 
   get "/users/:id" do
+    # binding.pry
     if logged_in?
       if current_user.id == params[:id].to_i
         @user = User.find_by(id: params[:id].to_i)
