@@ -3,7 +3,7 @@
 <% end %><br><br>
 
 <% if logged_in? %>
-    <h2>Hey <%= @user %>!</h2>
+    <h2>Hey <%= @user.capitalize %>!</h2>
 <% end %>
 
 <% if !logged_in? %>
