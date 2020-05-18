@@ -40,7 +40,11 @@ class UsersController < ApplicationController
   end
 
   get "/intro" do
-    erb :"/intro.html"
+    if current_user
+      redirect "/projects"
+    else
+      erb :"/intro.html"
+    end
   end
 
   get "/signout" do
