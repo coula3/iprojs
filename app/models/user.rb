@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 
     validates :first_name, :last_name, :dob, :email, presence: true
     validates :password, length: { in: 3..6 }
+    validates_uniqueness_of :email
 end
