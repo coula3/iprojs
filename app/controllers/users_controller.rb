@@ -12,12 +12,17 @@ class UsersController < ApplicationController
   end
   
   post "/signup" do
-    # user = User.new(params)
     user = User.new(first_name: params[:first_name].capitalize, last_name: params[:last_name].capitalize, organization: params[:organization].titlecase, dob: params[:dob], gender: params[:gender], email: params[:email].downcase, password: params[:password])
-    user.save
-    session[:id] = user.id
-    @user = current_user.first_name
-    erb :"/about.html"
+
+    if user.save
+      session[:id] = user.id
+      @user = current_user.first_name
+      erb :"/about.html"
+    else
+      binding.pry
+      flash[:message] = "Sign up unsuccessful: #{user.errors.full_messages.join(", ")}"
+      redirect "/signup"
+    end
   end
   
   get "/signin" do
@@ -96,7 +101,6 @@ class UsersController < ApplicationController
     old_object.dob = params["dob"]
     old_object.gender = params["gender"]
     old_object.email = params["email"].downcase
-    # old_object.update(new_params) # updates all fields and returns error msg for password
     
     if old_object.valid?
       old_object.save
