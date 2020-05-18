@@ -17,22 +17,21 @@ class ProjectsController < ApplicationController
     redirect "/projects"
   end
 
-  get "/projects/:id" do
-    @project = Project.find_by(id: params[:id])
-    # binding.pry
+  get "/projects/:slug" do
+    @project = Project.find_by_slug(params[:slug])
     erb :"/projects/show.html"
   end
 
-  get "/projects/:id/edit" do
-    @project = Project.find_by(id: params[:id])
+  get "/projects/:slug/edit" do
     # binding.pry
+    @project = Project.find_by_slug(params[:slug])
     erb :"/projects/edit.html"
   end
 
-  patch "/projects/:id" do
-    new_params = Hash.new
-    old_object = Project.find(params[:id])
+  patch "/projects/:slug" do
     # binding.pry
+    new_params = Hash.new
+    old_object = Project.find_by_slug(params[:slug])
     new_params["title"] = params[:title]
     new_params["domain"] = params[:domain]
     new_params["classification"] = params[:classification]
@@ -48,7 +47,7 @@ class ProjectsController < ApplicationController
     old_object.update(new_params)
     # binding.pry
 
-    redirect "/projects/#{old_object.id}"
+    redirect "/projects/#{old_object.slug}"
   end
 
   delete "/projects/:id/delete" do

@@ -26,7 +26,7 @@
 
 <br><br>
 <a href="/projects">Return to My Projects</a>
-<a href="/projects/<%=@project.id%>/edit">Edit Project</a><br><br>
+<a href="/projects/<%=@project.slug%>/edit">Edit Project</a><br><br>
 
 <form action="/projects/<%=@project.id%>/delete" method="POST">
     <input type="hidden" id=hidden name="_method" value="delete">
