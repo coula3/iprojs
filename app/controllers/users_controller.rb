@@ -58,9 +58,16 @@ class UsersController < ApplicationController
   end
 
   get "/users/:id" do
-    # binding.pry
-    @user = User.find_by(id: params[:id])
-    erb :"/users/show.html"
+    if logged_in?
+      if current_user.id == params[:id].to_i
+        @user = User.find_by(id: params[:id].to_i)
+        erb :"/users/show.html"
+      else
+        redirect "/users/#{current_user.id}"
+      end
+    else
+      redirect "/signin"
+    end
   end
 
   get "/users/:id/edit" do
