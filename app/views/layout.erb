@@ -19,7 +19,9 @@
         <% if logged_in? %>
           <a href="/users/<%=session[:id]%>">My Profile</a>
           <a href="/users/<%=session[:id]%>/edit">Edit Profile</a> 
-          <a href="/projects">My Projects</a>
+          <% if !current_user.projects.empty?%>
+            <a href="/projects">My Projects</a>
+          <%end%>
           <a href="/projects/new">New Project</a>
           <a href="/signout">Sign out</a>
         <% end %>
