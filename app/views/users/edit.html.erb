@@ -3,7 +3,7 @@
 <% end %><br><br>
 
 <%@user%>
-<%@other_gender%>
+<%@other_gender = ["Male", "Female", "Non-Binary"].delete_if {|gender| gender == current_user.gender}%>
 
 <form action="/users/<%=@user.id%>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
@@ -23,8 +23,8 @@
         <% end %>
         <option value="<%=@user.gender%>" selected><%=@user.gender%></option>
     </select></p>
-    <p><label>eMail </label><input type="text" name="email" value="<%= @user.email %>"></p>
-    <p><label>Password </label><input type="password" name="password" value="<%= @user.password.downcase %>"></p>
+    <p><label>eMail </label><input type="text" name="email" value="<%= @user.email.downcase %>"></p>
+    <p><label>Password </label><input type="password" name="password" value="<%= @user.password %>"></p>
 
    <input type="submit" id="submit" value="Save">
    <a href="/users/<%=current_user.id%>">Cancel</a>
