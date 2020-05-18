@@ -43,6 +43,8 @@ class UsersController < ApplicationController
         @user = current_user.first_name
         erb :"/about.html"
       end
+    else
+      redirect "/signin"
     end
   end
 
