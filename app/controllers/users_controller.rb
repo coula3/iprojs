@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   use Rack::Flash
   
   get "/signup" do
-    erb :"/users/signup.html"
+    if current_user
+      redirect "/projects"
+    else
+      erb :"/users/signup.html"
+    end
   end
   
   post "/signup" do
