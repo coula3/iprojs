@@ -1,3 +1,7 @@
+<% if !logged_in? %>
+    <a href="/">Back</a>
+<% end %><br><br>
+
 <% if logged_in? %>
     <h2>Hey <%= @user %>!</h2>
 <% end %>
