@@ -1,9 +1,17 @@
-<h2>Hey <%= @user %>!</h2>
+<% if logged_in? %>
+    <h2>Hey <%= @user %>!</h2>
+<% end %>
+
+<% if !logged_in? %>
+    <h2>Introduction</h2>
+<% end %>
 
 <div>
-    <p> <span style="color: red">iProjs</span> is a proprietory medium that provides you as a software developer a useful tool to enhance your project management experience. It is a ease-of-use platform to has functionality to data on your project portfolio that may be frequently accessed.</p>
+    <p> <span style="color: red">iProjs</span> is a proprietory medium that provides you as a software developer a useful tool to enhance your project management experience. It is a ease-of-use platform with functionalities to hold data on your project portfolio that may require frequent access.</p>
 
     <p>We hope your interaction with the product will be valuable.</p>
 
-    <p>Let's gets started by adding a new <a href="/projects/new">project</a>!!</p>
+    <% if logged_in? %>
+        <p>Let's gets started by adding a new <a href="/projects/new">project</a>!!</p>
+    <% end %>
 </div>
