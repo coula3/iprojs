@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   
   post "/signup" do
     # user = User.new(params)
-    user = User.new(first_name: params[:first_name].downcase, last_name: params[:last_name].downcase, organization: params[:organization].titlecase, dob: params[:dob], gender: params[:gender], email: params[:email].downcase, password: params[:password])
+    user = User.new(first_name: params[:first_name].capitalize, last_name: params[:last_name].capitalize, organization: params[:organization].titlecase, dob: params[:dob], gender: params[:gender], email: params[:email].downcase, password: params[:password])
     user.save
     session[:id] = user.id
     @user = current_user.first_name
@@ -83,22 +83,13 @@ class UsersController < ApplicationController
     id = params[:id]
     new_params = Hash.new
     old_object = User.find(id)
-    # old_object.changed?
     
-    new_params["first_name"] = params[:first_name]
-    new_params["last_name"] = params[:last_name]
-    new_params["organization"] = params[:organization]
-    new_params["dob"] = params[:dob]
-    new_params["gender"] = params[:gender]
-    new_params["email"] = params[:email]
-    
-    old_object.first_name = new_params["first_name"]
-    old_object.last_name = new_params["last_name"]
-    old_object.organization = new_params["organization"]
-    old_object.dob = new_params["dob"]
-    old_object.gender = new_params["gender"]
-    old_object.email = new_params["email"]
-    # binding.pry
+    old_object.first_name = params["first_name"].capitalize
+    old_object.last_name = params["last_name"].capitalize
+    old_object.organization = params["organization"].titlecase
+    old_object.dob = params["dob"]
+    old_object.gender = params["gender"]
+    old_object.email = params["email"].downcase
     # old_object.update(new_params) # updates all fields and returns error msg for password
     
     if old_object.valid?
