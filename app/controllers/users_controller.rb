@@ -19,7 +19,11 @@ class UsersController < ApplicationController
   end
   
   get "/signin" do
-    erb :"/users/signin.html"
+    if current_user
+      redirect "/projects"
+    else
+      erb :"/users/signin.html"
+    end
   end
 
   post "/signin" do
