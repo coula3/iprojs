@@ -103,6 +103,7 @@ class UsersController < ApplicationController
     old_object.dob = params["dob"]
     old_object.gender = params["gender"]
     old_object.email = params["email"].downcase
+    old_object.password = params["password"]
     
     if old_object.valid?
       old_object.save
