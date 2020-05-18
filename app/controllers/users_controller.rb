@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     user = User.new(params)
     user.save
     session[:id] = user.id
-    erb :"/users/intro.html"
+    erb :"/intro.html"
   end
   
   get "/signin" do
@@ -26,9 +26,13 @@ class UsersController < ApplicationController
         redirect "/projects"
       else
         @user = current_user.first_name
-        erb :"/users/intro.html"
+        erb :"/intro.html"
       end
     end
+  end
+
+  get "/intro" do
+    erb :"/intro.html"
   end
 
   get "/signout" do
