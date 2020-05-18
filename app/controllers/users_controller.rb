@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     id = params[:id]
     new_params = Hash.new
     old_object = User.find(id)
-    old_object.changed?
+    # old_object.changed?
     
     new_params["first_name"] = params[:first_name]
     new_params["last_name"] = params[:last_name]
@@ -69,12 +69,14 @@ class UsersController < ApplicationController
     old_object.gender = new_params["gender"]
     old_object.email = new_params["email"]
     # binding.pry
-    if old_object.changed?
-      old_object.update(new_params)
+    # old_object.update(new_params) # updates all fields and returns error msg for password
+    
+    if old_object.valid?
+      old_object.save
       flash[:message] = "Your profile has been successfully updated"
       redirect "/users/#{current_user.id}"
     else
-      flash[:message] = "You have not made any change to your profile data"
+      flash[:message] = "Update unsuccessful: #{old_object.errors.full_messages}"
       redirect "/users/#{current_user.id}/edit"
     end
   end
