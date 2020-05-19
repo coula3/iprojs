@@ -2,8 +2,12 @@ class ProjectsController < ApplicationController
 
   
   get "/projects" do
-    @projects = current_user.projects
-    erb :"/projects/index.html"
+    if logged_in?
+      @projects = current_user.projects
+      erb :"/projects/index.html"
+    else
+      erb :"/users/signin.html"
+    end
   end
 
   get "/projects/new" do
