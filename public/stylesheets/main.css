@@ -70,6 +70,10 @@
   th, td {
     padding: 3px;
   }
+  
+  tr {
+    margin: 25px 0px 25px 0px;
+  }
 
   h1 {
     font-size: 36px;
