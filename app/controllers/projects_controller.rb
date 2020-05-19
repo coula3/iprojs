@@ -11,7 +11,11 @@ class ProjectsController < ApplicationController
   end
 
   get "/projects/new" do
-    erb :"/projects/new.html"
+    if current_user
+      erb :"/projects/new.html"
+    else
+      erb :"/users/signin.html"
+    end
   end
 
   post "/projects" do
