@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-
   
   get "/projects" do
     if current_user
@@ -20,9 +19,11 @@ class ProjectsController < ApplicationController
 
   post "/projects" do
     project = current_user.projects.build(params)
-    project.save
-  
-    redirect "/projects"
+    if project.save
+      redirect "/projects"
+    else
+      redirect :"/projects/new"
+    end
   end
 
   get "/projects/:slug" do
