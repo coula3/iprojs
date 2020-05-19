@@ -44,10 +44,12 @@ class ProjectsController < ApplicationController
     new_params["actual_end_date"] = params[:actual_end_date]
     new_params["notes"] = params[:notes]
     
-    old_object.update(new_params)
-    # binding.pry
+    if old_object.update(new_params)
+      redirect "/projects/#{old_object.slug}"
+    else
+      redirect "/projects/#{old_object.slug}/edit"
+    end
 
-    redirect "/projects/#{old_object.slug}"
   end
 
   delete "/projects/:id/delete" do
