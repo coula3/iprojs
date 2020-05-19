@@ -14,7 +14,7 @@
         <option value="Individual" > Individual </option>
     </select></p>
     <p><label>Languages </label><input type="text" id="languages" name="languages"></p>
-    <p><label>Libraries </label><textarea id="libraries" name="libraries"></textarea></p>
+    <p><label class="lbltext">Libraries </label><textarea id="libraries" name="libraries"></textarea></p>
     <p><label for="phase">Phase </label>
     <select name="phase">
         <option value="Planning" selected> Planning </option>
@@ -26,9 +26,9 @@
     <p><label>Start Date </label><input type="date" id="start_date" name="start_date"></p>
     <p><label>Planned Completion Date </label><input type="date" id="planned_end_date" name="planned_end_date"></p>
     <p><label>Actual Completion Date </label><input type="date" id="actual_end_date" name="actual_end_date"></p>
-    <p><label>Notes </label><textarea id="notes" name="notes"></textarea></p>
+    <p><label class="lbltext">Notes </label><textarea id="notes" name="notes"></textarea></p>
 
-    <input type="submit" value="Add Project">
+    <button class="button">Add Project</button>
     <%if current_user.projects.size > 0%>
         <a href="/projects">Cancel</a>
     <%end%>

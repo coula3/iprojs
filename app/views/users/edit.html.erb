@@ -26,6 +26,6 @@
     <p><label>eMail </label><input type="text" name="email" value="<%= @user.email.downcase %>"></p>
     <p><label>Password </label><input type="password" name="password" value="<%= @user.password %>"></p>
 
-   <input type="submit" id="submit" value="Save">
+    <button class="button">Save</button>
    <a href="/users/<%=current_user.id%>">Cancel</a>
 </form>

@@ -1,4 +1,4 @@
-<h2><label>Title: </label><%= @project.title %></h2>
+<h2><label style="width: 75px; color: blue">Title: </label><%= @project.title %></h2>
 
 <% if @project.start_date%>
     <% start_date = @project.start_date.strftime("%B %d, %Y")%>
@@ -10,25 +10,24 @@
 
 <% if @project.actual_end_date%>
     <% actual_end_date = @project.actual_end_date.strftime("%B %d, %Y")%>
-<%end%>
+<%end%><br>
 
-<br>
 <p><label>Domain </label><%=@project.domain%></p>
 <p><label>Classification </label><%=@project.classification%></p>
 <p><label>Type </label><%=@project.nature%></p>
 <p><label>Language(s) </label><%=@project.languages%></p>
-<p><label>Library(ies) </label><%=@project.libraries%></p>
+<label>Library(ies) </label><p style="display: inline; margin-left: 0px"><%=@project.libraries%></p><br><br>
 <p><label>Phase </label><%=@project.phase%></p>
 <p><label>Start Date </label><%= start_date %></p>
 <p><label>Planned End Date </label><%= planned_end_date %></p>
 <p><label>Actual End Date </label><%= actual_end_date %></p>
 <p><label>Notes </label><%=@project.notes%></p>
-
 <br><br>
-<a href="/projects">Return to My Projects</a>
+
+<a href="/projects"><<</a>
 <a href="/projects/<%=@project.slug%>/edit">Edit Project</a><br><br>
 
 <form action="/projects/<%=@project.id%>/delete" method="POST">
     <input type="hidden" id=hidden name="_method" value="delete">
-    <input type="submit" value="Delete Project">
+    <button class="button">Delete Project</button>
 </form>
