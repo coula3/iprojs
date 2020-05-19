@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
 
   
   get "/projects" do
-    if logged_in?
+    if current_user
       @projects = current_user.projects
       erb :"/projects/index.html"
     else
