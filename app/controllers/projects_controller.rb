@@ -26,8 +26,17 @@ class ProjectsController < ApplicationController
   end
 
   get "/projects/:slug" do
-    @project = Project.find_by_slug(params[:slug])
-    erb :"/projects/show.html"
+    # binding.pry
+    if logged_in?
+      if current_user.projects.find_by_slug(params[:slug])
+        @project = Project.find_by_slug(params[:slug])
+        erb :"/projects/show.html"
+      else
+        redirect "/projects"
+      end
+    else
+      erb :"/users/signin.html"
+    end
   end
 
   get "/projects/:slug/edit" do
