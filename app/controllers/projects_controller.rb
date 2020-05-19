@@ -26,7 +26,6 @@ class ProjectsController < ApplicationController
   end
 
   get "/projects/:slug" do
-    # binding.pry
     if logged_in?
       if current_user.projects.find_by_slug(params[:slug])
         @project = Project.find_by_slug(params[:slug])
@@ -41,8 +40,16 @@ class ProjectsController < ApplicationController
 
   get "/projects/:slug/edit" do
     # binding.pry
-    @project = Project.find_by_slug(params[:slug])
-    erb :"/projects/edit.html"
+    if logged_in?
+      if current_user.projects.find_by_slug(params[:slug])
+        @project = Project.find_by_slug(params[:slug])
+        erb :"/projects/edit.html"
+      else
+        redirect "/projects"
+      end
+    else
+      erb :"/users/signin.html"
+    end
   end
 
   patch "/projects/:slug" do
