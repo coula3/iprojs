@@ -44,7 +44,8 @@ class UsersController < ApplicationController
         erb :"/about.html"
       end
     else
-      redirect "/signin"
+      flash[:message] = "Invalid email or password"
+      erb :"/users/signin.html"
     end
   end
 
