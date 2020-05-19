@@ -29,5 +29,7 @@
     <p><label>Notes </label><textarea id="notes" name="notes"></textarea></p>
 
     <input type="submit" value="Add Project">
-    <a href="/projects">Cancel</a>
+    <%if current_user.projects.size > 0%>
+        <a href="/projects">Cancel</a>
+    <%end%>
 </form>
