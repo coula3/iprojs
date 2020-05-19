@@ -12,17 +12,48 @@
     <% actual_end_date = @project.actual_end_date.strftime("%B %d, %Y")%>
 <%end%><br>
 
-<p><label>Domain </label><%=@project.domain%></p>
-<p><label>Classification </label><%=@project.classification%></p>
-<p><label>Type </label><%=@project.nature%></p>
-<p><label>Language(s) </label><%=@project.languages%></p>
-<label>Library(ies) </label><p style="display: inline; margin-left: 0px"><%=@project.libraries%></p><br><br>
-<p><label>Phase </label><%=@project.phase%></p>
-<p><label>Start Date </label><%= start_date %></p>
-<p><label>Planned End Date </label><%= planned_end_date %></p>
-<p><label>Actual End Date </label><%= actual_end_date %></p>
-<p><label>Notes </label><%=@project.notes%></p>
-<br><br>
+<table style="width:90%; margin-bottom: 30px">
+    <tr>
+       <td style="float: left; margin-right: 45px; color: blue">Domain</td>
+       <td><%=@project.domain%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Classification</td> 
+        <td><%=@project.classification%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Type</td> 
+        <td><%=@project.nature%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Language(s)</td> 
+        <td><%=@project.languages%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Libraries and Frameworks</td> 
+        <td><%=@project.libraries%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Phase</td> 
+        <td><%=@project.phase%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Start Date</td> 
+        <td><%=@project.start_date%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Planned End Date</td> 
+        <td><%=@project.planned_end_date%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Actual End Date</td> 
+        <td><%=@project.actual_end_date%></td>
+    </tr>
+    </tr>
+        <td style="float: left; margin-right: 45px; color: blue">Notes</td> 
+        <td><%=@project.notes%></td>
+    </tr>
+</table>
 
 <a href="/projects"><<</a>
 <a href="/projects/<%=@project.slug%>/edit">Edit Project</a><br><br>
