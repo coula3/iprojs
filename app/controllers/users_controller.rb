@@ -40,20 +40,11 @@ class UsersController < ApplicationController
       unless current_user.projects.empty?
         redirect "/projects"
       else
-        @user = current_user.first_name
         erb :"/about.html"
       end
     else
       flash[:message] = "Invalid email or password"
       erb :"/users/signin.html"
-    end
-  end
-
-  get "/about" do
-    if current_user
-      redirect "/projects"
-    else
-      erb :"/about.html"
     end
   end
 
