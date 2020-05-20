@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
       @projects = current_user.projects
       erb :"/projects/index.html"
     else
-      erb :"/users/signin.html"
+      redirect "/signin"
     end
   end
 
@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     if current_user
       erb :"/projects/new.html"
     else
-      erb :"/users/signin.html"
+      redirect "/signin"
     end
   end
 
@@ -35,12 +35,11 @@ class ProjectsController < ApplicationController
         redirect "/projects"
       end
     else
-      erb :"/users/signin.html"
+      redirect "/signin"
     end
   end
 
   get "/projects/:slug/edit" do
-    # binding.pry
     if logged_in?
       if current_user.projects.find_by_slug(params[:slug])
         @project = Project.find_by_slug(params[:slug])
@@ -49,12 +48,11 @@ class ProjectsController < ApplicationController
         redirect "/projects"
       end
     else
-      erb :"/users/signin.html"
+      redirect "/signin"
     end
   end
 
   patch "/projects/:slug" do
-    # binding.pry
     new_params = Hash.new
     old_object = Project.find_by_slug(params[:slug])
     new_params["title"] = params[:title]
@@ -79,7 +77,6 @@ class ProjectsController < ApplicationController
 
   delete "/projects/:id/delete" do
     project = Project.find_by(id: params[:id])
-    # binding.pry
     project.destroy
     redirect "/projects"
   end
