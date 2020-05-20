@@ -12,7 +12,7 @@
     <% actual_end_date = @project.actual_end_date.strftime("%B %d, %Y")%>
 <%end%><br>
 
-<table style="width:90%; margin-bottom: 30px">
+<table style="width:100%; margin-bottom: 30px">
     <tr>
        <td style="float: left; margin-right: 45px; color: blue">Domain</td>
        <td style="text-align: left"><%=@project.domain%></td>
@@ -55,7 +55,7 @@
     </tr>
 </table>
 
-<a href="/projects"><<</a>
+<a href="/projects">My Projects</a>
 <a href="/projects/<%=@project.slug%>/edit">Edit Project</a><br><br>
 
 <form action="/projects/<%=@project.id%>/delete" method="POST">
