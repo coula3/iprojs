@@ -19,7 +19,6 @@ class UsersController < ApplicationController
       @user = current_user.first_name
       erb :"/about.html"
     else
-      binding.pry
       flash[:message] = "Sign up unsuccessful: #{user.errors.full_messages.join(", ")}"
       redirect "/signup"
     end
@@ -37,6 +36,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:id] = user.id
+      flash[:message].clear
       unless current_user.projects.empty?
         redirect "/projects"
       else
