@@ -78,6 +78,10 @@ class ProjectsController < ApplicationController
   delete "/projects/:id/delete" do
     project = Project.find_by(id: params[:id])
     project.destroy
-    redirect "/projects"
+    if current_user.projects.empty?
+      redirect "/projects/new"
+    else      
+      redirect "/projects"
+    end
   end
 end
