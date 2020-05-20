@@ -79,7 +79,7 @@ class UsersController < ApplicationController
       redirect "/signin"
     end
   end
-
+  
   get "/users/:id/edit" do
     if logged_in?
       if current_user.id == params[:id].to_i
@@ -92,7 +92,7 @@ class UsersController < ApplicationController
       redirect "/signin"
     end
   end
-
+  
   patch "/users/:id" do
     id = params[:id]
     new_params = Hash.new
@@ -101,7 +101,7 @@ class UsersController < ApplicationController
     old_object.first_name = params["first_name"].capitalize
     old_object.last_name = params["last_name"].capitalize
     old_object.organization = params["organization"].titlecase
-    old_object.dob = params["dob"]
+    old_object.date_of_birth = params["dob"]
     old_object.gender = params["gender"]
     old_object.email = params["email"].downcase
     old_object.password = params["password"]
