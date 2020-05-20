@@ -36,7 +36,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:id] = user.id
-      flash[:message].clear
+      flash[:message].clear if flash[:message]
       unless current_user.projects.empty?
         redirect "/projects"
       else
