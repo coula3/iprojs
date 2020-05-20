@@ -22,7 +22,7 @@
           <a href="/users/<%=session[:id]%>">My Profile</a>
           <a href="/users/<%=session[:id]%>/edit">Edit Profile</a> 
           <% if !current_user.projects.empty?%>
-            <a href="/projects">My Projects</a>
+            <a href="/projects"><%=current_user.first_name.capitalize%>'s Projects</a>
           <%end%>
           <a href="/projects/new">New Project</a>
           <a href="/signout">Sign out</a>
@@ -31,7 +31,7 @@
 
         <span style="float: right">
         <% if logged_in? %>
-          <a href="/about">iProjs</a>
+          <a href="/about" title="About iProjs">iProjs</a>
         <% end %>
         </span>
       </div><br>
