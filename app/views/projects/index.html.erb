@@ -1,16 +1,18 @@
 <h2>My Projects</h2>
 
-<table style="width:80%">
+<table style="width:100%">
     <tr>
         <th>&nbsp;</th>
         <th style="text-align: left">Title</th>
+        <th style="text-align: left">Type</th>
         <th style="text-align: left">Phase</th>
     </tr>
     <% @projects.each.with_index(1) do |project, index|%>
         </tr>
-            <td style="margin-right: 5px"><%= index %></a> </td>
-            <td style="margin-right: 5px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></td>
-            <td style="margin-right: 5px"><%=project.phase%></td>
+            <td style="margin-right: 10px"><%= index %></a> </td>
+            <td style="margin-right: 10px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></td>
+            <td style="margin-right: 10px"><%=project.nature%></td>
+            <td><%=project.phase%></td>
         </tr>
     <%end%>
 </table>
