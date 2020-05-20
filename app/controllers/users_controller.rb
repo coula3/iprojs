@@ -101,7 +101,7 @@ class UsersController < ApplicationController
     old_object.first_name = params["first_name"].capitalize
     old_object.last_name = params["last_name"].capitalize
     old_object.organization = params["organization"].titlecase
-    old_object.date_of_birth = params["dob"]
+    old_object.date_of_birth = params["date_of_birth"]
     old_object.gender = params["gender"]
     old_object.email = params["email"].downcase
     old_object.password = params["password"]
@@ -111,7 +111,7 @@ class UsersController < ApplicationController
       flash[:message] = "Your profile has been successfully updated"
       redirect "/users/#{current_user.id}"
     else
-      flash[:message] = "Update unsuccessful: #{old_object.errors.full_messages}"
+      flash[:message] = "Update unsuccessful: #{old_object.errors.full_messages.join(", ")}"
       redirect "/users/#{current_user.id}/edit"
     end
   end
