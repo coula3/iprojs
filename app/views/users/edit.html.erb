@@ -2,6 +2,8 @@
     <span style="color:red"><%= flash[:message] %></span>
 <% end %><br><br>
 
+<h2>Edit My Profile</h2>
+
 <%@user%>
 <%@other_gender = ["Male", "Female", "Non-Binary"].delete_if {|gender| gender == current_user.gender}%>
 
