@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   post "/signin" do
-    user = User.find_by(email: params[:email])
+    user = User.find_by(email: params[:email].downcase)
     if user && user.authenticate(params[:password])
       session[:id] = user.id
       flash[:message].clear if flash[:message]
