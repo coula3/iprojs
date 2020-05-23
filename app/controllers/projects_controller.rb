@@ -65,6 +65,7 @@ class ProjectsController < ApplicationController
     new_params["start_date"] = params[:start_date]
     new_params["planned_end_date"] = params[:planned_end_date]
     new_params["actual_end_date"] = params[:actual_end_date]
+    new_params["url"] = params[:url]
     new_params["notes"] = params[:notes]
     
     if old_object.update(new_params)
