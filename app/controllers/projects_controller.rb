@@ -28,8 +28,7 @@ class ProjectsController < ApplicationController
 
   get "/projects/:slug" do
     if logged_in?
-      if current_user.projects.find_by_slug(params[:slug])
-        @project = Project.find_by_slug(params[:slug])
+      if @project = current_user.projects.find_by_slug(params[:slug])
         erb :"/projects/show.html"
       else
         redirect "/projects"
@@ -41,8 +40,7 @@ class ProjectsController < ApplicationController
 
   get "/projects/:slug/edit" do
     if logged_in?
-      if current_user.projects.find_by_slug(params[:slug])
-        @project = Project.find_by_slug(params[:slug])
+      if @project = current_user.projects.find_by_slug(params[:slug])
         erb :"/projects/edit.html"
       else
         redirect "/projects"
@@ -54,7 +52,7 @@ class ProjectsController < ApplicationController
 
   patch "/projects/:slug" do
     new_params = Hash.new
-    old_object = Project.find_by_slug(params[:slug])
+    old_object = current_user.projects.find_by_slug(params[:slug])
     new_params["title"] = params[:title]
     new_params["domain"] = params[:domain]
     new_params["classification"] = params[:classification]
@@ -73,11 +71,10 @@ class ProjectsController < ApplicationController
     else
       redirect "/projects/#{old_object.slug}/edit"
     end
-
   end
 
   delete "/projects/:id/delete" do
-    project = Project.find_by(id: params[:id])
+    project = current_user.projects.find_by(id: params[:id])
     project.destroy
     if current_user.projects.empty?
       redirect "/projects/new"
