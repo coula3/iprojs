@@ -106,4 +106,10 @@ class UsersController < ApplicationController
       redirect "/users/#{current_user.id}/edit"
     end
   end
+
+  helpers do
+    def calculate_age
+      Date.today < current_user.date_of_birth + (Date.today.year - current_user.date_of_birth.year).years ?  Date.today.year - current_user.date_of_birth.year-1 : Date.today.year - current_user.date_of_birth.year
+    end
+  end
 end
