@@ -7,21 +7,13 @@
 
     <p><label for="classification">Classification </label>
     <select name="classification">
-        <%=i = 0 %>
-        <% until i == @other_class.size %>
-            <option value="<%=@other_class[i]%>" selected><%=@other_class[i]%></option> 
-            <%=i += 1%>
-        <% end %>
+        <option value="<%=@other_class[0]%>" selected><%=@other_class[0]%></option> 
         <option value="<%=@project.classification%>" selected><%=@project.classification%></option>
     </select></p>
 
     <p><label for="nature">Nature </label>
     <select name="nature">
-        <%=i = 0 %>
-        <% until i == @other_nature.size %>
-            <option value="<%=@other_nature[i]%>" selected><%=@other_nature[i]%></option> 
-            <%=i += 1%>
-        <% end %>
+        <option value="<%=@other_nature[0]%>" selected><%=@other_nature[0]%></option>
         <option value="<%=@project.nature%>" selected><%=@project.nature%></option>
     </select></p>
 
