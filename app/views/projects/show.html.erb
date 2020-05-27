@@ -1,17 +1,5 @@
 <br><h2><label style="width: 75px; color: blue">Title: </label><%= @project.title %></h2>
 
-<% if @project.start_date%>
-    <% start_date = @project.start_date.strftime("%B %d, %Y")%>
-<%end%>
-
-<% if @project.planned_end_date%>
-    <% planned_end_date = @project.planned_end_date.strftime("%B %d, %Y")%>
-<%end%>
-
-<% if @project.actual_end_date%>
-    <% actual_end_date = @project.actual_end_date.strftime("%B %d, %Y")%>
-<%end%><br>
-
 <table style="width:100%; margin-bottom: 30px">
     <tr>
        <td style="float: left; margin-right: 45px; color: blue">Domain</td>
