@@ -4,9 +4,6 @@
 
 <h2>Edit My Profile</h2>
 
-<%@user%>
-<%@other_gender = ["Male", "Female", "Non-Binary"].delete_if {|gender| gender == current_user.gender}%>
-
 <form action="/users/<%=@user.id%>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
     <p><label>First Name </label><input type="text" name="first_name" value="<%= @user.first_name.capitalize %>"></p>
