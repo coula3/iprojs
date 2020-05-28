@@ -58,8 +58,9 @@ class UsersController < ApplicationController
   end
 
   get "/users/:id" do
+    binding.pry
     if logged_in?
-      if current_user.id == params[:id].to_i
+      if current_user == User.find(params[:id])
         @user = User.find_by(id: params[:id])
         erb :"/users/show.html"
       else
@@ -72,7 +73,7 @@ class UsersController < ApplicationController
   
   get "/users/:id/edit" do
     if logged_in?
-      if current_user.id == params[:id].to_i
+      if current_user == User.find(params[:id])
         @user = User.find_by(id: params[:id])
         @other_gender = ["Male", "Female", "Non-Binary"].delete_if {|gender| gender == current_user.gender}
         erb :"/users/edit.html"
