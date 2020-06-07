@@ -58,7 +58,6 @@ class UsersController < ApplicationController
   end
 
   get "/users/:id" do
-    binding.pry
     if logged_in?
       if current_user == User.find(params[:id])
         @user = User.find_by(id: params[:id])
@@ -86,9 +85,8 @@ class UsersController < ApplicationController
   end
   
   patch "/users/:id" do
-    id = params[:id]
     new_params = Hash.new
-    old_object = User.find(id)
+    old_object = User.find(params[:id])
     
     old_object.first_name = params["first_name"].capitalize
     old_object.last_name = params["last_name"].capitalize
@@ -98,8 +96,7 @@ class UsersController < ApplicationController
     old_object.email = params["email"].downcase
     old_object.password = params["password"]
     
-    if old_object.valid?
-      old_object.save
+    if old_object.save
       flash[:message] = "Your profile has been successfully updated"
       redirect "/users/#{current_user.id}"
     else
