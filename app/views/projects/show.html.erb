@@ -27,15 +27,15 @@
     </tr>
     </tr>
         <td style="float: left; margin-right: 45px; color: blue">Start Date</td> 
-        <td style="text-align: left"><%=@project.start_date%></td>
+        <td style="text-align: left"><%= @project.start_date.strftime("%b %d, %Y") if @project.start_date %></td>
     </tr>
     </tr>
         <td style="float: left; margin-right: 45px; color: blue">Planned End Date</td> 
-        <td style="text-align: left"><%=@project.planned_end_date%></td>
+        <td style="text-align: left"><%= @project.planned_end_date.strftime("%b %d, %Y") if @project.planned_end_date %></td>
     </tr>
     </tr>
         <td style="float: left; margin-right: 45px; color: blue">Actual End Date</td> 
-        <td style="text-align: left"><%=@project.actual_end_date%></td>
+        <td style="text-align: left"><%= @project.actual_end_date.strftime("%b %d, %Y") if @project.actual_end_date %></td>
     </tr>
     </tr>
         <td style="float: left; margin-right: 45px; color: blue">VCS URL</td> 
