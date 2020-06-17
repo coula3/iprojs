@@ -1,5 +1,8 @@
+require 'rack-flash'
+
 class ProjectsController < ApplicationController
-  
+  use Rack::Flash  
+
   get "/projects" do
     if current_user
       @projects = current_user.projects
@@ -31,6 +34,7 @@ class ProjectsController < ApplicationController
       if @project = current_user.projects.find_by_slug(params[:slug])
         erb :"/projects/show.html"
       else
+        flash[:message] = "You are not authorized to access /projects/#{params[:slug]}"
         redirect "/projects"
       end
     else
