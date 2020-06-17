@@ -35,7 +35,11 @@ class ProjectsController < ApplicationController
         erb :"/projects/show.html"
       else
         flash[:message] = "You are not authorized to access /projects/#{params[:slug]}"
-        redirect "/projects"
+        if !current_user.projects.empty?
+          redirect "/projects"
+        else
+          redirect "/users/#{current_user.id}"
+        end
       end
     else
       redirect "/signin"
