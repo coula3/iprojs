@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       erb :"/about.html"
     else
       flash[:message] = "#{user.errors.full_messages.join(", ")}"
-      redirect "/signup"
+      erb :"/users/signup.html"
     end
   end
   
