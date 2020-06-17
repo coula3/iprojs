@@ -96,12 +96,17 @@ class UsersController < ApplicationController
     old_object.email = params["email"].downcase
     old_object.password = params["password"]
     
-    if old_object.save
-      flash[:message] = "Your profile has been successfully updated"
-      redirect "/users/#{current_user.id}"
+    if old_object.changed?
+      if old_object.save
+        flash[:message] = "Your profile has been successfully updated"
+        redirect "/users/#{current_user.id}"
+      else
+        flash[:message] = "Update unsuccessful: #{old_object.errors.full_messages.join(", ")}"
+        redirect "/users/#{current_user.id}/edit"
+      end
     else
-      flash[:message] = "Update unsuccessful: #{old_object.errors.full_messages.join(", ")}"
-      redirect "/users/#{current_user.id}/edit"
+      flash[:message] = "No change to your profile"
+      redirect "/users/#{current_user.id}"
     end
   end
 
