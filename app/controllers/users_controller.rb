@@ -16,7 +16,6 @@ class UsersController < ApplicationController
 
     if user.save
       session[:id] = user.id
-      @user = current_user.first_name
       erb :"/about.html"
     else
       flash[:message] = "#{user.errors.full_messages.join(", ")}"
