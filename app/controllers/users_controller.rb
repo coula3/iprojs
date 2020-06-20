@@ -111,7 +111,7 @@ class UsersController < ApplicationController
 
   helpers do
     def calculate_age
-      Date.today < current_user.date_of_birth + (Date.today.year - current_user.date_of_birth.year).years ?  Date.today.year - current_user.date_of_birth.year-1 : Date.today.year - current_user.date_of_birth.year
+      current_user.calculate_age
     end
   end
 end
