@@ -16,26 +16,25 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="nav">
+      <div class="nav" style="margin-bottom: 20px">
         <span style="float: left">
-        <% if logged_in? %>
-          <a href="/about" title="About iProjs">iProjs</a>
-          <a href="/users/<%=session[:id]%>">My Profile</a>
-          <a href="/users/<%=session[:id]%>/edit">Edit Profile</a> 
-          <% if !current_user.projects.empty?%>
-            <a href="/projects"><%=current_user.first_name.capitalize%>'s Projects</a>
-          <%end%>
-          <a href="/projects/new">New Project</a>
-          
-        <% end %>
+          <% if logged_in? %>
+              <a href="/about" title="About iProjs">iProjs</a>
+              <a href="/users/<%=session[:id]%>">My Profile</a>
+              <a href="/users/<%=session[:id]%>/edit">Edit Profile</a> 
+            <% if !current_user.projects.empty?%>
+              <a href="/projects"><%=current_user.first_name.capitalize%>'s Projects</a>
+            <%end%>
+            <a href="/projects/new">New Project</a>
+          <% end %>
         </span>
 
         <span style="float: right">
-        <% if logged_in? %>
-          <a href="/signout">Sign out</a>
-        <% end %>
+          <% if logged_in? %>
+            <a href="/signout">Sign out</a>
+          <% end %>
         </span>
-      </div><br>
+      </div>
 
         <%= yield %>
 
