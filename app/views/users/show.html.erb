@@ -8,7 +8,7 @@
 
 <p><label>First Name: </label><%=@user.first_name%></p>
 <p><label>Last Name: </label><%=@user.last_name%></p>
-<p><label>Organization: </label><%=@user.organization%></p>
+<p><label>Organization: </label><%=@user.organization.titlecase%></p>
 <p><label>Age: </label><%= calculate_age %></p>
 <p><label>Gender: </label><%=@user.gender%></p>
 <p><label>eMail: </label><%=@user.email%></p>
