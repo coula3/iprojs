@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
     
     validates :first_name, :last_name, :date_of_birth, presence: true
     validates :email, email: true
-    validates_uniqueness_of :email
+    validates_uniqueness_of :email, case_sensitive: false
     validate :dob_must_be_at_least_ten_years_old
     has_secure_password
 
