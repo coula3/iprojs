@@ -9,8 +9,8 @@
         <tr>
             <th>&nbsp;</th>
             <th style="text-align: left">Title</th>
-            <th style="text-align: left">Type</th>
             <th style="text-align: left">Phase</th>
+            <th style="text-align: left">Completed</th>
         </tr>
     </thead>
     <tbody>
@@ -18,8 +18,8 @@
             </tr>
                 <td style="margin-right: 10px"><%= index %></a> </td>
                 <td style="margin-right: 10px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></td>
-                <td style="margin-right: 10px"><%=project.nature%></td>
-                <td><%=project.phase%></td>
+                <td style="margin-right: 10px"><%=project.phase%></td>
+                <td><%=project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
             </tr>
         <%end%>
     </tbody>
