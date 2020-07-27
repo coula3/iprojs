@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
   
   post "/signup" do
-    user = User.new(first_name: params[:first_name].capitalize, last_name: params[:last_name].capitalize, organization: params[:organization].titlecase, date_of_birth: params[:date_of_birth], gender: params[:gender], email: params[:email].downcase, password: params[:password])
+    user = User.new(first_name: params[:first_name].capitalize, last_name: params[:last_name].capitalize, organization: params[:organization].titlecase, date_of_birth: params[:date_of_birth], gender: params[:gender], email: params[:email].downcase, password: params[:password], password_confirmation: params[:password_confirmation])
 
     if user.save
       session[:id] = user.id
