@@ -109,6 +109,33 @@ class UsersController < ApplicationController
     end
   end
 
+  get "/users/:id/change_password" do
+    if logged_in?
+      if current_user == User.find(params[:id])
+        @user = User.find_by(id: params[:id])
+        erb :"users/change_password.html"
+      else
+        redirect "/users/#{current_user.id}"
+      end
+    else
+      redirect "/signin"
+    end
+  end
+
+  patch "/users/:id/change_password" do
+    user = User.find_by(id: params[:id])
+    if !user.authenticate(params[:current_password])
+      flash[:message] = "Your current password does not match your records"
+      redirect "/users/#{user.id}/change_password"
+    elsif user.update(password: params[:new_password], password_confirmation: params[:password_confirmation])
+      flash[:message] = "Your password has been successfully updated"
+      redirect "/users/#{user.id}"
+    else
+      flash[:message] = "#{user.errors.full_messages.uniq.join(", ")}"
+      redirect "/users/#{user.id}/change_password"
+    end
+  end
+
   helpers do
     def calculate_age
       current_user.calculate_age
