@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
     validates_uniqueness_of :email, case_sensitive: false
     validate :dob_must_be_at_least_ten_years_old
     has_secure_password
+    validates :password, confirmation: true
     validates :password_confirmation, presence: true
 
     def dob_must_be_at_least_ten_years_old
