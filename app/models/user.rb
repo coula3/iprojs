@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
     validates :password, confirmation: true, :if => lambda{ new_record? || !password.nil? }
 
     def dob_must_be_at_least_ten_years_old
-        if (date_of_birth.present? && date_of_birth <= Date.today) && calculate_age < 10
+        if date_of_birth.present? && calculate_age < 10
             errors.add(:date_of_birth, "must be least 10 years")
         end
     end
