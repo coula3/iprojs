@@ -93,8 +93,7 @@ class UsersController < ApplicationController
     old_object.date_of_birth = params["date_of_birth"]
     old_object.gender = params["gender"]
     old_object.email = params["email"].downcase
-    old_object.password = params["password"]
-    
+
     if old_object.changed?
       if old_object.save
         flash[:message] = "Your profile has been successfully updated"
