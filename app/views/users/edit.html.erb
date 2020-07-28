@@ -8,7 +8,7 @@
     <input id="hidden" type="hidden" name="_method" value="patch">
     <p><label>First Name </label><input type="text" name="first_name" value="<%= @user.first_name.capitalize %>"></p>
     <p><label>Last Name </label><input type="text" name="last_name" value="<%= @user.last_name.capitalize %>"></p>
-    <p><label>Organization </label><input type="text" name="organization" value="<%= @user.organization.titlecase %>"></p>
+    <p><label>Organization </label><input type="text" name="organization" value="<%= @user.organization.titlecase if @user.organization %>"></p>
     <p><label>Date of Birth </label><input type="date" id="dob" name="date_of_birth" value="<%= @user.date_of_birth.to_s.gsub(" 00:00:00 UTC", "") %>"></p>
     <p><label for="gender">Gender </label>
     <select name="gender">
