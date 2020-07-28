@@ -5,43 +5,43 @@
        <td style="float: left; margin-right: 45px; color: blue">Domain</td>
        <td style="text-align: left"><%=@project.domain%></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Classification</td> 
         <td style="text-align: left"><%=@project.classification%></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Type</td> 
         <td style="text-align: left"><%=@project.nature%></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Language(s)</td> 
         <td style="text-align: left"><%=@project.languages%></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Frameworks and Libraries</td> 
         <td style="text-align: left"><%=@project.libraries%></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Phase</td> 
         <td style="text-align: left"><%=@project.phase%></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Start Date</td> 
         <td style="text-align: left"><%= @project.start_date.strftime("%b %d, %Y") if @project.start_date %></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Planned End Date</td> 
         <td style="text-align: left"><%= @project.planned_end_date.strftime("%b %d, %Y") if @project.planned_end_date %></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Actual End Date</td> 
         <td style="text-align: left"><%= @project.actual_end_date.strftime("%b %d, %Y") if @project.actual_end_date %></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">VCS URL</td> 
         <td style="text-align: left"><a href="<%=@project.url%>" target="_blank"><%=@project.url%></a></td>
     </tr>
-    </tr>
+    <tr>
         <td style="float: left; margin-right: 45px; color: blue">Notes</td> 
         <td style="text-align: left"><%=@project.notes%></td>
     </tr>
