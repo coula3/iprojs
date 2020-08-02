@@ -4,7 +4,7 @@
     <div style="margin: 0px 0px 25px 15px ">
         <ul>
             <% flash[:message].split(", ").each do |message| %>
-                <li><span style="padding-right: 10px"><></span><span style="color:red"><%= message %></span></li>
+                <li><span style="padding-right: 10px">*</span><span style="color:red"><%= message %></span></li>
             <% end %>
         </ul>
     </div>
