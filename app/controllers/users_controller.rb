@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       session[:id] = user.id
       erb :"/about.html"
     else
-      flash[:message] = "#{user.errors.full_messages.join(", ")}"
+      flash[:message] = "#{user.errors.full_messages.uniq.join(", ")}"
       erb :"/users/signup.html"
     end
   end
@@ -96,7 +96,7 @@ class UsersController < ApplicationController
 
     if old_object.changed?
       if old_object.save
-        flash[:message] = "Your profile has been successfully updated"
+        flash[:message] = "Your profile has been successfully changed"
         redirect "/users/#{current_user.id}"
       else
         flash[:message] = "Update unsuccessful: #{old_object.errors.full_messages.join(", ")}"
@@ -127,7 +127,7 @@ class UsersController < ApplicationController
       flash[:message] = "Your current password does not match your records"
       redirect "/users/#{user.id}/change_password"
     elsif user.update(password: params[:new_password], password_confirmation: params[:password_confirmation])
-      flash[:message] = "Your password has been successfully updated"
+      flash[:message] = "Your password has been successfully changed"
       redirect "/users/#{user.id}"
     else
       flash[:message] = "#{user.errors.full_messages.uniq.join(", ")}"
