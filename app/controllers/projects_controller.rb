@@ -22,7 +22,9 @@ class ProjectsController < ApplicationController
 
   post "/projects" do
     project = current_user.projects.build(params)
+    
     if project.save
+      project.update(phase: "Completed") if !params[:actual_end_date].blank?
       redirect "/projects"
     else
       redirect :"/projects/new"
@@ -78,6 +80,7 @@ class ProjectsController < ApplicationController
     new_params["notes"] = params[:notes]
     
     if old_object.update(new_params)
+      old_object.update(phase: "Completed") if !params[:actual_end_date].blank?
       redirect "/projects/#{old_object.slug}"
     else
       redirect "/projects/#{old_object.slug}/edit"
