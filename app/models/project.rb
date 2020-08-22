@@ -8,4 +8,8 @@ class Project < ActiveRecord::Base
 
     extend Slugifiable::ClassMethods
     include Slugifiable::InstanceMethods
+
+    def format_dates(date_provided)
+        date_provided.strftime("%b %d, %Y") if date_provided
+    end
 end
