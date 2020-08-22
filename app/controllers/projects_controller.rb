@@ -22,11 +22,11 @@ class ProjectsController < ApplicationController
 
   post "/projects" do
     project = current_user.projects.build(params)
-    
     if project.save
       project.update(phase: "Completed") if !params[:actual_end_date].blank?
       redirect "/projects"
     else
+      flash[:message] = project.errors.full_messages
       redirect :"/projects/new"
     end
   end
