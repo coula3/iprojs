@@ -1,5 +1,9 @@
 <br><h2>Add A New Project</h2>
 
+<% if flash.has?(:message) %>
+    <span style="color:red"><%= flash[:message] %></span>
+<% end %><br><br>
+
 <form action="/projects" method="POST">
     <p><label>Title </label><input type="text" id="title" name="title" style="width: 800px"></p>
     <p><label>Domain </label><input type="text" id="domain" name="domain" style="width: 800px"></p>
