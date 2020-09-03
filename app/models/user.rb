@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
         end
     end
 
+    extend Slugifiable::ClassMethods
+    include Slugifiable::InstanceMethods
+
     def calculate_age
         Date.today < self.date_of_birth + (Date.today.year - self.date_of_birth.year).years ?  Date.today.year - self.date_of_birth.year - 1 : Date.today.year - self.date_of_birth.year
     end
