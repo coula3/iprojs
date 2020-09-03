@@ -59,10 +59,10 @@ class UsersController < ApplicationController
     end
   end
 
-  get "/users/:id" do
+  get "/users/:slug" do
     if logged_in?
-      if current_user == User.find(params[:id])
-        @user = User.find_by(id: params[:id])
+      if current_user == User.find_by_slug(params[:slug])
+        @user = User.find_by_slug(params[:slug])
         erb :"/users/show.html"
       else
         redirect "/users/#{current_user.id}"
