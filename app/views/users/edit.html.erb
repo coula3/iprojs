@@ -23,7 +23,7 @@
         <option value="<%=@user.gender%>" selected><%=@user.gender%></option>
     </select></p>
     <p style="margin-bottom: 40px"><label>eMail </label><input type="text" name="email" value="<%= @user.email.downcase %>">
-    <a href="/users/<%=session[:id]%>/change_password" style="margin-left: 15px">Change Password</a></p>
+    <a href="/users/<%=current_user.slug%>/change_password" style="margin-left: 15px">Change Password</a></p>
 
     <button class="button">Save</button>
    <a href="/users/<%=current_user.slug%>" style="margin-left: 10px">My Profile</a>
