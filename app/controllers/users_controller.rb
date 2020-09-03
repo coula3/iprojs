@@ -126,8 +126,11 @@ class UsersController < ApplicationController
 
   patch "/users/:slug/change_password" do
     user = User.find_by_slug(params[:slug])
-    if !user.authenticate(params[:current_password])
-      flash[:message] = "Your current password does not match your records"
+    if params[:current_password].blank? || params[:new_password].blank?
+      flash[:message] = "Please provide your current and new passwords to continue"
+      redirect "/users/#{user.slug}/change_password"
+    elsif !user.authenticate(params[:current_password])
+      flash[:message] = "The current password provided does not match your records"
       redirect "/users/#{user.slug}/change_password"
     elsif user.update(password: params[:new_password], password_confirmation: params[:password_confirmation])
       flash[:message] = "Your password has been successfully changed"
