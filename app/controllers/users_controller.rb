@@ -72,23 +72,23 @@ class UsersController < ApplicationController
     end
   end
   
-  get "/users/:id/edit" do
+  get "/users/:slug/edit" do
     if logged_in?
-      if current_user == User.find(params[:id])
-        @user = User.find_by(id: params[:id])
+      if current_user == User.find_by_slug(params[:slug])
+        @user = User.find_by_slug(id: params[:slug])
         @other_gender = ["Male", "Female", "Non-Binary"].delete_if {|gender| gender == current_user.gender}
         erb :"/users/edit.html"
       else
-        redirect "/users/#{current_user.id}"
+        redirect "/users/#{current_user.slug}"
       end
     else
       redirect "/signin"
     end
   end
   
-  patch "/users/:id" do
+  patch "/users/:slug" do
     new_params = Hash.new
-    old_object = User.find(params[:id])
+    old_object = User.find_by_slug(params[:slug])
     
     old_object.first_name = params["first_name"].capitalize
     old_object.last_name = params["last_name"].capitalize
@@ -100,14 +100,14 @@ class UsersController < ApplicationController
     if old_object.changed?
       if old_object.save
         flash[:message] = "Your profile has been successfully changed"
-        redirect "/users/#{current_user.id}"
+        redirect "/users/#{current_user.slug}"
       else
         flash[:message] = "Update unsuccessful: #{old_object.errors.full_messages.join(", ")}"
-        redirect "/users/#{current_user.id}/edit"
+        redirect "/users/#{current_user.slug}/edit"
       end
     else
       flash[:message] = "No change to your profile"
-      redirect "/users/#{current_user.id}"
+      redirect "/users/#{current_user.slug}"
     end
   end
 
