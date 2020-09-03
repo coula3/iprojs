@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
     def calculate_age
         Date.today < self.date_of_birth + (Date.today.year - self.date_of_birth.year).years ?  Date.today.year - self.date_of_birth.year - 1 : Date.today.year - self.date_of_birth.year
     end
+
+    def full_name
+        self.first_name + " " + self.last_name
+    end
 end 
