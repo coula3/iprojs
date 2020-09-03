@@ -111,30 +111,30 @@ class UsersController < ApplicationController
     end
   end
 
-  get "/users/:id/change_password" do
+  get "/users/:slug/change_password" do
     if logged_in?
-      if current_user == User.find(params[:id])
-        @user = User.find_by(id: params[:id])
+      if current_user == User.find_by_slug(params[:slug])
+        @user = User.find_by_slug(params[:slug])
         erb :"users/change_password.html"
       else
-        redirect "/users/#{current_user.id}"
+        redirect "/users/#{current_user.slug}"
       end
     else
       redirect "/signin"
     end
   end
 
-  patch "/users/:id/change_password" do
-    user = User.find_by(id: params[:id])
+  patch "/users/:slug/change_password" do
+    user = User.find_by_slug(params[:slug])
     if !user.authenticate(params[:current_password])
       flash[:message] = "Your current password does not match your records"
-      redirect "/users/#{user.id}/change_password"
+      redirect "/users/#{user.slug}/change_password"
     elsif user.update(password: params[:new_password], password_confirmation: params[:password_confirmation])
       flash[:message] = "Your password has been successfully changed"
-      redirect "/users/#{user.id}"
+      redirect "/users/#{user.slug}"
     else
       flash[:message] = "#{user.errors.full_messages.uniq.join(", ")}"
-      redirect "/users/#{user.id}/change_password"
+      redirect "/users/#{user.slug}/change_password"
     end
   end
 
