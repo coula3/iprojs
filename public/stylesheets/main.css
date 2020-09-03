@@ -52,15 +52,15 @@
     font-size: 15px;
   }
 
-  select { /* add */
+  select {
     min-width: 125px;
     width: auto;
     font-size: 15px;
   }
 
-  textarea { /* add */
+  #notes {
     width: 800px;
-    height: 140px;
+    height: 155px;
     font-size: 15px;
   }
 
