@@ -1,7 +1,11 @@
 module Slugifiable
     module InstanceMethods
         def slug
-            self.title.gsub(" ", "-").downcase
+            if self.has_attribute?("title")
+                self.title.gsub(" ", "-").downcase
+            elsif self.respond_to?(:full_name)
+                self.full_name.gsub(" ", "-").downcase
+            end
         end
     end
 
