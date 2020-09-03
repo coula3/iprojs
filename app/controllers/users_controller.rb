@@ -65,7 +65,7 @@ class UsersController < ApplicationController
         @user = User.find_by_slug(params[:slug])
         erb :"/users/show.html"
       else
-        redirect "/users/#{current_user.id}"
+        redirect "/users/#{current_user.slug}"
       end
     else
       redirect "/signin"
