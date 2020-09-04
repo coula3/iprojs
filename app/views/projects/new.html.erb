@@ -18,7 +18,7 @@
         <option value="Individual" > Individual </option>
     </select></p>
     <p><label>Languages </label><input type="text" id="languages" name="languages" style="width: 800px"></p>
-    <p><label class="lbltext">Frameworks and Libraries </label><textarea id="libraries" name="libraries" style="height:40px"></textarea></p>
+    <p><label class="lbltext">Frameworks and Libraries </label><textarea class="libraries" name="libraries"></textarea></p>
     <p><label for="phase">Phase </label>
     <select name="phase">
         <option value="Planning" selected> Planning </option>
@@ -31,7 +31,7 @@
     <p><label>Planned End Date </label><input type="date" id="planned_end_date" name="planned_end_date"></p>
     <p><label>Actual End Date </label><input type="date" id="actual_end_date" name="actual_end_date"></p>
     <p><label>VCS URL </label><input type="text" id="url" name="url" style="width: 800px"></p>
-    <div style="margin-bottom: 20px"><label class="lbltext">Notes </label><textarea id="notes" name="notes"></textarea></div>
+    <div style="margin-bottom: 20px"><label class="lbltext">Notes </label><textarea class="notes" name="notes"></textarea></div>
 
     <button class="button">Add Project</button>
     <%if current_user.projects.size > 0%>

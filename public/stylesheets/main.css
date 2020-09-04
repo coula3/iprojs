@@ -58,9 +58,15 @@
     font-size: 15px;
   }
 
-  #notes {
+  .notes {
     width: 800px;
     height: 155px;
+    font-size: 15px;
+  }
+
+  .libraries {
+    width: 800px;
+    height: 40px;
     font-size: 15px;
   }
 
