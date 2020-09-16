@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
     if logged_in?
       if @project = current_user.projects.find_by_slug(params[:slug])
         @other_class = ["CLI", "Web Based"].delete_if {|c| c == @project.classification}
-        @other_nature = ["Colloboration", "Individual"].delete_if {|n| n == @project.nature}
+        @other_project_type = ["Colloboration", "Individual"].delete_if {|n| n == @project.project_type}
         @other_phases = ["Planning", "Development", "Testing", "Completed", "Production"].sort.delete_if {|phase| phase == @project.phase}
         erb :"/projects/edit.html"
       else
@@ -69,7 +69,7 @@ class ProjectsController < ApplicationController
     new_params["title"] = params[:title]
     new_params["domain"] = params[:domain]
     new_params["classification"] = params[:classification]
-    new_params["nature"] = params[:nature]
+    new_params["project_type"] = params[:project_type]
     new_params["languages"] = params[:languages]
     new_params["libraries"] = params[:libraries]
     new_params["phase"] = params[:phase]

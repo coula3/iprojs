@@ -11,10 +11,10 @@
         <option value="<%=@project.classification%>" selected><%=@project.classification%></option>
     </select></p>
 
-    <p><label for="nature">Nature </label>
-    <select name="nature">
-        <option value="<%=@other_nature[0]%>" selected><%=@other_nature[0]%></option>
-        <option value="<%=@project.nature%>" selected><%=@project.nature%></option>
+    <p><label for="project_type">Type </label>
+    <select name="project_type">
+        <option value="<%=@other_project_type[0]%>" selected><%=@other_project_type[0]%></option>
+        <option value="<%=@project.project_type%>" selected><%=@project.project_type%></option>
     </select></p>
 
     <p><label>Language(s) </label><input type="text" id="languages" name="languages" value="<%=@project.languages%>" style="width: 800px"></p>

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200523034502) do
+ActiveRecord::Schema.define(version: 20200916133252) do
 
   create_table "projects", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.string   "domain"
     t.string   "classification"
-    t.string   "nature"
+    t.string   "project_type"
     t.string   "languages"
     t.text     "libraries"
     t.string   "phase"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20200523034502) do
     t.datetime "actual_end_date"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "database"
     t.string   "url"
   end
 
