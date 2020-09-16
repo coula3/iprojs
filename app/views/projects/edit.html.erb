@@ -7,13 +7,13 @@
 
     <p><label for="classification">Classification </label>
     <select name="classification">
-        <option value="<%=@other_class[0]%>" selected><%=@other_class[0]%></option> 
+        <option value="<%=@list_classification[0]%>" selected><%=@list_classification[0]%></option>
         <option value="<%=@project.classification%>" selected><%=@project.classification%></option>
     </select></p>
 
     <p><label for="project_type">Type </label>
     <select name="project_type">
-        <option value="<%=@other_project_type[0]%>" selected><%=@other_project_type[0]%></option>
+        <option value="<%=@list_project_type[0]%>" selected><%=@list_project_type[0]%></option>
         <option value="<%=@project.project_type%>" selected><%=@project.project_type%></option>
     </select></p>
 
@@ -23,8 +23,8 @@
     <p><label for="phase">Phase </label>
     <select name="phase">
         <%=i = 0 %>
-        <% until i == @other_phases.size %>
-            <option value="<%=@other_phases[i]%>" selected><%=@other_phases[i]%></option> 
+        <% until i == @list_phases.size %>
+            <option value="<%=@list_phases[i]%>" selected><%=@list_phases[i]%></option>
             <%=i += 1%>
         <% end %>
         <option value="<%=@project.phase%>" selected><%=@project.phase%></option>
