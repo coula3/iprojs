@@ -2,8 +2,8 @@
 
 <form action="/projects/<%=@project.slug %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="patch">
-    <p><label>Title </label><input type="text" id="title" name="title" value="<%=@project.title%>" style="width: 800px"></p>
-    <p><label>Domain </label><input type="text" id="domain" name="domain" value="<%=@project.domain%>" style="width: 800px"></p>
+    <p><label>Title </label><input class="inputs-width" type="text" id="title" name="title" value="<%=@project.title%>"></p>
+    <p><label>Domain </label><input class="inputs-width" type="text" id="domain" name="domain" value="<%=@project.domain%>"></p>
 
     <p><label for="classification">Classification </label>
     <select name="classification">
@@ -17,7 +17,7 @@
         <option value="<%=@project.project_type%>" selected><%=@project.project_type%></option>
     </select></p>
 
-    <p><label>Language(s) </label><input type="text" id="languages" name="languages" value="<%=@project.languages%>" style="width: 800px"></p>
+    <p><label>Language(s) </label><input class="inputs-width" type="text" id="languages" name="languages" value="<%=@project.languages%>"></p>
     <p><label class="lbltext">Frameworks and Libraries </label><textarea class="libraries" name="libraries"><%=@project.libraries%></textarea></p>
 
     <p><label for="phase">Phase </label>
@@ -33,7 +33,7 @@
     <p><label>Start Date </label><input type="date" id="start_date" name="start_date" value="<%=@project.start_date.to_s.gsub(" 00:00:00 UTC", "")%>"></p>
     <p><label>Planned End Date </label><input type="date" id="planned_end_date" name="planned_end_date" value="<%=@project.planned_end_date.to_s.gsub(" 00:00:00 UTC", "")%>"></p>
     <p><label>Actual End Date </label><input type="date" id="actual_end_date" name="actual_end_date" value="<%= @project.actual_end_date.to_s.gsub(" 00:00:00 UTC", "")%>"></p>
-    <p><label title="Version Control System URL">VCS URL </label><input type="text" id="url" name="url" value="<%=@project.url%>" style="width: 800px"></p>
+    <p><label title="Version Control System URL">VCS URL </label><input class="inputs-width" type="text" id="url" name="url" value="<%=@project.url%>"></p>
     <p><label class="lbltext">Notes </label><textarea class="notes" name="notes"><%=@project.notes%></textarea></p>
 
     <button class="button">Save</button>
