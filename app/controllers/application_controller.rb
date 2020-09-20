@@ -22,7 +22,14 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/dashboard" do
-    erb :"/dashboard.html"
+
+    if current_user && current_user.projects.empty?
+      redirect :"/about"
+    elsif logged_in?
+      erb :"/dashboard.html"
+    else
+      redirect :"/signin"
+    end
   end
 
   helpers do
