@@ -21,6 +21,10 @@ class ApplicationController < Sinatra::Base
     erb :"/about.html"
   end
 
+  get "/dashboard" do
+    erb :"/dashboard.html"
+  end
+
   helpers do
     def logged_in?
       !!current_user
