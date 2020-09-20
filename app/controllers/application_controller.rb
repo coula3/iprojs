@@ -24,6 +24,8 @@ class ApplicationController < Sinatra::Base
     if current_user && current_user.projects.empty?
       redirect :"/about"
     elsif logged_in?
+      @last_project_created = current_user.projects.sort_by {|p| p.created_at}.last
+      @last_project_updated = current_user.projects.sort_by {|p| p.updated_at}.last
       erb :"/dashboard.html"
     else
       redirect :"/signin"
