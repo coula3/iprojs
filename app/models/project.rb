@@ -12,8 +12,4 @@ class Project < ActiveRecord::Base
     def format_dates(date_provided)
         date_provided.strftime("%b %d, %Y") if date_provided
     end
-
-    def abridged_classification
-        self.classification.end_with?("App") ? self.classification.delete_suffix(" App") : self.classification
-    end
 end
