@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
       if @project = current_user.projects.find_by_slug(params[:slug])
         erb :"/projects/show.html"
       else
-        flash[:message] = "You are not authorized to access /projects/#{params[:slug]}"
+        flash[:message] = "You are only authorized to access your own projects"
         if !current_user.projects.empty?
           redirect "/projects"
         else
