@@ -23,7 +23,7 @@
       <div class="nav" style="margin-bottom: 20px">
         <span style="float: left">
           <% if logged_in? %>
-            <% if request.env["sinatra.route"] != "GET /about" %>
+            <% if request.env["sinatra.route"] != "GET /about" && request.env["sinatra.route"] != "POST /signup" && request.env["sinatra.route"] != "POST /signin"%>
               <a href="/about" title="About iProjs">iProjs</a>
             <% end %>
             <% if request.env["sinatra.route"] != "GET /users/:slug" %>
