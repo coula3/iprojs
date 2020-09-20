@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   use Rack::Flash  
 
   get "/projects" do
-    if current_user.projects.empty?
+    if logged_in? && current_user.projects.empty?
       redirect "/about"
     elsif current_user
       @projects = current_user.projects
@@ -80,7 +80,7 @@ class ProjectsController < ApplicationController
     new_params["actual_end_date"] = params[:actual_end_date]
     new_params["url"] = params[:url]
     new_params["notes"] = params[:notes]
-    
+
     if old_object.update(new_params)
       old_object.update(phase: "Completed") if !params[:actual_end_date].blank?
       redirect "/projects/#{old_object.slug}"
