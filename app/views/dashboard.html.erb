@@ -45,7 +45,7 @@
             <tr>
                 <td>Last Project Registered</td>
                 <td>Title</td>
-                <td><%= current_user.projects.sort_by {|p| p.created_at}.last.title %></td>
+                <td><a href="/projects/<%= @last_project_created.slug %>"><%= @last_project_created.title %></a></td>
             </tr>
             <tr>
                 <td></td>
@@ -61,7 +61,7 @@
             <tr>
                 <td>Last Project Edited</td>
                 <td>Title</td>
-                <td><%= current_user.projects.sort_by {|p| p.updated_at}.last.title %></td>
+                <td><a href="/projects/<%= @last_project_updated.slug%>"><%=@last_project_updated.title%></a></td>
             </tr>
             <tr>
                 <td></td>
