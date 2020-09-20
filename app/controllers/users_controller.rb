@@ -12,14 +12,18 @@ class UsersController < ApplicationController
   end
   
   post "/signup" do
-    user = User.new(first_name: params[:first_name].capitalize, last_name: params[:last_name].capitalize, organization: params[:organization].titlecase, date_of_birth: params[:date_of_birth], gender: params[:gender], email: params[:email].downcase, password: params[:password], password_confirmation: params[:password_confirmation])
-
-    if user.save
-      session[:id] = user.id
-      erb :"/about.html"
+    if current_user
+      redirect "/about"
     else
-      flash[:message] = "#{user.errors.full_messages.uniq.join(", ")}"
-      erb :"/users/signup.html"
+      user = User.new(first_name: params[:first_name].capitalize, last_name: params[:last_name].capitalize, organization: params[:organization].titlecase, date_of_birth: params[:date_of_birth], gender: params[:gender], email: params[:email].downcase, password: params[:password], password_confirmation: params[:password_confirmation])
+
+      if user.save
+        session[:id] = user.id
+        erb :"/about.html"
+      else
+        flash[:message] = "#{user.errors.full_messages.uniq.join(", ")}"
+        erb :"/users/signup.html"
+      end
     end
   end
   
