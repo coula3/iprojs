@@ -40,6 +40,9 @@
             <% if request.env["sinatra.route"] != "GET /projects/new" %>
               <a href="/projects/new">New Project</a>
             <% end %>
+            <% if !current_user.projects.empty? %>
+              <a href="/dashboard">My Dashboard</a>
+            <% end %>
           <% end %>
         </span>
 
