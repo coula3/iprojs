@@ -23,13 +23,23 @@
       <div class="nav" style="margin-bottom: 20px">
         <span style="float: left">
           <% if logged_in? %>
+            <% if request.env["sinatra.route"] != "GET /about" %>
               <a href="/about" title="About iProjs">iProjs</a>
+            <% end %>
+            <% if request.env["sinatra.route"] != "GET /users/:slug" %>
               <a href="/users/<%=current_user.slug%>">My Profile</a>
-              <a href="/users/<%=current_user.slug%>/edit">Edit Profile</a> 
+            <% end %>
+            <% if request.env["sinatra.route"] != "GET /users/:slug/edit" %>
+              <a href="/users/<%=current_user.slug%>/edit">Edit Profile</a>
+            <% end %>
             <% if !current_user.projects.empty?%>
-              <a href="/projects"><%=current_user.first_name.capitalize%>'s Projects</a>
+              <% if request.env["sinatra.route"] != "GET /projects" %>
+                <a href="/projects"><%=current_user.first_name.capitalize%>'s Projects</a>
+              <% end %>
             <%end%>
-            <a href="/projects/new">New Project</a>
+            <% if request.env["sinatra.route"] != "GET /projects/new" %>
+              <a href="/projects/new">New Project</a>
+            <% end %>
           <% end %>
         </span>
 
