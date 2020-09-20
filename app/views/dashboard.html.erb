@@ -2,6 +2,77 @@
 
 <h2>My Dashboard</h2>
 
-<div>
-    Hello <%= current_user.first_name.capitalize%> and welcome to your dashboard!
+<div style="padding-left:15px">
+    <table style="width:60%; margin-top:20px">
+        <thead>
+            <tr>
+                <th style="text-align:left; padding: 0px"></th>
+                <th style="text-align:center; padding: 0px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Number of Projects</td>
+                <td><%= current_user.projects.size %></td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td>Phase</td>
+                <td>Planning</td>
+                <td><%= current_user.projects.where(phase: "Planning").size %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Development</td>
+                <td><%= current_user.projects.where(phase: "Development").size %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Testing</td>
+                <td><%= current_user.projects.where(phase: "Testing").size %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Completed</td>
+                <td><%= current_user.projects.where(phase: "Completed").size %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Production</td>
+                <td><%= current_user.projects.where(phase: "Production").size %></td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td>Last Project Registered</td>
+                <td>Title</td>
+                <td><%= User.first.projects.sort_by {|p| p.created_at}.last.title %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Date</td>
+                <td><%= current_user.projects.map(&:created_at).sort.last.strftime("%b %d, %Y") %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Phase</td>
+                <td><%= current_user.projects.sort_by {|p| p.created_at}.last.phase %></td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
+                <td>Last Project Edited</td>
+                <td>Title</td>
+                <td><%= User.first.projects.sort_by {|p| p.updated_at}.last.title %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Date & Time</td>
+                <td><%= ((current_user.projects.map(&:updated_at).sort.last)- 60*60*4).strftime("%b %d, %Y %H:%M:%S") %></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Phase</td>
+                <td><%= current_user.projects.sort_by {|p| p.updated_at}.last.phase %></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
