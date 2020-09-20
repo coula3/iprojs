@@ -7,8 +7,12 @@
 
     <p><label for="classification">Classification </label>
     <select name="classification">
-        <option value="<%=@list_classification[0]%>" selected><%=@list_classification[0]%></option>
-        <option value="<%=@project.classification%>" selected><%=@project.classification%></option>
+        <%=c = 0 %>
+            <% until c == @list_classification.size %>
+                <option value="<%=@list_classification[c]%>" selected><%=@list_classification[c]%></option>
+                <%=c += 1%>
+            <% end %>
+            <option value="<%=@project.classification%>" selected><%=@project.classification%></option>
     </select></p>
 
     <p><label for="project_type">Type </label>
