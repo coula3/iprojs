@@ -26,6 +26,11 @@
             <% if request.env["sinatra.route"] != "GET /about" && request.env["sinatra.route"] != "POST /signup" && request.env["sinatra.route"] != "POST /signin"%>
               <a href="/about" title="About iProjs">iProjs</a>
             <% end %>
+            <% if !current_user.projects.empty? %>
+              <% if request.env["sinatra.route"] != "GET /dashboard" %>
+                <a href="/dashboard">My Dashboard</a>
+              <% end %>
+            <% end %>
             <% if request.env["sinatra.route"] != "GET /users/:slug" %>
               <a href="/users/<%=current_user.slug%>">My Profile</a>
             <% end %>
@@ -39,11 +44,6 @@
             <%end%>
             <% if request.env["sinatra.route"] != "GET /projects/new" %>
               <a href="/projects/new">New Project</a>
-            <% end %>
-            <% if !current_user.projects.empty? %>
-              <% if request.env["sinatra.route"] != "GET /dashboard" %>
-                <a href="/dashboard">My Dashboard</a>
-              <% end %>
             <% end %>
           <% end %>
         </span>
