@@ -1,5 +1,7 @@
 <% if !logged_in? %>
     <a href="/">Back</a>
+    <br><br>
+    <h2>About</h2>
 <% end %><br><br>
 
 <% if logged_in? %>
@@ -8,10 +10,6 @@
     <% else %>
         <h2>Hey Buddy!</h2>
     <% end %>
-<% end %>
-
-<% if !logged_in? %>
-    <h2>About</h2>
 <% end %>
 
 <div>
