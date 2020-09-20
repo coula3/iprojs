@@ -1,7 +1,6 @@
 require './config/environment'
 
 class ApplicationController < Sinatra::Base
-
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -22,7 +21,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/dashboard" do
-
     if current_user && current_user.projects.empty?
       redirect :"/about"
     elsif logged_in?
