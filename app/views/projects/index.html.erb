@@ -12,16 +12,18 @@
             <th style="text-align:left;">Classification</th>
             <th style="text-align:left;">Phase</th>
             <th style="text-align:left;">Completed</th>
+            <th style="width:3.5%"></th>
         </tr>
     </thead>
     <tbody>
         <% @projects.each.with_index(1) do |project, index|%>
             </tr>
                 <td style="margin-right:10px"><%= index %></a> </td>
-                <td style="margin-right:10px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></td>
+                <td style="margin-right:10px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></a></td>
                 <td style="margin-right:10px"><%=project.classification%></td>
                 <td style="margin-right:10px"><%=project.phase%></td>
                 <td><%=project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+                <td><a href="/projects/<%=project.slug%>/edit" title="Change Project Details">edit</a></td>
             </tr>
         <%end%>
     </tbody>
