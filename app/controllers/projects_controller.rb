@@ -4,7 +4,9 @@ class ProjectsController < ApplicationController
   use Rack::Flash  
 
   get "/projects" do
-    if current_user
+    if current_user.projects.empty?
+      redirect "/about"
+    elsif current_user
       @projects = current_user.projects
       erb :"/projects/index.html"
     else
