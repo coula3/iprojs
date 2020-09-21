@@ -26,4 +26,29 @@ class String
             end.join(" ")
         end
     end
+
+    def sanitize_name_roman_suffix
+        if self.upcase.end_with?("I")
+            upcase_suffix(self)
+        elsif self.upcase.end_with?("II")
+            upcase_suffix(self)
+        elsif self.upcase.end_with?("III")
+            upcase_suffix(self)
+        elsif self.upcase.end_with?("IV")
+            upcase_suffix(self)
+        elsif self.upcase.end_with?("V")
+            upcase_suffix(self)
+        else
+            self
+        end
+    end
+
+    private
+
+    def upcase_suffix(name_with_suffix)
+        name_array = name_with_suffix.split(" ")
+        upcased_suffix = name_array[-1].upcase
+        name_array[-1] = upcased_suffix
+        name_array.join(" ")
+    end
 end
