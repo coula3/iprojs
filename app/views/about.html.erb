@@ -6,7 +6,7 @@
 
 <% if logged_in? %>
     <%if rand(4) != 0%>
-        <h2>Hey <%= current_user.first_name.capitalize %>!</h2>
+        <h2>Hey <%= current_user.first_name.titlecase %>!</h2>
     <% else %>
         <h2>Hey Buddy!</h2>
     <% end %>

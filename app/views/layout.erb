@@ -39,7 +39,7 @@
             <% end %>
             <% if !current_user.projects.empty?%>
               <% if request.env["sinatra.route"] != "GET /projects" %>
-                <a href="/projects"><%=current_user.first_name.capitalize%>'s Projects</a>
+                <a href="/projects"><%=current_user.first_name.titlecase%>'s Projects</a>
               <% end %>
             <%end%>
             <% if request.env["sinatra.route"] != "GET /projects/new" %>
