@@ -1,7 +1,7 @@
 class String
     def titlecase
         string_arrray = self.split
-        exclusions = %w(of and in from the to is)
+        exclusions = %w(of and in from the to is for)
         capitalize_array = string_arrray.map do |str| 
             if exclusions.none?(str) && str.include?("-")
                 arr = str.gsub("-", " ").split
@@ -28,15 +28,13 @@ class String
     end
 
     def sanitize_name_roman_suffix
-        if self.upcase.end_with?("I")
+        if self.upcase.end_with?("VI", "VII", "VIII")
+            self
+        elsif self.upcase.end_with?("I")
             upcase_suffix(self)
         elsif self.upcase.end_with?("II")
             upcase_suffix(self)
         elsif self.upcase.end_with?("III")
-            upcase_suffix(self)
-        elsif self.upcase.end_with?("IV")
-            upcase_suffix(self)
-        elsif self.upcase.end_with?("V")
             upcase_suffix(self)
         else
             self
