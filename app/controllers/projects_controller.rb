@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
       project.update(phase: "Completed") if !params[:actual_end_date].blank?
       redirect "/projects"
     else
-      flash[:message] = project.errors.full_messages
+      flash[:message] = project.errors.full_messages.join(" ")
       redirect :"/projects/new"
     end
   end
