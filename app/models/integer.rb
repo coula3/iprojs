@@ -45,10 +45,9 @@ class Integer
 
   private
   def twenty_to_ninety_nine(figure)
-    tens = figure / 10 * 10
-    ones = (tens - figure) * -1
-    "#{figures_hash[tens]} #{figures_hash[ones]}"
+    unit_tens = figure / 10 * 10
+    ones = (unit_tens - figure) * -1
+
+    (unit_tens - figure) * -1 == 0 ? figures_hash[unit_tens] : "#{figures_hash[unit_tens]} #{figures_hash[ones]}"
   end
 end
-
-p 43.to_words
