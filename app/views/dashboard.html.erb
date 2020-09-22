@@ -12,8 +12,8 @@
         </thead>
         <tbody>
             <tr>
-                <td>Number of Projects</td>
-                <td><%= current_user.projects.size %></td>
+                <td>Total Projects</td>
+                <td><a href="/projects"><%= current_user.projects.size.to_words.titlecase %> (<%= current_user.projects.size %>)</a></td>
             </tr>
             <tr class="spacer"></tr>
             <tr>
