@@ -43,6 +43,11 @@
             </tr>
             <tr class="spacer"></tr>
             <tr>
+                <td>On-Time Completion</td>
+                <td><%= @rate_of_timely_completion%>%</td>
+            </tr>
+            <tr class="spacer"></tr>
+            <tr>
                 <td>Last Project Registered</td>
                 <td>Title</td>
                 <td><a href="/projects/<%= @last_project_created.slug %>"><%= @last_project_created.title %></a></td>
