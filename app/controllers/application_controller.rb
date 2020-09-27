@@ -21,13 +21,14 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/dashboard" do
+    puts "START TIME: #{Time.now.strftime("%H:%M:%S:%L")}"
     if current_user && current_user.projects.empty?
       redirect :"/about"
     elsif logged_in?
       @last_project_created = current_user.projects.sort_by {|p| p.created_at if p.created_at}.last
       @last_project_updated = current_user.projects.sort_by {|p| p.updated_at if p.updated_at}.last
       @rate_of_timely_completion = get_rate_of_timely_completion
-
+      puts "END TIME: #{Time.now.strftime("%H:%M:%S:%L")}"
       erb :"/dashboard.html"
     else
       redirect :"/signin"
@@ -44,8 +45,8 @@ class ApplicationController < Sinatra::Base
     end
 
     def get_rate_of_timely_completion
-      completed_projects = User.first.projects.select {|p| p.phase == "Completed" || p.phase == "Production"}
-      on_time_completion = completed_projects.select {|p| p.planned_end_date >= p.actual_end_date}
+      completed_projects = User.first.projects.where(["phase = ? or phase = ?", "Completed", "Production"])
+      on_time_completion = completed_projects.where("planned_end_date >= actual_end_date")
       ((on_time_completion.size / completed_projects.size.to_f) * 100).round(1)
     end
   end
