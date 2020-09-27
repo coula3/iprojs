@@ -68,6 +68,7 @@ class ProjectsController < ApplicationController
   patch "/projects/:slug" do
     new_params = Hash.new
     old_object = current_user.projects.find_by_slug(params[:slug])
+
     new_params["title"] = params[:title]
     new_params["domain"] = params[:domain]
     new_params["classification"] = params[:classification]
@@ -82,7 +83,7 @@ class ProjectsController < ApplicationController
     new_params["notes"] = params[:notes]
 
     if old_object.update(new_params)
-      old_object.update(phase: "Completed") if !params[:actual_end_date].blank?
+      complimentary_updates(old_object)
       redirect "/projects/#{old_object.slug}"
     else
       redirect "/projects/#{old_object.slug}/edit"
@@ -96,6 +97,13 @@ class ProjectsController < ApplicationController
       redirect "/projects/new"
     else      
       redirect "/projects"
+    end
+  end
+
+  helpers do
+    def complimentary_updates(object)
+      object.update(phase: "Completed") if !params[:actual_end_date].blank?
+      object.update(actual_end_date: Time.now.strftime("%Y/%m/%d")) if (params[:phase] == "Production" || params[:phase] == "Completed") && params[:actual_end_date].empty?
     end
   end
 end
