@@ -86,6 +86,7 @@ class ProjectsController < ApplicationController
       complimentary_updates(old_object)
       redirect "/projects/#{old_object.slug}"
     else
+      flash[:message] = old_object.errors.full_messages.join(" ")
       redirect "/projects/#{old_object.slug}/edit"
     end
   end
@@ -104,7 +105,6 @@ class ProjectsController < ApplicationController
     def complimentary_updates(object)
       object.update(actual_end_date: nil) if (params[:phase] == "Planning" || params[:phase] == "Development" || params[:phase] == "Testing") && !!params[:actual_end_date]
       object.update(phase: "Completed") if object.actual_end_date
-      # object.update(actual_end_date: Time.now.strftime("%Y/%m/%d")) if (params[:phase] == "Production" || params[:phase] == "Completed") && params[:actual_end_date].empty?
     end
   end
 end
