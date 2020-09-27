@@ -8,6 +8,8 @@ class Project < ActiveRecord::Base
     validates :url, format: { with: /\:\/+\w+\.[a-zA-Z]{2,}/, message: "must be valid" },
         if: Proc.new { |entry| entry.url.present? }
 
+    validates_with ActualEndDateValidator
+
     extend Slugifiable::ClassMethods
     include Slugifiable::InstanceMethods
 
