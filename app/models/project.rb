@@ -2,7 +2,7 @@ require_relative 'concerns/slugifiable.rb'
 
 class Project < ActiveRecord::Base
     belongs_to :user
-    validates :title, presence: true
+    validates :title, :start_date, :planned_end_date, presence: true
     validates_uniqueness_of :title, case_sensitive: false
     validates :title, format: { with: /\A[a-zA-Z0-9-:\s]+\z/, message: "only allows letters, numbers, spaces, colons and hyphens" }
     validates :url, format: { with: /\:\/+\w+\.[a-zA-Z]{2,}/, message: "must be valid" },
