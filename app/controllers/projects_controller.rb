@@ -102,8 +102,9 @@ class ProjectsController < ApplicationController
 
   helpers do
     def complimentary_updates(object)
-      object.update(phase: "Completed") if !params[:actual_end_date].blank?
-      object.update(actual_end_date: Time.now.strftime("%Y/%m/%d")) if (params[:phase] == "Production" || params[:phase] == "Completed") && params[:actual_end_date].empty?
+      object.update(actual_end_date: nil) if (params[:phase] == "Planning" || params[:phase] == "Development" || params[:phase] == "Testing") && !!params[:actual_end_date]
+      object.update(phase: "Completed") if object.actual_end_date
+      # object.update(actual_end_date: Time.now.strftime("%Y/%m/%d")) if (params[:phase] == "Production" || params[:phase] == "Completed") && params[:actual_end_date].empty?
     end
   end
 end
