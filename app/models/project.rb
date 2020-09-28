@@ -1,5 +1,3 @@
-require_relative 'concerns/slugifiable.rb'
-
 class Project < ActiveRecord::Base
     belongs_to :user
     validates :title, :start_date, :planned_end_date, presence: true
