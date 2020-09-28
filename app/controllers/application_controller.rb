@@ -21,14 +21,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/dashboard" do
-    puts "START TIME: #{Time.now.strftime("%H:%M:%S:%L")}"
     if current_user && current_user.projects.empty?
       redirect :"/about"
     elsif logged_in?
-      @last_project_created = current_user.projects.sort_by {|p| p.created_at if p.created_at}.last
-      @last_project_updated = current_user.projects.sort_by {|p| p.updated_at if p.updated_at}.last
+      @last_project_created = get_last_project_created
+      @last_project_updated = get_last_project_updated
       @rate_of_timely_completion = get_rate_of_timely_completion
-      puts "END TIME: #{Time.now.strftime("%H:%M:%S:%L")}"
       erb :"/dashboard.html"
     else
       redirect :"/signin"
@@ -42,6 +40,14 @@ class ApplicationController < Sinatra::Base
 
     def current_user
       @user ||= User.find_by(id: session[:id]) if session[:id]
+    end
+
+    def get_last_project_created
+      current_user.projects.sort_by {|p| p.created_at if p.created_at}.last
+    end
+
+    def get_last_project_updated
+      current_user.projects.sort_by {|p| p.updated_at if p.updated_at}.last
     end
 
     def get_rate_of_timely_completion
