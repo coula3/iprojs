@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
         if: Proc.new { |entry| entry.url.present? }
 
     validates_with ActualEndDateValidator
+    validates_with ProjectDatesValidator
 
     extend Slugifiable::ClassMethods
     include Slugifiable::InstanceMethods
