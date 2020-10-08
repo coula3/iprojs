@@ -24,6 +24,8 @@ class String
             else
                 capitalize_array.unshift(first_str.capitalize)
             end.join(" ")
+        else
+            ""
         end
     end
 
