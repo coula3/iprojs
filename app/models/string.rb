@@ -2,10 +2,11 @@ class String
     def titlecase
         string_arrray = self.split
         exclusions = %w(of and in from the to is for)
+
         capitalize_array = string_arrray.map do |str| 
             if exclusions.none?(str) && str.include?("-")
-                arr = str.gsub("-", " ").split
-                arr.map {|a| a.capitalize}.join(" ").gsub(" ", "-")
+                new_array = str.gsub("-", " ").split
+                new_array.map {|str| str.capitalize}.join(" ").gsub(" ", "-")
             elsif exclusions.include?(str)
                 str
             else
@@ -13,20 +14,7 @@ class String
             end
         end
         
-        if !capitalize_array.empty?
-            first_str = capitalize_array.shift 
-            if first_str.include?("-") && capitalize_array.count == 0
-                capitalize_array.unshift(first_str)
-            elsif first_str.include?("-") && capitalize_array.count > 0
-                capitalize_array.unshift(first_str)
-            elsif first_str == first_str.downcase
-                capitalize_array.unshift(first_str.capitalize)
-            else
-                capitalize_array.unshift(first_str.capitalize)
-            end.join(" ")
-        else
-            ""
-        end
+        return_string_titlecase(capitalize_array)
     end
 
     def sanitize_name_roman_suffix
@@ -50,5 +38,22 @@ class String
         upcased_suffix = name_array[-1].upcase
         name_array[-1] = upcased_suffix
         name_array.join(" ")
+    end
+
+    def return_string_titlecase(capitalize_array)
+        if !capitalize_array.empty?
+            first_str = capitalize_array.shift
+            if first_str.include?("-") && capitalize_array.count == 0
+                capitalize_array.unshift(first_str)
+            elsif first_str.include?("-") && capitalize_array.count > 0
+                capitalize_array.unshift(first_str)
+            elsif first_str == first_str.downcase
+                capitalize_array.unshift(first_str.capitalize)
+            else
+                capitalize_array.unshift(first_str.capitalize)
+            end.join(" ")
+        else
+            ""
+        end
     end
 end
