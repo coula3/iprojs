@@ -46,10 +46,10 @@ class UsersController < ApplicationController
       end
     elsif params[:email].blank? && params[:password].blank?
       flash[:message] = "A valid email and a password is required"
-      erb :"/users/signin.html"
+      erb :"/welcome.html"
     else
       flash[:message] = "Invalid email or password"
-      erb :"/users/signin.html"
+      erb :"/welcome.html"
     end
   end
 

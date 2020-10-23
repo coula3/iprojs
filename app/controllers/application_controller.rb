@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
     if logged_in?
       redirect "/projects"
     else
-      erb :welcome
+      erb :"/welcome.html"
     end
   end
 
