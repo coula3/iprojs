@@ -55,11 +55,11 @@ class UsersController < ApplicationController
 
   get "/signout" do
     if !logged_in?
-      redirect "/signin"
+      redirect "/"
     else
       @first_name = current_user.first_name
       session.clear
-      erb :"/users/bye.html"
+      erb :"/users/signout.html"
     end
   end
 
