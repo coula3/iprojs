@@ -35,6 +35,11 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  get "/project_dates_analysis" do
+    @current_user_projects = current_user.projects.where.not(actual_end_date: nil)
+    erb :"/projects/project_dates_analysis.html"
+  end
+
   helpers do
     def logged_in?
       !!current_user

@@ -1,0 +1,28 @@
+<br><br>
+
+<h2>Dates Analysis on Completed Projects</h2>
+
+<div>
+    <table style="width:95%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Title</th>
+                <th>Start Date</th>
+                <th>Planned End Date</th>
+                <th>Actual End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @current_user_projects.each.with_index(1) do |project, index|%>
+            <tr>
+                <td><%= index %></td>
+                <td><%= project.title %></td>
+                <td><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
+                <td><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
+                <td><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
