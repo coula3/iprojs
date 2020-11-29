@@ -25,9 +25,9 @@
     </select></p>
     <p style="margin-bottom: 40px"><label style="width: 120px; display: inline-block">eMail </label><input type="text" style="width: 300px; height: 20px; padding: 2px 5px" name="email" value="<%= @user.email.downcase %>"></p>
 
-    <p style="padding-left: 50px"><button class="button" style="width:350px; height:35px">Save</button></p>
+    <p style="padding-left: 50px"><button class="button" style="width:350px; height:35px; background: #fff; color: #0000ff; cursor: pointer">Save</button></p>
     <p style="padding-left: 50px; margin-top: 0px">
         <a href="/users/<%=current_user.slug%>" style="background: #0000ff; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 160px; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">My Profile</a>
-        <a href="/users/<%=current_user.slug%>/change_password" style="background: #0000ff; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 160px; height: 25px; margin: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Change Password</a>
+        <a href="/users/<%=current_user.slug%>/change_password" style="background: #0000ff; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 160px; height: 25px; margin: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Change Password</a>
     </p>
 </form>
