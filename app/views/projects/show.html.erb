@@ -48,6 +48,10 @@
     </tr>
     <tr class="spacer"></tr>
     <tr class="spacer"></tr>
+    <tr>
+        <td style="float: left; margin-right: 45px; color: blue">Last updated</td>
+        <td style="text-align: left"><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @project.format_dates(@project.updated_at) + @project.updated_at.to_s.slice(10..18) %></span></td>
+    </tr>
 </table>
 <div style="margin-bottom: 25px">
     <a href="/projects/<%=@project.slug%>/edit" style="background: #0000ff; color: #fff; text-decoration:none; text-align: center; display: block; width: 50%; height: 25px; margin: 10px auto; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Edit</a>

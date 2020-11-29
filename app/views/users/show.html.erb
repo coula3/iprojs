@@ -13,6 +13,8 @@
 <p><label>Gender: </label><%=@user.gender%></p>
 <p><label>eMail: </label><%=@user.email%></p>
 
+<p style="margin-top: 50px"><label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.to_s.slice(0..18) %></span></p>
+
 <br>
 <p style="padding-left: 50px; margin-top: 0px">
     <a href="/users/<%=current_user.slug%>/edit" style="background: #0000ff; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 160px; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Edit Profile</a>
