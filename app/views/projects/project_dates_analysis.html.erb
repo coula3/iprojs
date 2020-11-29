@@ -7,10 +7,11 @@
         <thead>
             <tr>
                 <th></th>
-                <th style="width:50%">Title</th>
+                <th style="width:40%">Title</th>
                 <th>Start</th>
                 <th>Planned End</th>
                 <th>Actual End</th>
+                <th>Duration (days)</th>
                 <th>On-Time</th>
                 <th style="width:5%">Days Delayed</th>
             </tr>
@@ -23,6 +24,7 @@
                     <td><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
                     <td><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
                     <td><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+                    <td style="text-align:center"><%= ((project.actual_end_date - project.start_date)/86400).to_i %></td>
                     <td style="text-align:center"><%= "✓" if project.actual_end_date <= project.planned_end_date %></td>
                     <td style="text-align:center"><%= ((project.planned_end_date - project.actual_end_date)/86400) < 0 ? "(#{(((project.planned_end_date - project.actual_end_date)/86400).to_i) * -1})" : ((project.planned_end_date - project.actual_end_date)/86400).to_i %></td>
                 </tr>
