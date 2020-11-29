@@ -19,7 +19,7 @@
             <% @current_user_projects.each.with_index(1) do |project, index|%>
             <tr>
                 <td><%= index %></td>
-                <td><%= project.title %></td>
+                <td><a href="/projects/<%= project.slug %>" title="View Project Details"><%= project.title %></a></td>
                 <td><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
                 <td><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
                 <td><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
