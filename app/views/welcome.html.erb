@@ -9,20 +9,23 @@
 
   <p style="color: blue; text-align:right; font-family: 'Gloria Hallelujah', cursive, sans-serif; margin-right: 22%">... the project buddy of software developers in the cloud!</p>
 
-  <div style="margin: 40px 0px 25px 0px">
+  <div style="margin: 75px 0px 25px 0px">
     <% if flash.has?(:message) %>
         <span style="color:red"><%= flash[:message] %></span>
     <% end %><br><br>
 
     <% flash[:message].clear if flash[:message] %>
     
-    <form action="/signin" method="POST">
-        <p><label for="email" style="width: 10%; display: inline-block">eMail</label><input type="text" style="width: 30%; height: 20px; padding: 2px 5px" id="email" name="email"></p>
-        <p><label for="password" style="width: 10%; display: inline-block" >Password</label><input type="password" style="width: 30%; height: 20px; padding: 2px 5px" id="password" name="password"></p>
+    <div style="width: 50%; float:right">
+    <form action="/signin" method="POST" style="width: 100%; float:right; margin-bottom: 20px">
+        <p><label for="email" style="width: 22%; display: inline-block">eMail</label><input type="text" style="width: 75%; height: 20px; padding: 2px 5px" id="email" name="email"></p>
+        <p><label for="password" style="width: 22%; display: inline-block" >Password</label><input type="password" style="width: 75%; height: 20px; padding: 2px 5px" id="password" name="password"></p>
 
-        <button class="button" style="cursor: pointer; width: 41.5%; height: 30px">Sign In</button>
+        <button class="button" style="cursor: pointer; width: 100%; height: 30px">Sign In</button>
     </form>
 
-    <p style="margin: 15px 0px 75px 0px"><a href="/signup" style="background: #ed404c; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 40.3%; height: 24px; padding: 4px 5px 0px 5px; border:solid 1px; border-color:grey">Sign Up</a> </p>
+    <p style="margin-bottom: 50px; clear:both"><a href="/signup" style="background: #ed404c; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 98%; height: 24px; padding: 4px 5px 0px 5px; border:solid 1px; border-color:grey">Sign Up</a> </p>
+    </div>
+
   </div>
 </div>
