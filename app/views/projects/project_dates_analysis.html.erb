@@ -3,14 +3,16 @@
 <h2>Dates Analysis on Completed Projects</h2>
 
 <div>
-    <table style="width:95%">
+    <table style="width:100%">
         <thead>
             <tr>
                 <th></th>
-                <th>Title</th>
-                <th>Start Date</th>
-                <th>Planned End Date</th>
-                <th>Actual End Date</th>
+                <th style="width:50%">Title</th>
+                <th>Start</th>
+                <th>Planned End</th>
+                <th>Actual End</th>
+                <th>On-Time</th>
+                <th style="width:5%">Days Delayed</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +23,8 @@
                 <td><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
                 <td><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
                 <td><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+                <td style="text-align:center"><%= "✓" if project.actual_end_date <= project.planned_end_date %></td>
+                <td style="text-align:center"><%= ((project.actual_end_date - project.planned_end_date)/86400).to_i   if project.actual_end_date > project.planned_end_date %></td>
             </tr>
             <% end %>
         </tbody>
