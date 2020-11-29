@@ -16,13 +16,13 @@
 
     <% flash[:message].clear if flash[:message] %>
     
-    <form action="/signin" method="POST" style="display: inline;">
-        <label for="email" style="width: 50px; display: inline-block">eMail</label><input type="text" style="margin-right: 10px; size: auto" id="email" name="email"> 
-        <label for="password" style="width: 90px; display: inline-block" >Password</label><input type="password" style="margin-right: 10px; size: auto" id="password" name="password">
+    <form action="/signin" method="POST">
+        <p><label for="email" style="width: 10%; display: inline-block">eMail</label><input type="text" style="width: 30%; height: 20px; padding: 2px 5px" id="email" name="email"></p>
+        <p><label for="password" style="width: 10%; display: inline-block" >Password</label><input type="password" style="width: 30%; height: 20px; padding: 2px 5px" id="password" name="password"></p>
 
-        <button class="button" style="cursor: pointer">Sign In</button>
+        <button class="button" style="cursor: pointer; width: 41.5%; height: 30px">Sign In</button>
     </form>
 
-    <a href="/signup" style="color:black; text-decoration:none; margin-left:10px; padding:0px 20px 0px 20px; border:solid 1px; border-color:grey">Sign Up</a> <br>
+    <p style="margin: 15px 0px 75px 0px"><a href="/signup" style="background: #ed404c; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 40.3%; height: 24px; padding: 4px 5px 0px 5px; border:solid 1px; border-color:grey">Sign Up</a> </p>
   </div>
 </div>
