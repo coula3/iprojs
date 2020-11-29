@@ -13,13 +13,13 @@
 <% end %>
 
 <div>
-    <p><span style="color: red">iProjs</span> is a platform that provides software developers a useful tool to enrich their development experience. This ease-of-use medium has functionalities to hold key data on project portfolio that typically requires frequent access.</p>
+    <p><span style="color:red">iProjs</span> is a handy platform that provides software developers with a tool that contributes towards enriching their development experience. The app provides functionalities to hold data on project portfolio that would typically be frequently accessed.</p>
 
-    <p>The average time to add a new project or update an existing project is estimated at less than 2 minutes, which makes <span style="color: red">iProjs</span> an ideal buddy of software developers in the cloud!</p> 
+    <p>The average time to add a new project or update an existing project is estimated at less than 3 minutes, which makes <span style="color:red">iProjs</span> <i style="color:green">an ideal buddy of software developers in the cloud!</i></p>
 
-    <p>We trust that your interaction with the product will be consistently valuable.</p>
+    <p>We trust that your interactions with the product will be consistently valuable.</p>
 
     <% if logged_in? && current_user.projects.empty?%>
-        <p>Let's get started with a <a href="/projects/new">new project</a>!!</p>
+        <p>Let's get started with a <a href="/projects/new" title="New Project">new project</a>!!</p>
     <% end %>
 </div>
