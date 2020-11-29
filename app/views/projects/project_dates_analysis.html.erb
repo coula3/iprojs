@@ -17,15 +17,15 @@
         </thead>
         <tbody>
             <% @current_user_projects.each.with_index(1) do |project, index|%>
-            <tr>
-                <td><%= index %></td>
-                <td><a href="/projects/<%= project.slug %>" title="View Project Details"><%= project.title %></a></td>
-                <td><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
-                <td><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
-                <td><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
-                <td style="text-align:center"><%= "✓" if project.actual_end_date <= project.planned_end_date %></td>
-                <td style="text-align:center"><%= ((project.actual_end_date - project.planned_end_date)/86400).to_i   if project.actual_end_date > project.planned_end_date %></td>
-            </tr>
+                <tr>
+                    <td><%= index %></td>
+                    <td><a href="/projects/<%= project.slug %>" title="View Project Details"><%= project.title %></a></td>
+                    <td><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
+                    <td><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
+                    <td><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+                    <td style="text-align:center"><%= "✓" if project.actual_end_date <= project.planned_end_date %></td>
+                    <td style="text-align:center"><%= ((project.planned_end_date - project.actual_end_date)/86400) < 0 ? "(#{(((project.planned_end_date - project.actual_end_date)/86400).to_i) * -1})" : ((project.planned_end_date - project.actual_end_date)/86400).to_i %></td>
+                </tr>
             <% end %>
         </tbody>
     </table>
