@@ -10,23 +10,23 @@
     </div>
 <% end %>
 
-<h2>Please enter your details to sign up</h2>
+<div style="float: right; width: 50%; margin-bottom: 25px">
+    <form action="/signup" method="POST" style="width: 100%">
+        <p><label for="first_name" style="width: 30%; display: inline-block">First Name </label><input type="text" style="width: 67%; height: 20px; padding: 2px 5px" id="first_name" name="first_name"/></p>
+        <p><label for="last_name" style="width: 30%; display: inline-block">Last Name </label><input type="text" style="width: 67%; height: 20px; padding: 2px 5px" id="last_name" name="last_name"/></p>
+        <p><label for="organization" style="width: 30%; display: inline-block">Organization </label><input type="text" style="width: 67%; height: 20px; padding: 2px 5px" id="organization" name="organization"/></p>
+        <p><label for="dob" style="width: 30%; display: inline-block">Date of Birth </label><input type="date" style="width: 67%; height: 20px; padding: 2px 5px" id="dob" name="date_of_birth"></p>
+        <p><label for="gender" style="width: 30%; display: inline-block">Gender </label>
+        <select id="gender" name="gender" style="width: 67%; height: 25px; padding: 2px 5px; display: inline-block">
+            <option value="Female" selected>Female</option>
+            <option value="Male" selected>Male</option>
+            <option value="Non-Binary" selected>Non-Binary</option>
+            <option value="" selected></option>
+        </select></p>
+        <p><label for="email" style="width: 30%; display: inline-block">eMail </label><input type="email" style="width: 67%; height: 20px; padding: 2px 5px" id="email" name="email"/></p>
+        <p><label for="password" style="width: 30%; display: inline-block">Password </label><input type="password" style="width: 67%; height: 20px; padding: 2px 5px" id="password" name="password"/></p>
+        <p><label for="password_confirmation" style="width: 30%; display: inline-block">Confirm Password </label><input type="password" style="width: 67%; height: 20px; padding: 2px 5px" id="password_confirmation" name="password_confirmation"/></p>
 
-<form action="/signup" method="POST">
-    <p><label for="first_name">First Name </label><input type="text" id="first_name" name="first_name"/></p>
-    <p><label for="last_name">Last Name </label><input type="text" id="last_name" name="last_name"/></p>
-    <p><label for="organization">Organization </label><input type="text" id="organization" name="organization"/></p>
-    <p><label for="dob">Date of Birth </label><input type="date" id="dob" name="date_of_birth"></p>
-    <p><label for="gender">Gender </label>
-    <select id="gender" name="gender">
-        <option value="Female" selected>Female</option>
-        <option value="Male" selected>Male</option>
-        <option value="Non-Binary" selected>Non-Binary</option>
-        <option value="" selected></option>
-    </select></p>
-    <p><label for="email">eMail </label><input type="email" id="email" name="email"/></p>
-    <p><label for="password">Password </label><input type="password" id="password" name="password"/></p>
-    <p><label for="password_confirmation">Confirm Password </label><input type="password" id="password_confirmation" name="password_confirmation"/></p>
-
-    <button class="button">Sign up</button>
-</form>
+        <button class="button" style="cursor: pointer; width: 100%; height: 30px; background: #ed404c; color: #FFF">Sign up</button>
+    </form>
+</div>
