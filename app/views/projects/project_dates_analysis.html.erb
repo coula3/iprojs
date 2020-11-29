@@ -27,7 +27,7 @@
                 <% end %>
 
                 <tr>
-                    <td><%= index %></td>
+                    <td style="vertical-align:top"><%= index %></td>
                     <td><a href="/projects/<%= project.slug %>" title="View Project Details"><%= project.title %></a></td>
                     <td style="text-align:center"><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
                     <td style="text-align:center"><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
