@@ -23,19 +23,16 @@
       <div class="nav" style="margin-bottom: 20px">
         <span style="float: left">
           <% if logged_in? %>
-            <% if request.env["sinatra.route"] != "GET /about" && request.env["sinatra.route"] != "POST /signup" && request.env["sinatra.route"] != "POST /signin"%>
-              <a href="/about" title="About iProjs">iProjs</a>
+            <% if request.env["sinatra.route"] != "GET /users/:slug" %>
+              <a href="/users/<%=current_user.slug%>"><%= current_user.first_name.titlecase %> <%= current_user.last_name.titlecase %></a>
+            <% end %>
+            <% if request.env["sinatra.route"] != "GET /users/:slug/edit" %>
+              <a href="/users/<%=current_user.slug%>/edit">Edit Profile</a>
             <% end %>
             <% if !current_user.projects.empty? %>
               <% if request.env["sinatra.route"] != "GET /dashboard" %>
                 <a href="/dashboard">My Dashboard</a>
               <% end %>
-            <% end %>
-            <% if request.env["sinatra.route"] != "GET /users/:slug" %>
-              <a href="/users/<%=current_user.slug%>">My Profile</a>
-            <% end %>
-            <% if request.env["sinatra.route"] != "GET /users/:slug/edit" %>
-              <a href="/users/<%=current_user.slug%>/edit">Edit Profile</a>
             <% end %>
             <% if !current_user.projects.empty?%>
               <% if request.env["sinatra.route"] != "GET /projects" %>
@@ -44,6 +41,9 @@
             <%end%>
             <% if request.env["sinatra.route"] != "GET /projects/new" %>
               <a href="/projects/new">New Project</a>
+            <% end %>
+            <% if request.env["sinatra.route"] != "GET /about" && request.env["sinatra.route"] != "POST /signup" && request.env["sinatra.route"] != "POST /signin"%>
+              <a href="/about" title="About iProjs">iProjs</a>
             <% end %>
           <% end %>
         </span>
