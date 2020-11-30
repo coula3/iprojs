@@ -42,11 +42,13 @@
                 <td><%= current_user.projects.where(phase: "Production").size %></td>
             </tr>
             <tr class="spacer"></tr>
-            <tr>
-                <td>On-Time Completion</td>
-                <td><a href="/project_dates_analysis" title="Project Completion Analysis"><%= @rate_of_timely_completion%>%</a></td>
-            </tr>
-            <tr class="spacer"></tr>
+            <% if @user.projects.any? {|p| p.actual_end_date} %>
+                <tr>
+                    <td>On-Time Completion</td>
+                    <td><a href="/project_dates_analysis" title="Project Completion Analysis"><%= @rate_of_timely_completion%>%</a></td>
+                </tr>
+                <tr class="spacer"></tr>
+            <% end %>
             <tr>
                 <td>Last Project Registered</td>
                 <td>Title</td>
