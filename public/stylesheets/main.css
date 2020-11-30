@@ -45,6 +45,16 @@
     width: 130px;
     text-align: center;
     display: inline-block;
+    transition-duration: 0.4s;
+  }
+
+  .hoverable-btn {
+    background-color: #3572d4;
+    color: #fff;
+  }
+
+  .hoverable-btn:hover {
+    background-color: #ed404c;
   }
 
   input {
