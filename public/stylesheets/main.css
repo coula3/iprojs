@@ -58,19 +58,35 @@
   }
 
   .notes {
-    width: 83.715%;
-    height: 155px;
+    width: 83%;
+    height: 135px;
     font-size: 15px;
+    padding: 5px 5px;
   }
 
   .libraries {
-    width: 83.715%;
+    width: 83%;
     height: 40px;
     font-size: 15px;
+    padding: 5px 5px;
   }
 
   .inputs-width {
-    width: 83.5%
+    width: 82.75%;
+    height: 20px;
+    padding: 2px 5px;
+  }
+
+  .select-inputs {
+    width: 225px;
+    height: 30px;
+    padding: 2px 0px;
+  }
+
+  .date-inputs {
+    width: 215px;
+    height: 20px;
+    padding: 2px 5px;
   }
 
   a {
@@ -103,7 +119,11 @@
   }
 
   p {
-    margin-bottom: 18px;
+    margin-bottom: 10px;
+  }
+
+  .notes-p-margin {
+    margin-bottom: 20px;
   }
 
   .main {
