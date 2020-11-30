@@ -1,4 +1,4 @@
-<br><h2>My Projects</h2>
+<br><h2><%=current_user.first_name.titlecase%>'s Project<%= + "s" if current_user.projects.size > 1 %></h2>
 
 <% if flash.has?(:message) %>
     <span style="color:red"><%= flash[:message] %></span>
