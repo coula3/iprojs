@@ -58,7 +58,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def get_rate_of_timely_completion
-      completed_projects = User.first.projects.where(["phase = ? or phase = ?", "Completed", "Production"])
+      completed_projects = current_user.projects.where(["phase = ? or phase = ?", "Completed", "Production"])
       on_time_completion = completed_projects.where("planned_end_date >= actual_end_date")
       ((on_time_completion.size / completed_projects.size.to_f) * 100).round(1)
     end
