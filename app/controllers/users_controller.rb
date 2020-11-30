@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if current_user
       redirect "/projects"
     else
-      erb :"/users/signin.html"
+      erb :"/welcome.html"
     end
   end
 
