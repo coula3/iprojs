@@ -6,14 +6,16 @@
     <%= flash[:message] %>
 <% end %><br><br><br>
 
+<p><label>UID: </label><%=@user.id%></p>
 <p><label>First Name: </label><%=@user.first_name%></p>
 <p><label>Last Name: </label><%=@user.last_name%></p>
 <p><label>Organization: </label><%=@user.organization.titlecase if @user.organization %></p>
 <p><label>Age: </label><%= calculate_age %></p>
 <p><label>Gender: </label><%=@user.gender%></p>
 <p><label>Email: </label><%=@user.email%></p>
-
-<p style="margin-top: 50px"><label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.to_s.slice(0..18) %></span></p>
+<br>
+<p><label>Date Joined: </label><%= @user.created_at.to_s.slice(0..10) %></p>
+<p style="margin-top: 40px"><label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.to_s.slice(0..18) %></span></p>
 
 <br>
 <p style="padding-left: 50px; margin-top: 0px">
