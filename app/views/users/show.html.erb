@@ -14,8 +14,8 @@
 <p><label>Gender: </label><%=@user.gender%></p>
 <p><label>Email: </label><%=@user.email%></p>
 <br>
-<p><label>Date Joined: </label><%= @user.created_at.to_s.slice(0..10) %></p>
-<p style="margin-top: 40px"><label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.to_s.slice(0..18) %></span></p>
+<p><label>Date Joined: </label><%= @user.created_at.strftime("%b %d, %Y") %></p>
+<p style="margin-top: 40px"><label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.strftime("%b %d, %Y") + " " + @user.updated_at.to_s.slice(11..18) %></span></p>
 
 <br>
 <p style="padding-left: 50px; margin-top: 0px">
