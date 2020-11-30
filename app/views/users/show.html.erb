@@ -6,7 +6,7 @@
     <%= flash[:message] %>
 <% end %><br><br><br>
 
-<p><label>UID: </label><%=@user.id%></p>
+<p><label>UID: </label><strong><%=@user.id.to_s.rjust(10, '0')%></strong></p>
 <p><label>First Name: </label><%=@user.first_name%></p>
 <p><label>Last Name: </label><%=@user.last_name%></p>
 <p><label>Organization: </label><%=@user.organization.titlecase if @user.organization %></p>
