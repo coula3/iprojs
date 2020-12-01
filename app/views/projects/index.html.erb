@@ -1,4 +1,4 @@
-<br><h2><%=current_user.first_name.titlecase%>'s Project<%= + "s" if current_user.projects.size > 1 %> (<%= current_user.projects.size %>)</h2>
+<br><h2><%=current_user.first_name.titlecase%>'s Project<%= + "s" if current_user.projects.size > 1 %> <span style="color: #008000">(<%= current_user.projects.size %>)</span></h2>
 
 <% if flash.has?(:message) %>
     <span style="color:red"><%= flash[:message] %></span>
