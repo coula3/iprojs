@@ -31,17 +31,17 @@
             <% end %>
             <% if !current_user.projects.empty? %>
               <% if request.env["sinatra.route"] != "GET /dashboard" %>
-                <a href="/dashboard">My Dashboard</a>
+                <a href="/dashboard">Dashboard</a>
               <% end %>
+            <% end %>
+            <% if request.env["sinatra.route"] != "GET /projects/new" %>
+              <a href="/projects/new">New Project</a>
             <% end %>
             <% if !current_user.projects.empty?%>
               <% if request.env["sinatra.route"] != "GET /projects" %>
                 <a href="/projects">My Project<%= + "s" if current_user.projects.size > 1 %></a>
               <% end %>
             <%end%>
-            <% if request.env["sinatra.route"] != "GET /projects/new" %>
-              <a href="/projects/new">New Project</a>
-            <% end %>
             <% if request.env["sinatra.route"] != "GET /about" && request.env["sinatra.route"] != "POST /signup" && request.env["sinatra.route"] != "POST /signin"%>
               <a href="/about" title="About iProjs">iProjs</a>
             <% end %>
