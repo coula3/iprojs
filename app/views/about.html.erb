@@ -20,7 +20,8 @@
 
     <p>We trust that your interactions with the product will be consistently valuable.</p>
 
+    <br>
     <% if logged_in? && current_user.projects.empty?%>
-        <p>Let's get started with a <a href="/projects/new" title="New Project">new project</a>!!</p>
+        <p>Let's get started with a <a style="margin-right: 0px;" href="/projects/new" title="New Project">new project</a>!</p>
     <% end %>
 </div>
