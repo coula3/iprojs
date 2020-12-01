@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        <% @projects.each.with_index(1) do |project, index|%>
+        <% @projects.each do |project|%>
             </tr>
                 <td style="margin-right:10px; text-align: center"><%= project.id %></a> </td>
                 <td style="margin-right:10px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></a></td>

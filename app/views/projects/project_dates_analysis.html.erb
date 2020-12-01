@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            <% @current_user_projects.each.with_index(1) do |project, index|%>
+            <% @current_user_projects.each do |project|%>
                 <% if project.planned_end_date - project.actual_end_date < 0 %>
                     <% @color = "color:red" %>
                 <% elsif project.planned_end_date - project.actual_end_date == 0 %>
