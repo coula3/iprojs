@@ -6,8 +6,8 @@
     <table style="width:100%">
         <thead>
             <tr>
-                <th></th>
-                <th style="width:40%">Title</th>
+                <th>PID</th>
+                <th style="width:40%; text-align:left">Title</th>
                 <th>Start</th>
                 <th>Planned End</th>
                 <th>Actual End</th>
@@ -27,7 +27,7 @@
                 <% end %>
 
                 <tr>
-                    <td style="vertical-align:top"><%= index %></td>
+                    <td style="vertical-align:top; text-align:center"><%= project.id %></td>
                     <td><a href="/projects/<%= project.slug %>" title="View Project Details"><%= project.title %></a></td>
                     <td style="text-align:center"><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
                     <td style="text-align:center"><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>

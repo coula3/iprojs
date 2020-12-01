@@ -36,7 +36,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/project_dates_analysis" do
-    @current_user_projects = current_user.projects.where.not(actual_end_date: nil)
+    @current_user_projects = current_user.projects.where.not(actual_end_date: nil).reverse
     erb :"/projects/project_dates_analysis.html"
   end
 
