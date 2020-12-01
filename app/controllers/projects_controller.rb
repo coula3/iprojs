@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     if logged_in? && current_user.projects.empty?
       redirect "/about"
     elsif current_user
-      @projects = current_user.projects
+      @projects = current_user.projects.reverse
       erb :"/projects/index.html"
     else
       redirect "/signin"
