@@ -18,27 +18,27 @@
             <tr>
                 <td>Phase</td>
                 <td>Planning</td>
-                <td><%= current_user.projects.where(phase: "Planning").size %></td>
+                <td><%= current_user.projects.where(phase: "Planning").size > 0 ? current_user.projects.where(phase: "Planning").size : "-" %></td>
             </tr>
             <tr>
                 <td></td>
                 <td>Development</td>
-                <td><%= current_user.projects.where(phase: "Development").size %></td>
+                <td><%= current_user.projects.where(phase: "Development").size > 0 ? current_user.projects.where(phase: "Development").size : "-" %></td>
             </tr>
             <tr>
                 <td></td>
                 <td>Testing</td>
-                <td><%= current_user.projects.where(phase: "Testing").size %></td>
+                <td><%= current_user.projects.where(phase: "Testing").size > 0 ? current_user.projects.where(phase: "Testing").size : "-" %></td>
             </tr>
             <tr>
                 <td></td>
                 <td>Completed</td>
-                <td><%= current_user.projects.where(phase: "Completed").size %></td>
+                <td><%= current_user.projects.where(phase: "Completed").size > 0 ? current_user.projects.where(phase: "Completed").size : "-" %></td>
             </tr>
             <tr>
                 <td></td>
                 <td>Production</td>
-                <td><%= current_user.projects.where(phase: "Production").size %></td>
+                <td><%= current_user.projects.where(phase: "Production").size > 0 ? current_user.projects.where(phase: "Production").size  : "-" %></td>
             </tr>
             <tr class="spacer"></tr>
             <% if @user.projects.any? {|p| p.actual_end_date} %>
