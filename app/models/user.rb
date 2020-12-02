@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
     
     validates :first_name, :last_name, :date_of_birth, :email, presence: true
     validates :first_name, :last_name, format: { with: /\A[a-zA-Z\-\s]+\z/, message: "only allows letters, space and hyphen" }, :if => lambda{first_name.present? && last_name.present?}
+    validates :first_name, length: { maximum: 15 }
+    validates :last_name, length: { maximum: 25 }
+    validates :organization, length: { maximum: 40 }
     validates :email, email: true
     validates_uniqueness_of :email, case_sensitive: false
     validate :dob_must_be_at_least_thirteen_years_old
