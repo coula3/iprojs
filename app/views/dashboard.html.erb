@@ -43,8 +43,8 @@
             <tr class="spacer"></tr>
             <% if @user.projects.any? {|p| p.actual_end_date} %>
                 <tr>
-                    <td>On-Time Completion</td>
-                    <td><a href="/project_dates_analysis" title="Project Completion Analysis"><%= @rate_of_timely_completion%>%</a></td>
+                    <td><a href="/project_dates_analysis" title="Project Completion Analysis">On-Time Completion</a></td>
+                    <td><%= @rate_of_timely_completion%>%</td>
                 </tr>
                 <tr class="spacer"></tr>
             <% end %>
