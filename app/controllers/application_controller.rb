@@ -62,5 +62,9 @@ class ApplicationController < Sinatra::Base
       on_time_completion = completed_projects.where("planned_end_date >= actual_end_date")
       ((on_time_completion.size / completed_projects.size.to_f) * 100).round(1)
     end
+
+    def current_year
+      Time.now.to_s.slice(0,4)
+    end
   end
 end
