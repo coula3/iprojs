@@ -10,21 +10,21 @@
   <p style="color: blue; text-align:right; font-family: 'Gloria Hallelujah', cursive, sans-serif; margin-right: 22%">... the project buddy of software developers in the cloud!</p>
 
   <div style="margin: 75px 0px 0px 0px">
-    <div style="width: 50%; float:right">
+    <div style="width: 100%; float:right">
     <form action="/signin" method="POST" style="width: 100%; float:right; margin-bottom: 10px">
-        <p><label for="email" style="width: 30%; display: inline-block">Email</label><input type="text" style="width: 67%; height: 20px; padding: 2px 5px" id="email" name="email"></p>
-        <p><label for="password" style="width: 30%; display: inline-block" >Password</label><input type="password" style="width: 67%; height: 20px; padding: 2px 5px" id="password" name="password"></p>
+        <p style="text-align: right"><input type="text" style="width: 325px; height: 20px; font-size: 16px; padding: 2px 5px" id="email" name="email" placeholder="email"></p>
+        <p style="text-align: right"><input type="password" style="width: 325px; height: 20px; font-size: 16px; padding: 2px 5px" id="password" name="password" placeholder="password"></p>
 
         <% if flash.has?(:message) %>
-            <p style="color:red; text-align: center; font-size: 14px"><%= flash[:message] %></p>
+            <p style="color:red; text-align: center; width: 325px; float: right; font-size: 12px"><%= flash[:message] %></p>
         <% end %>
 
-        <% flash[:message].clear if flash[:message] %><br>
+        <% flash[:message].clear if flash[:message] %>
 
-        <button class="button" style="cursor: pointer; width: 100%; height: 30px; background-color: #3572d4; color: #fff">Sign In</button>
+        <p style="text-align: right; margin-top: 40px; clear:both"><button class="button" style="cursor: pointer; width: 340px; height: 30px; background-color: #3572d4; color: #fff">Sign In</button></p>
     </form>
 
-    <p style="margin-bottom: 25px; clear:both"><a href="/signup" style="background: #ed404c; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 97.2%; height: 25px; padding: 4px 5px 0px 5px; border: solid 2px grey; border-style: outset">Sign Up</a> </p>
+    <p style="margin-bottom: 25px; text-align: right; clear:both"><a href="/signup" style="background: #ed404c; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 325px; height: 25px; padding: 4px 5px 0px 5px; margin-right: 0px; border: solid 2px grey">Sign Up</a> </p>
     </div>
 
   </div>
