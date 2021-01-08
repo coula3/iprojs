@@ -1,26 +1,47 @@
 <br>
-
 <h2>My Profile</h2>
 
 <% if flash.has?(:message) %>
     <%= flash[:message] %>
 <% end %><br><br><br>
 
-<p><label>UID: </label><strong><%=@user.id.to_s.rjust(10, '0')%></strong></p>
-<p><label>First Name: </label><%=@user.first_name%></p>
-<p><label>Last Name: </label><%=@user.last_name%></p>
-<p><label>Organization: </label><%=@user.organization.titlecase if @user.organization %></p>
-<p><label>Age: </label><%= calculate_age %></p>
-<p><label>Gender: </label><%=@user.gender%></p>
-<p><label>Email: </label><%=@user.email%></p>
-<br>
-<p><label>Date Joined: </label><%= @user.created_at.strftime("%b %d, %Y") %></p>
-<p style="margin-top: 40px"><label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.strftime("%b %d, %Y") + " " + @user.updated_at.to_s.slice(11..18) %></span></p>
+<div id="profile-card">
+    <div style="text-align: left; width: 350px; margin: auto">
+        <p>
+            <label>UID: </label><strong><%=@user.id.to_s.rjust(10, '0')%></strong>
+        </p>
+        <p>
+            <label>First Name: </label><%=@user.first_name%>
+        </p>
+        <p>
+            <label>Last Name: </label><%=@user.last_name%>
+        </p>
+        <p>
+            <label>Organization: </label><%=@user.organization.titlecase if @user.organization %>
+        </p>
+        <p>
+            <label>Age: </label><%= calculate_age %>
+        </p>
+        <p>
+            <label>Gender: </label><%=@user.gender%>
+        </p>
+        <p>
+            <label>Email: </label><%=@user.email%>
+        </p>
 
-<br>
-<p style="padding-left: 50px; margin-top: 0px">
-    <a href="/users/<%=current_user.slug%>/edit" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 160px; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Edit Profile</a>
-    <a href="/users/<%=current_user.slug%>/change_password" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 160px; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Change Password</a>
-    <br>
-    <a href="/projects" style="background: #fff; color: #0000ff; text-decoration:none; text-align: center; display: inline-block; width: 340px; height: 25px; margin: 10px 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">My Project<%= + "s" if current_user.projects.size > 1 %></a>
-</p>
+        <br>
+        <p>
+            <label>Date Joined: </label><%= @user.created_at.strftime("%b %d, %Y") %>
+        </p>
+        <p style="margin-top: 40px">
+            <label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.strftime("%b %d, %Y") + " " + @user.updated_at.to_s.slice(11..18) %></span>
+        </p>
+    </div>
+
+    <p style="margin-top: 25px">
+        <a href="/users/<%=current_user.slug%>/edit" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 320px; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Edit Profile</a>
+        <a href="/users/<%=current_user.slug%>/change_password" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 320px; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Change Password</a>
+
+        <a href="/projects" style="background: #fff; color: #0000ff; text-decoration:none; text-align: center; display: inline-block; width: 320px; height: 25px; margin: 25px 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">My Project<%= + "s" if current_user.projects.size > 1 %></a>
+    </p>
+</div>
