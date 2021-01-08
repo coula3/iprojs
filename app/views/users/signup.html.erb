@@ -12,23 +12,47 @@
 
 <% flash[:message].clear if flash[:message] %>
 
-<div style="float: right; width: 50%; margin-bottom: 25px">
-    <form action="/signup" method="POST" style="width: 100%">
-        <p><label for="first_name" style="width: 30%; display: inline-block">First Name </label><input type="text" style="width: 67%; height: 20px; padding: 2px 5px" id="first_name" name="first_name"/></p>
-        <p><label for="last_name" style="width: 30%; display: inline-block">Last Name </label><input type="text" style="width: 67%; height: 20px; padding: 2px 5px" id="last_name" name="last_name"/></p>
-        <p><label for="organization" style="width: 30%; display: inline-block">Organization </label><input type="text" style="width: 67%; height: 20px; padding: 2px 5px" id="organization" name="organization"/></p>
-        <p><label for="dob" style="width: 30%; display: inline-block">Date of Birth </label><input type="date" style="width: 67%; height: 20px; padding: 2px 5px" id="dob" name="date_of_birth"></p>
-        <p><label for="gender" style="width: 30%; display: inline-block">Gender </label>
-        <select id="gender" name="gender" style="width: 67%; height: 25px; padding: 2px 5px; display: inline-block">
-            <option value="Female" selected>Female</option>
-            <option value="Male" selected>Male</option>
-            <option value="Non-Binary" selected>Non-Binary</option>
-            <option value="" selected></option>
-        </select></p>
-        <p><label for="email" style="width: 30%; display: inline-block">Email </label><input type="email" style="width: 67%; height: 20px; padding: 2px 5px" id="email" name="email"/></p>
-        <p><label for="password" style="width: 30%; display: inline-block">Password </label><input type="password" style="width: 67%; height: 20px; padding: 2px 5px" id="password" name="password"/></p>
-        <p><label for="password_confirmation" style="width: 30%; display: inline-block">Confirm Password </label><input type="password" style="width: 67%; height: 20px; padding: 2px 5px" id="password_confirmation" name="password_confirmation"/></p>
+<div style="width: 100%; margin-bottom: 25px; float: right">
+    <form action="/signup" method="POST" style="width: 100%; margin-bottom: 10px; float: right">
+        <p style="text-align: right">
+            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" id="first_name" name="first_name" placeholder="First name" />
+        </p>
+        <p style="text-align: right">
+            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" id="last_name" name="last_name" placeholder="Last name" />
+        </p>
+        <p style="text-align: right">
+            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" id="organization" name="organization" placeholder="Organization" />
+        </p>
+        <p style="width: 340px; margin-bottom: 0px; float: right">
+            <label for="dob" style="margin-left: 7.5px; font-size: 16px">Date of Birth</label>
+        </p>
+        <p style="text-align: right; clear: both">
+            <input type="date" style="width: 325px; height: 22.5px; padding: 2px 5px" id="dob" name="date_of_birth">
+        </p>
+        <p style="text-align: right; clear: both">
+            <select id="gender" name="gender" style="width: 340px; height: 28px; padding: 2px 5px; display: inline-block">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Non-Binary">Non-Binary</option>
+                <option value="" selected>--select your gender--</option>
+            </select>
+        </p>
+        <p style="text-align: right">
+            <input type="email" style="width: 325px; height: 20px; padding: 2px 5px" id="email" name="email" placeholder="Email" />
+        </p>
+        <p style="text-align: right">
+            <input type="password" style="width: 325px; height: 20px; padding: 2px 5px" id="password" name="password" placeholder="Password" />
+        </p>
+        <p style="text-align: right">
+            <input type="password" style="width: 325px; height: 20px; padding: 2px 5px" id="password_confirmation" name="password_confirmation" placeholder="Confirm password" />
+        </p>
 
-        <button class="button" style="cursor: pointer; width: 100%; height: 30px; background: #ed404c; color: #FFF">Sign up</button>
+        <p style="text-align: right">
+            <button class="button" style="cursor: pointer; width: 340px; height: 30px; background: #ed404c; color: #FFF">Sign Up</button>
+        </p>
     </form>
+
+    <p style="text-align: right; clear:both">
+        <a href="/" style="background: #ADFF2F; color: #808080; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 325px; height: 25px; padding: 4px 5px 0px 5px; margin-right: 0px; border: solid 2px 	#808080">Back</a>
+    </p>
 </div>
