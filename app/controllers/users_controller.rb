@@ -67,6 +67,7 @@ class UsersController < ApplicationController
     if logged_in?
       if current_user == User.find_by_slug(params[:slug])
         @user = User.find_by_slug(params[:slug])
+        @updated_at = localize_time(@user.updated_at)
         erb :"/users/show.html"
       else
         redirect "/users/#{current_user.slug}"

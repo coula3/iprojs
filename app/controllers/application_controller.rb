@@ -66,5 +66,12 @@ class ApplicationController < Sinatra::Base
     def current_year
       Time.now.to_s.slice(0,4)
     end
+
+    def localize_time(time)
+      hour = 60 * 60
+      time.dst? ? (diff_to_UTC = hour * 4) : (diff_to_utc = hour * 5)
+
+      localize_time = time - diff_to_utc
+    end
   end
 end

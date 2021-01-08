@@ -34,7 +34,7 @@
             <label>Date Joined: </label><%= @user.created_at.strftime("%b %d, %Y") %>
         </p>
         <p style="margin-top: 40px">
-            <label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.strftime("%b %d, %Y") + " " + @user.updated_at.to_s.slice(11..18) %></span>
+            <label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.strftime("%b %d, %Y") + " " + @updated_at.to_s.slice(11..18) %></span>
         </p>
     </div>
 

@@ -36,6 +36,7 @@ class ProjectsController < ApplicationController
   get "/projects/:slug" do
     if logged_in?
       if @project = current_user.projects.find_by_slug(params[:slug])
+        @updated_at = localize_time(@project.updated_at)
         erb :"/projects/show.html"
       else
         flash[:message] = "You are only authorized to access your own projects"
