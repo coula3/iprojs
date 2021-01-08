@@ -6,3 +6,13 @@
     box-shadow: 10px 10px #888888;
     padding-top: 20px;
 }
+
+
+#password-card {
+    width: 425px;
+    margin: auto;
+    text-align: center;
+    border: solid 1px grey;
+    box-shadow: 10px 10px #888888;
+    padding-top: 20px;
+}
