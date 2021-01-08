@@ -4,28 +4,37 @@
 
 <div class="container">
   <h1 style="display: inline; font-family: 'Gloria Hallelujah', cursive, sans-serif">Welcome to </h1>
-  <h1 style="color: red; display: inline; font-family: 'Gloria Hallelujah', cursive, sans-serif"><a href="/about" style="color: red" title="About iProjs">iProjs</a></h1>
+  <h1 style="color: red; display: inline; font-family: 'Gloria Hallelujah', cursive, sans-serif">
+    <a href="/about" style="color: red" title="About iProjs">iProjs</a>
+  </h1>
   <h1 style="display: inline; font-family: 'Gloria Hallelujah', cursive, sans-serif">!</h1><br>
 
   <p style="color: blue; text-align:right; font-family: 'Gloria Hallelujah', cursive, sans-serif; margin-right: 22%">... the project buddy of software developers in the cloud!</p>
 
   <div style="margin: 75px 0px 0px 0px">
     <div style="width: 100%; float:right">
-    <form action="/signin" method="POST" style="width: 100%; float:right; margin-bottom: 10px">
-        <p style="text-align: right"><input type="text" style="width: 325px; height: 20px; font-size: 16px; padding: 2px 5px" id="email" name="email" placeholder="email"></p>
-        <p style="text-align: right"><input type="password" style="width: 325px; height: 20px; font-size: 16px; padding: 2px 5px" id="password" name="password" placeholder="password"></p>
+      <form action="/signin" method="POST" style="width: 100%; float:right; margin-bottom: 10px">
+          <p style="text-align: right">
+            <input type="text" style="width: 325px; height: 20px; font-size: 16px; padding: 2px 5px" id="email" name="email" placeholder="Email">
+          </p>
+          <p style="text-align: right;  margin-bottom: 0px">
+            <input type="password" style="width: 325px; height: 20px; font-size: 16px; padding: 2px 5px" id="password" name="password" placeholder="Password">
+          </p>
 
-        <% if flash.has?(:message) %>
-            <p style="color:red; text-align: center; width: 325px; float: right; font-size: 12px"><%= flash[:message] %></p>
-        <% end %>
+          <% if flash.has?(:message) %>
+              <p style="color:red; text-align: center; width: 325px; margin-top: 5px; font-size: 12px; float: right"><%= flash[:message] %></p>
+          <% end %>
 
-        <% flash[:message].clear if flash[:message] %>
+          <% flash[:message].clear if flash[:message] %>
 
-        <p style="text-align: right; margin-top: 40px; clear:both"><button class="button" style="cursor: pointer; width: 340px; height: 30px; background-color: #3572d4; color: #fff">Sign In</button></p>
-    </form>
+          <p style="text-align: right; margin-top: 40px; clear:both">
+            <button class="button" style="cursor: pointer; width: 340px; height: 30px; background-color: #3572d4; color: #fff">Sign In</button>
+          </p>
+      </form>
 
-    <p style="margin-bottom: 25px; text-align: right; clear:both"><a href="/signup" style="background: #ed404c; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 325px; height: 25px; padding: 4px 5px 0px 5px; margin-right: 0px; border: solid 2px grey">Sign Up</a> </p>
+      <p style="margin-bottom: 25px; text-align: right; clear:both">
+        <a href="/signup" style="background: #ed404c; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 325px; height: 25px; padding: 4px 5px 0px 5px; margin-right: 0px; border: solid 2px #808080">Sign Up</a>
+      </p>
     </div>
-
   </div>
 </div>
