@@ -167,6 +167,15 @@
     margin-top: 20px;
     padding-top: 20px;
   }
+
+  #dashboard {
+    background-color: rgb(240, 255, 255, 0.3);
+    width: 650px;
+    margin: auto;
+    text-align: center;
+    border: outset;
+    padding-top: 20px;
+  }
 }
 
 @media screen and (max-width: 600px) {

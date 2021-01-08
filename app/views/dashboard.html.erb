@@ -1,8 +1,8 @@
 <br>
-<h2>My Dashboard</h2>
+<h2 style="color: #006400">My Dashboard</h2>
 
-<div style="padding-left:15px">
-    <table style="width:60%; margin-top:20px">
+<div id="dashboard" style="padding-left:15px">
+    <table style="width:90%; margin-bottom:25px;">
         <thead>
             <tr>
                 <th style="text-align:left; padding: 0px"></th>
@@ -16,7 +16,7 @@
             </tr>
             <tr class="spacer"></tr>
             <tr>
-                <td>Phase</td>
+                <td>Phases</td>
                 <td>Planning</td>
                 <td><%= current_user.projects.where(phase: "Planning").size > 0 ? current_user.projects.where(phase: "Planning").size : "-" %></td>
             </tr>
