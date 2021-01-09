@@ -83,8 +83,10 @@ class ProjectsController < ApplicationController
     new_params["url"] = params[:url]
     new_params["notes"] = params[:notes]
 
+    original_old_object = old_object.dup
+
     if old_object.update(new_params)
-      complimentary_updates(old_object)
+      check_complimentary_updates(old_object, original_old_object)
       redirect "/projects/#{old_object.slug}"
     else
       flash[:message] = old_object.errors.full_messages.join(" ")
@@ -103,9 +105,12 @@ class ProjectsController < ApplicationController
   end
 
   helpers do
-    def complimentary_updates(object)
-      object.update(actual_end_date: nil) if (params[:phase] == "Planning" || params[:phase] == "Development" || params[:phase] == "Testing") && !!params[:actual_end_date]
-      object.update(phase: "Completed") if object.actual_end_date
+    def check_complimentary_updates(object, original_old_object)
+      if !original_old_object.actual_end_date && params[:actual_end_date] && (original_old_object.phase != "Completed" || original_old_object.phase != "Production") && (object.phase != "Completed" || object.phase != "Production")
+        object.update(phase: params[:phase]) if object.actual_end_date
+      elsif original_old_object.actual_end_date && (object.phase != "Completed") && (params[:phase] != "Production")
+        object.update(actual_end_date: nil) if params[:actual_end_date].present?
+      end
     end
   end
 end
