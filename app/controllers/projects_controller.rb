@@ -70,6 +70,20 @@ class ProjectsController < ApplicationController
     new_params = Hash.new
     old_object = current_user.projects.find_by_slug(params[:slug])
 
+    assign_new_params(new_params)
+
+    original_old_object = old_object.dup
+
+    if old_object.update(new_params)
+      check_complimentary_updates(old_object, original_old_object)
+      redirect "/projects/#{old_object.slug}"
+    else
+      flash[:message] = old_object.errors.full_messages.join(" ")
+      redirect "/projects/#{old_object.slug}/edit"
+    end
+  end
+
+  def assign_new_params(new_params)
     new_params["title"] = params[:title]
     new_params["domain"] = params[:domain]
     new_params["classification"] = params[:classification]
@@ -83,15 +97,7 @@ class ProjectsController < ApplicationController
     new_params["url"] = params[:url]
     new_params["notes"] = params[:notes]
 
-    original_old_object = old_object.dup
-
-    if old_object.update(new_params)
-      check_complimentary_updates(old_object, original_old_object)
-      redirect "/projects/#{old_object.slug}"
-    else
-      flash[:message] = old_object.errors.full_messages.join(" ")
-      redirect "/projects/#{old_object.slug}/edit"
-    end
+    new_params
   end
 
   delete "/projects/:id/delete" do
