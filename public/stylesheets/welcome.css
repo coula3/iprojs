@@ -1,0 +1,14 @@
+#welcome-h1 {
+    display: inline;
+    font-family: 'Gloria Hallelujah', cursive, sans-serif;
+}
+
+#appname-color {
+    color: red;
+}
+
+#app-tagline {
+    color: blue;
+    padding-left: 275px; 
+    font-family: 'Gloria Hallelujah', cursive, sans-serif;
+}
