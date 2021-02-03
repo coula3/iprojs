@@ -6,33 +6,31 @@
   <h1 id="welcome-h1">
     Welcome to <a href="/about" id="appname-color" title="About iProjs">iProjs</a>!
   </h1>
-
   <p id="app-tagline">... the project buddy of software developers in the cloud!</p>
 
-  <div style="margin: 75px 0px 0px 0px">
-    <div style="width: 100%; float:right">
-      <form action="/signin" method="POST" style="width: 100%; float:right; margin-bottom: 10px">
-          <p style="text-align: right">
-            <input type="text" style="width: 325px; height: 20px; font-size: 16px; padding: 2px 5px" id="email" name="email" placeholder="Email">
-          </p>
-          <p style="text-align: right;  margin-bottom: 0px">
-            <input type="password" style="width: 325px; height: 20px; font-size: 16px; padding: 2px 5px" id="password" name="password" placeholder="Password">
-          </p>
+  <div id="auth-div">
+    <div id="signin-div">
+      <form action="/signin" method="POST" id="signin-form">
+        <p class="signin-inputs-p">
+          <input type="text" id="email" class="signin-inputs" name="email" placeholder="Email">
+        </p>
 
-          <% if flash.has?(:message) %>
-              <p style="color:red; text-align: center; width: 325px; margin-top: 5px; font-size: 12px; float: right"><%= flash[:message] %></p>
-          <% end %>
+        <p style="margin-bottom: 0px" class="signin-inputs-p">
+          <input type="password" id="password" class="signin-inputs" name="password" placeholder="Password">
+        </p>
 
-          <% flash[:message].clear if flash[:message] %>
+        <% if flash.has?(:message) %>
+            <p id="msg-p"><%= flash[:message] %></p>
+        <% end %>
+        <% flash[:message].clear if flash[:message] %>
 
-          <p style="text-align: right; margin-top: 40px; clear:both">
-            <button class="button" style="cursor: pointer; width: 340px; height: 30px; background-color: #3572d4; color: #fff">Sign In</button>
-          </p>
+        <p id="p-signin-button" class="signin-inputs-p">
+          <button class="button" id="signin-button">Sign In</button>
+        </p>
       </form>
-
-      <p style="margin-bottom: 25px; text-align: right; clear:both">
-        <a href="/signup" style="background: #ed404c; color: #fff; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 325px; height: 25px; padding: 4px 5px 0px 5px; margin-right: 0px; border: solid 2px #808080">Sign Up</a>
-      </p>
+    </div>
+    <div id="wel-signup-div">
+      <a href="/signup" id="wel-signup-link">Sign Up</a>
     </div>
   </div>
 </div>

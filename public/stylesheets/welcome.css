@@ -13,6 +13,74 @@
     font-family: 'Gloria Hallelujah', cursive, sans-serif;
 }
 
+#auth-div {
+    margin-top: 75px;
+}
+
+#signin-div {
+    width: 100%;
+    float: right;
+}
+
+#signin-form {
+    width: 100%;
+    float:right;
+    margin-bottom: 10px;
+}
+
+.signin-inputs-p {
+    text-align: right;
+}
+
+.signin-inputs {
+    width: 325px;
+    height: 20px;
+    font-size: 16px;
+    padding: 2px 5px;
+}
+
+#msg-p {
+    color:red;
+    text-align: center;
+    width: 325px;
+    margin-top: 5px;
+    font-size: 12px;
+    float: right;
+}
+
+#p-signin-button {
+    margin-top: 40px;
+    clear: both;
+}
+
+#signin-button {
+    cursor: pointer;
+    width: 340px;
+    height: 30px;
+    background-color: #3572d4;
+    color: #fff"
+}
+
+#wel-signup-div {
+    margin-bottom: 25px;
+    text-align: right;
+    clear:both;
+}
+
+#wel-signup-link {
+    background: #ed404c;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    width: 325px;
+    height: 25px;
+    padding: 4px 5px 0px 5px;
+    margin-right: 0px;
+    border: solid 2px #808080;
+}
+
 @media screen and (max-width: 860px) {
     #app-tagline {
         padding-left: 15px;
