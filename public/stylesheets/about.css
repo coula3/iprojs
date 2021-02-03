@@ -1,0 +1,13 @@
+.about-msg-p {
+    text-align: justify;
+}
+
+.appname-span-color {
+    color: red;
+}
+
+@media screen and (max-width: 750px) {
+    #about-msg-div {
+        padding: 0 15px;
+    }
+}
