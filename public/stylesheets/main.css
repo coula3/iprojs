@@ -11,6 +11,7 @@
     width: 100%;
   }
 
+
   /* --- Welcome Page Styles --- */
   body {
     background-image: url('https://cdn.pixabay.com/photo/2015/10/27/14/40/programming-1009134_1280.jpg');
@@ -31,12 +32,28 @@
     width: 85%;
   }
 
+  #nav-div {
+    margin-bottom: 20px;
+  }
+
+  #main-nav {
+    float: left;
+  }
+
+  #signout-nav {
+    float: right;
+  }
+
+  #yield-div {
+    clear: both;
+  }
+
   label {
     color: #0000ff;
     width: 150px;
     display: inline-block;
   }
-  
+
   .lbltext {
     float: left;
   }
@@ -206,5 +223,10 @@
   h2 {
     font-size: 18px;
     line-height: 24px;
+  }
+
+  #main-nav {
+    display: flex;
+    flex-flow: column;
   }
 }

@@ -25,8 +25,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="nav" style="margin-bottom: 20px">
-        <nav style="float: left">
+      <div id="nav-div">
+        <nav id="main-nav">
           <% if logged_in? %>
             <% if request.env["sinatra.route"] != "GET /users/:slug" %>
               <a href="/users/<%=current_user.slug%>"><%= current_user.first_name.titlecase %> <%= current_user.last_name.titlecase %></a>
@@ -53,14 +53,16 @@
           <% end %>
         </nav>
 
-        <nav style="float: right">
+        <nav id="signout-nav">
           <% if logged_in? %>
             <a href="/signout">Sign out</a>
           <% end %>
         </nav>
       </div>
 
+      <div id="yield-div">
         <%= yield %>
+      </div>
 
       <footer class="branding">
         <small>&copy; <%= current_year %> <a href="/about" title="About iProjs" style="text-decoration:none; color:red">iProjs</a></small>
