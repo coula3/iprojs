@@ -8,40 +8,53 @@
 <div id="profile-card">
     <div id="user-profile-div">
         <p>
-            <label class="user-profile-label">UID: </label><strong><%=@user.id.to_s.rjust(10, '0')%></strong>
+            <label class="user-profile-label">UID: </label>
+            <strong><%=@user.id.to_s.rjust(10, '0')%></strong>
         </p>
         <p>
-            <label class="user-profile-label">First Name: </label><%=@user.first_name%>
+            <label class="user-profile-label">First Name:</label>
+            <%=@user.first_name%>
         </p>
         <p>
-            <label class="user-profile-label">Last Name: </label><%=@user.last_name%>
+            <label class="user-profile-label">Last Name:</label>
+            <%=@user.last_name%>
         </p>
         <p>
-            <label class="user-profile-label">Organization: </label><%=@user.organization.titlecase if @user.organization %>
+            <label class="user-profile-label">Organization:</label>
+            <%=@user.organization.titlecase if @user.organization %>
         </p>
         <p>
-            <label class="user-profile-label">Age: </label><%= calculate_age %>
+            <label class="user-profile-label">Age:</label>
+            <%= calculate_age %>
         </p>
         <p>
-            <label class="user-profile-label">Gender: </label><%=@user.gender%>
+            <label class="user-profile-label">Gender:</label>
+            <%=@user.gender%>
         </p>
         <p>
-            <label class="user-profile-label">Email: </label><%=@user.email%>
+            <label class="user-profile-label">Email:</label>
+            <%=@user.email%>
         </p>
 
         <br>
         <p>
-            <label class="user-profile-label">Date Joined: </label><%= @user.created_at.strftime("%b %d, %Y") %>
+            <label class="user-profile-label">Date Joined:</label>
+            <%= @user.created_at.strftime("%b %d, %Y") %>
         </p>
-        <p style="margin-top: 40px">
-            <label class="user-profile-label">Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.strftime("%b %d, %Y") + " " + @updated_at.to_s.slice(11..18) %></span>
+        <p id="user-profile-update-p">
+            <label class="user-profile-label">
+                Last updated:
+            </label>
+            <span id="user-profile-update-span">
+                <%= @user.updated_at.strftime("%b %d, %Y") + " " + @updated_at.to_s.slice(11..18) %>
+            </span>
         </p>
     </div>
 
-    <p style="margin-top: 25px">
-        <a href="/users/<%=current_user.slug%>/edit" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 75%; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Edit Profile</a>
-        <a href="/users/<%=current_user.slug%>/change_password" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 75%; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Change Password</a>
+    <p id="user-profile-buttons-p">
+        <a href="/users/<%=current_user.slug%>/edit" class="user-buttons blue-white-buttons">Edit Profile</a>
+        <a href="/users/<%=current_user.slug%>/change_password" class="user-buttons blue-white-buttons">Change Password</a>
 
-        <a href="/projects" style="background: #fff; color: #0000ff; text-decoration:none; text-align: center; display: inline-block; width: 75%; height: 25px; margin: 25px 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">My Project<%= + "s" if current_user.projects.size > 1 %></a>
+        <a href="/projects" id="user-myprojs" class="user-buttons white-blue-buttons">My Project<%= + "s" if current_user.projects.size > 1 %></a>
     </p>
 </div>

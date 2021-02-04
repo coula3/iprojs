@@ -1,4 +1,3 @@
-/* USER PROFILE */
 #profile-card {
     width: 425px;
     margin: auto;
@@ -18,7 +17,46 @@
     text-align: center;
 }
 
+#user-profile-update-p {
+    margin-top: 40px;
+}
 
+#user-profile-update-span {
+    background-color: #008000;
+    color: white;
+    display: inline-block;
+    padding: 3px 15px;
+}
+
+#user-profile-buttons-p {
+    margin-top: 25px;
+}
+
+.user-buttons {
+    width: 75%;
+    height: 25px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin-right: 0px;
+    padding: 8px 5px 0px 5px;
+    border: solid 1px grey;
+    border-style: outset"
+}
+
+.blue-white-buttons {
+    background: #3572d4;
+    color: #fff;
+}
+
+.white-blue-buttons {
+    background: #fff;
+    color: #0000ff;     
+}
+
+#user-myprojs {
+    margin: 25px 0px;
+}
 
 #edit-profile-card {
     width: 425px;
