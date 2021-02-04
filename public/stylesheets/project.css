@@ -6,3 +6,12 @@
     border: outset;
     padding-top: 20px;
 }
+
+#proj-index-div {
+    overflow-x: auto;
+}
+
+#proj-index-table {
+    width: 100%;
+    min-width: 900px;
+}

@@ -4,31 +4,33 @@
     <span style="color:red"><%= flash[:message] %></span>
 <% end %><br><br>
 
-<table style="width:100%">
-    <thead>
-        <tr>
-            <th>PID</th>
-            <th style="text-align:left;">Title</th>
-            <th style="text-align:left;">Classification</th>
-            <th style="text-align:left;">Phase</th>
-            <% if @user.projects.any? {|p| p.actual_end_date} %>
-                <th style="text-align:left;"><a href="/project_dates_analysis" title="Project Completion Analysis">Completed</a></th>
-            <% else %>
-                <th style="text-align:left;">Completed</th>
-            <% end %>
-            <th style="width:3.5%"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @projects.each do |project|%>
+<div id="proj-index-div">
+    <table id="proj-index-table">
+        <thead>
+            <tr>
+                <th>PID</th>
+                <th style="text-align:left;">Title</th>
+                <th style="text-align:left;">Classification</th>
+                <th style="text-align:left;">Phase</th>
+                <% if @user.projects.any? {|p| p.actual_end_date} %>
+                    <th style="text-align:left;"><a href="/project_dates_analysis" title="Project Completion Analysis">Completed</a></th>
+                <% else %>
+                    <th style="text-align:left;">Completed</th>
+                <% end %>
+                <th style="width:3.5%"></th>
             </tr>
-                <td style="margin-right:10px; text-align: center"><%= project.id %></a> </td>
-                <td style="margin-right:10px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></a></td>
-                <td style="margin-right:10px"><%=project.classification%></td>
-                <td style="margin-right:10px"><%=project.phase%></td>
-                <td><%=project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
-                <td><a href="/projects/<%=project.slug%>/edit" title="Edit Project Details">edit</a></td>
-            </tr>
-        <%end%>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <% @projects.each do |project|%>
+                </tr>
+                    <td style="margin-right:10px; text-align: center"><%= project.id %></a> </td>
+                    <td style="margin-right:10px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></a></td>
+                    <td style="margin-right:10px"><%=project.classification%></td>
+                    <td style="margin-right:10px"><%=project.phase%></td>
+                    <td><%=project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+                    <td><a href="/projects/<%=project.slug%>/edit" title="Edit Project Details">edit</a></td>
+                </tr>
+            <%end%>
+        </tbody>
+    </table>
+</div>
