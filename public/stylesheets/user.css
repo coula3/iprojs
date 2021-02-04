@@ -1,3 +1,4 @@
+/* USER PROFILE */
 #profile-card {
     width: 425px;
     margin: auto;
@@ -7,13 +8,25 @@
     padding-top: 20px;
 }
 
+#user-profile-div {
+    text-align: left;
+    width: 350px;
+    margin: auto;
+}
+
+#user-profile-msg {
+    text-align: center;
+}
+
+
+
 #edit-profile-card {
     width: 425px;
     margin: auto;
     text-align: center;
     border: solid 1px grey;
     box-shadow: 10px 10px #888888;
-    padding-top: 20px;
+    padding-top: 3%;
 }
 
 #password-card {
@@ -23,4 +36,17 @@
     border: solid 1px grey;
     box-shadow: 10px 10px #888888;
     padding-top: 20px;
+}
+
+
+@media screen and (max-width: 515px) {
+    #profile-card {
+        width: 315px;
+        font-size: 13px;
+        padding: 3%;
+    }
+
+    #user-profile-div {
+        width: 300px;
+    }
 }
