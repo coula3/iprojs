@@ -1,32 +1,40 @@
-<br><h2><%=current_user.first_name.titlecase%>'s Project<%= + "s" if current_user.projects.size > 1 %> <span style="color: #008000">(<%= current_user.projects.size %>)</span></h2>
+<br>
+<h2>
+    <%=current_user.first_name.titlecase%>'s Project<%= + "s" if current_user.projects.size > 1 %>
+    <span id="proj-idx-size-span">
+        (<%= current_user.projects.size %>)
+    </span>
+</h2>
 
 <% if flash.has?(:message) %>
-    <span style="color:red"><%= flash[:message] %></span>
-<% end %><br><br>
+    <span id="proj-idx-msg-span">
+        <%= flash[:message] %>
+    </span>
+<% end %>
 
-<div id="proj-index-div">
-    <table id="proj-index-table">
+<div id="proj-idx-div">
+    <table id="proj-idx-table">
         <thead>
             <tr>
                 <th>PID</th>
-                <th style="text-align:left;">Title</th>
-                <th style="text-align:left;">Classification</th>
-                <th style="text-align:left;">Phase</th>
+                <th class="proj-idx-left-align">Title</th>
+                <th class="proj-idx-left-align">Classification</th>
+                <th class="proj-idx-left-align">Phase</th>
                 <% if @user.projects.any? {|p| p.actual_end_date} %>
-                    <th style="text-align:left;"><a href="/project_dates_analysis" title="Project Completion Analysis">Completed</a></th>
+                    <th class="proj-idx-left-align""><a href="/project_dates_analysis" title="Project Completion Analysis">Completed</a></th>
                 <% else %>
-                    <th style="text-align:left;">Completed</th>
+                    <th class="proj-idx-left-align"">Completed</th>
                 <% end %>
-                <th style="width:3.5%"></th>
+                <th id="proj-idx-edit"></th>
             </tr>
         </thead>
         <tbody>
             <% @projects.each do |project|%>
                 </tr>
-                    <td style="margin-right:10px; text-align: center"><%= project.id %></a> </td>
-                    <td style="margin-right:10px"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></a></td>
-                    <td style="margin-right:10px"><%=project.classification%></td>
-                    <td style="margin-right:10px"><%=project.phase%></td>
+                    <td id="proj-idx-td-pid" class="proj-idx-td"><%= project.id %></a> </td>
+                    <td class="proj-idx-td"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></a></td>
+                    <td class="proj-idx-td"><%=project.classification%></td>
+                    <td class="proj-idx-td"><%=project.phase%></td>
                     <td><%=project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
                     <td><a href="/projects/<%=project.slug%>/edit" title="Edit Project Details">edit</a></td>
                 </tr>

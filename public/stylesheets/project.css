@@ -7,11 +7,36 @@
     padding-top: 20px;
 }
 
-#proj-index-div {
+#proj-idx-div {
     overflow-x: auto;
+    margin-top: 50px;
 }
 
-#proj-index-table {
+#proj-idx-table {
     width: 100%;
     min-width: 900px;
+}
+
+#proj-idx-size-span {
+    color: #008000;
+}
+
+#proj-idx-msg-span {
+    color: red;
+}
+
+.proj-idx-left-align {
+    text-align: left;
+}
+
+#proj-idx-edit {
+    width: 15px;
+}
+
+#proj-idx-td-pid {
+    text-align: center;
+}
+
+.proj.idx-td {
+    margin-right: 10px;
 }
