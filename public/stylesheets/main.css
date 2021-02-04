@@ -224,9 +224,4 @@
     font-size: 18px;
     line-height: 24px;
   }
-
-  #main-nav {
-    display: flex;
-    flex-flow: column;
-  }
 }
