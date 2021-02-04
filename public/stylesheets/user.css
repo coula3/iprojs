@@ -46,6 +46,10 @@
         padding: 3%;
     }
 
+    .user-profile-label {
+        width: 90px;
+    }
+
     #user-profile-div {
         width: 300px;
     }

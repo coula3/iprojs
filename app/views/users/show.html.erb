@@ -8,33 +8,33 @@
 <div id="profile-card">
     <div id="user-profile-div">
         <p>
-            <label>UID: </label><strong><%=@user.id.to_s.rjust(10, '0')%></strong>
+            <label class="user-profile-label">UID: </label><strong><%=@user.id.to_s.rjust(10, '0')%></strong>
         </p>
         <p>
-            <label>First Name: </label><%=@user.first_name%>
+            <label class="user-profile-label">First Name: </label><%=@user.first_name%>
         </p>
         <p>
-            <label>Last Name: </label><%=@user.last_name%>
+            <label class="user-profile-label">Last Name: </label><%=@user.last_name%>
         </p>
         <p>
-            <label>Organization: </label><%=@user.organization.titlecase if @user.organization %>
+            <label class="user-profile-label">Organization: </label><%=@user.organization.titlecase if @user.organization %>
         </p>
         <p>
-            <label>Age: </label><%= calculate_age %>
+            <label class="user-profile-label">Age: </label><%= calculate_age %>
         </p>
         <p>
-            <label>Gender: </label><%=@user.gender%>
+            <label class="user-profile-label">Gender: </label><%=@user.gender%>
         </p>
         <p>
-            <label>Email: </label><%=@user.email%>
+            <label class="user-profile-label">Email: </label><%=@user.email%>
         </p>
 
         <br>
         <p>
-            <label>Date Joined: </label><%= @user.created_at.strftime("%b %d, %Y") %>
+            <label class="user-profile-label">Date Joined: </label><%= @user.created_at.strftime("%b %d, %Y") %>
         </p>
         <p style="margin-top: 40px">
-            <label>Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.strftime("%b %d, %Y") + " " + @updated_at.to_s.slice(11..18) %></span>
+            <label class="user-profile-label">Last updated: </label><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @user.updated_at.strftime("%b %d, %Y") + " " + @updated_at.to_s.slice(11..18) %></span>
         </p>
     </div>
 
