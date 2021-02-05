@@ -185,6 +185,11 @@
     padding-top: 20px;
   }
 
+  #app-branding {
+    text-decoration: none;
+    color: red;
+  }
+
   #dashboard {
     background-color: rgb(238, 232, 170, 0.2);
     width: 650px;
@@ -223,6 +228,10 @@
   h2 {
     font-size: 18px;
     line-height: 24px;
+  }
+
+  .branding {
+    font-size: 11px;
   }
 
   #main-nav, #signout-nav {
