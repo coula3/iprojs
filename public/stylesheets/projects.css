@@ -52,11 +52,11 @@
     padding: 3px 15px;
 }
 
-.projects-buttons {
+.projects-link-buttons {
     text-decoration: none;
     text-align: center;
     display: block;
-    width: 75%;
+    width: 325px;
     height: 25px;
     margin: 10px auto;
     padding: 8px 5px 0px 5px;
@@ -75,10 +75,9 @@
 }
 
 #proj-show-delete-btn {
-    text-decoration: none;
     text-align: center;
     display: block;
-    width: 65%;
+    width: 300px;
     height: 38px;
     margin: 10px auto;
     padding: 5px 5px 0px 5px;
@@ -126,19 +125,76 @@
     margin-right: 10px;
 }
 
+.inputs-width {
+    width: 98.5%;
+    height: 20px;
+    display: block;
+    margin-bottom: 10px;
+    padding: 2px 5px;
+}
+
+.notes {
+height: 135px;
+}
+
+.libraries {
+height: 40px;
+}
+
+textarea {
+width: 98.5%;
+display: block;
+margin-bottom: 10px;
+font-size: 15px;
+padding: 5px 5px;
+}
+
+.notes-p-margin {
+    margin-bottom: 45px;
+}
+
+.projects-buttons {
+    width: 340px;
+    height: 35px;
+    text-align: center;
+    display: block;
+    margin: auto;
+    border: solid 1px grey;
+    border-style: outset"
+}
+
 @media screen and (max-width: 600px) {
-    #project-show {
-        width: 315px;
-        padding: 3%;
+    #project-show, #proj-idx-div, #proj-new-form, textarea, .inputs-width, .date-inputs, .select-inputs, .projects-buttons, #proj-show-delete-btn {
         font-size: 13px;
     }
 
-    #proj-idx-div {
-        font-size: 13px;
+    .projects-link-buttons {
+        width: 275px
+    }
+
+    .projects-buttons {
+        width: 285px
+    }
+
+    #proj-show-delete-btn {
+        width: 250px
+    }
+
+    #project-show {
+        width: 315px;
+        padding: 3%;
     }
 
     .proj-show-td-label {
         margin-right: 20px;
+    }
+
+    textarea {
+        width: 97.5%;
+    }
+
+    .inputs-width {
+        width: 96.5%;
     }
 }
 

@@ -5,40 +5,60 @@
     <span style="color:red"><%= flash[:message] %></span>
 <% end %><br><br>
 
-<form action="/projects" method="POST">
-    <p><label>Title </label><input class="inputs-width" type="text" id="title" name="title"></p>
-    <p><label>Domain </label><input class="inputs-width" type="text" id="domain" name="domain"></p>
-    <p><label for="classification">Classification </label>
-    <select name="classification" class="select-inputs">
-        <option value="CLI">CLI</option>
-        <option value="MPA" selected>Multi Page App</option>
-        <option value="Mobile App">Native Mobile App</option>
-        <option value="PWA">Progressive Web App</option>
-        <option value="SPA">Single Page App</option>
-    </select></p>
-    <p><label for="project_type">Type </label>
-    <select name="project_type" class="select-inputs">
-        <option value="Collaboration" selected> Collaboration </option>
-        <option value="Individual" > Individual </option>
-    </select></p>
+<form id="proj-new-form" action="/projects" method="POST">
+    <label>Title </label>
+    <input class="inputs-width" type="text" id="title" name="title">
+
+    <label>Domain</label>
+    <input class="inputs-width" type="text" id="domain" name="domain">
+
+    <p>
+        <label for="classification">Classification </label>
+        <select name="classification" class="select-inputs">
+            <option value="CLI">CLI</option>
+            <option value="MPA" selected>Multi Page App</option>
+            <option value="Mobile App">Native Mobile App</option>
+            <option value="PWA">Progressive Web App</option>
+            <option value="SPA">Single Page App</option>
+        </select>
+    </p>
+
+    <p>
+        <label for="project_type">Type </label>
+        <select name="project_type" class="select-inputs">
+            <option value="Collaboration" selected> Collaboration </option>
+            <option value="Individual" > Individual </option>
+        </select>
+    </p>
+
     <p><label>Languages </label><input class="inputs-width" type="text" id="languages" name="languages"></p>
-    <p><label class="lbltext">Frameworks and Libraries </label><textarea class="libraries" name="libraries"></textarea></p>
-    <p><label for="phase">Phase </label>
-    <select name="phase" class="select-inputs">
-        <option value="Planning" selected> Planning </option>
-        <option value="Development" > Development </option>
-        <option value="Testing" > Testing </option>
-        <option value="Completed" > Completed </option>
-        <option value="Production" > Production </option>
-    </select></p>
+
+    <p><label class="lbltext" style="width: 250px">Frameworks and Libraries </label>
+    <textarea class="libraries" name="libraries"></textarea></p>
+
+    <p>
+        <label for="phase">Phase </label>
+        <select name="phase" class="select-inputs">
+            <option value="Planning" selected> Planning </option>
+            <option value="Development" > Development </option>
+            <option value="Testing" > Testing </option>
+            <option value="Completed" > Completed </option>
+            <option value="Production" > Production </option>
+        </select>
+    </p>
+
     <p><label>Start Date </label><input type="date" class="date-inputs" id="start_date" name="start_date"></p>
+
     <p><label>Planned End Date </label><input type="date" class="date-inputs" id="planned_end_date" name="planned_end_date"></p>
+
     <p><label>Actual End Date </label><input type="date" class="date-inputs" id="actual_end_date" name="actual_end_date"></p>
+
     <p><label title="Version Control System URL">VCS URL </label><input class="inputs-width" type="text" id="url" name="url"></p>
+
     <p class="notes-p-margin"><label class="lbltext">Notes </label><textarea class="notes" name="notes"></textarea></p>
 
-    <button class="button" style="background: #fff; color: #0000ff; text-decoration:none; text-align: center; display: block; width: 50%; height: 35px; margin: 10px auto; padding: 5px; border: solid 2px grey; border-style: outset; cursor: pointer">Add Project</button>
-    <%if current_user.projects.size > 0%>
-        <a href="/projects" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: block; width: 40%; height: 25px; margin: 10px auto; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">My Projects</a>
+    <button class="button projects-buttons white-blue-buttons">Add Project</button>
+    <%if current_user.projects.size > 0 %>
+        <a href="/projects" class="projects-link-buttons blue-white-buttons">My Projects</a>
     <%end%>
 </form>

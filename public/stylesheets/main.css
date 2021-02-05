@@ -85,26 +85,6 @@
     font-size: 15px;
   }
 
-  .notes {
-    width: 83%;
-    height: 135px;
-    font-size: 15px;
-    padding: 5px 5px;
-  }
-
-  .libraries {
-    width: 83%;
-    height: 40px;
-    font-size: 15px;
-    padding: 5px 5px;
-  }
-
-  .inputs-width {
-    width: 82.75%;
-    height: 20px;
-    padding: 2px 5px;
-  }
-
   .select-inputs {
     width: 225px;
     height: 30px;
@@ -148,10 +128,6 @@
 
   p {
     margin-bottom: 10px;
-  }
-
-  .notes-p-margin {
-    margin-bottom: 20px;
   }
 
   .main {
