@@ -72,6 +72,8 @@
 }
 
 .flash-msg-span {
+    display: block;
+    text-align: center;
     color: red;
 }
 
@@ -154,6 +156,10 @@
 
     .edit-profile-save-btn {
         width: 63.75%;
+        font-size: 13px;
+    }
+
+    .flash-msg-span {
         font-size: 13px;
     }
 }
