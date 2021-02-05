@@ -118,7 +118,7 @@
 
 
 @media screen and (max-width: 600px) {
-    #profile-card, #edit-profile-card,  #password-card, .edit-profile-inputs, .edit-profile-save-btn, .flash-msg-span{
+    #profile-card, #edit-profile-card,  #password-card, #user-profile-msg, .edit-profile-inputs, .edit-profile-save-btn, .flash-msg-span{
         font-size: 13px;
     }
 
