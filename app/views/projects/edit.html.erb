@@ -1,8 +1,10 @@
-<br><h2>Edit Project</h2>
+<br>
+<h2>Edit Project</h2>
 
 <% if flash.has?(:message) %>
-    <span style="color:red"><%= flash[:message] %></span>
-<% end %><br><br>
+    <span class="flash-msg-span"><%= flash[:message] %></span>
+<% end %>
+<br><br>
 
 <form action="/projects/<%=@project.slug %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="patch">

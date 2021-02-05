@@ -71,12 +71,6 @@
     padding-top: 3%;
 }
 
-.flash-msg-span {
-    display: block;
-    text-align: center;
-    color: red;
-}
-
 .user-edit-pw-inputs {
     width: 80%;
     height: 20px;
@@ -118,7 +112,7 @@
 
 
 @media screen and (max-width: 600px) {
-    #profile-card, #edit-profile-card,  #password-card, #user-profile-msg, .edit-profile-inputs, .edit-profile-save-btn, .flash-msg-span{
+    #profile-card, #edit-profile-card,  #password-card, #user-profile-msg, .edit-profile-inputs, .edit-profile-save-btn {
         font-size: 13px;
     }
 
