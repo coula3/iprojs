@@ -54,7 +54,7 @@
     color: #0000ff;     
 }
 
-#user-myprojs {
+.user-myprojs {
     margin: 25px 0px;
 }
 
@@ -65,6 +65,36 @@
     border: solid 1px grey;
     box-shadow: 10px 10px #888888;
     padding-top: 3%;
+}
+
+.edit-profile-inputs {
+    width: 80%;
+    height: 20px;
+    padding: 2px 5px;
+}
+
+.edit-profile-labels {
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+}
+
+#edit-profile-gender {
+    width: 83.5%;
+    height: 30px;
+    padding: 2px 5px;
+}
+
+#edit-profile-save-btn {
+    width: 78%;
+    height: 35px;
+    display: block;
+    margin: 25px auto;
+    background: #3572d4;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px grey;
+    border-style: outset"
 }
 
 #password-card {
@@ -84,6 +114,12 @@
         padding: 3%;
     }
 
+    #edit-profile-card {
+        width: 315px;
+        font-size: 13px;
+        padding: 3%;
+    }
+
     .user-profile-label {
         width: 90px;
     }
@@ -96,5 +132,14 @@
         width: 60%;
         height: 15px;
         padding: 5px 5px 6px 5px;
+    }
+
+    .edit-profile-inputs {
+        font-size: 13px;
+    }
+
+    #edit-profile-save-btn {
+        width: 63.75%;
+        font-size: 13px;
     }
 }

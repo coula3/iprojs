@@ -8,25 +8,26 @@
 <div id="edit-profile-card">
     <form action="/users/<%=@user.slug%>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="patch">
+
         <p>
-            <label style="display: inline-block">First Name </label><br>
-            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" name="first_name" value="<%= @user.first_name %>">
+            <label class="edit-profile-labels">First Name </label><br>
+            <input type="text" class="edit-profile-inputs" name="first_name" value="<%= @user.first_name %>">
         </p>
         <p>
-            <label style="display: inline-block">Last Name </label><br>
-            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" name="last_name" value="<%= @user.last_name %>">
+            <label class="edit-profile-labels">Last Name </label><br>
+            <input type="text" class="edit-profile-inputs" name="last_name" value="<%= @user.last_name %>">
         </p>
         <p>
-            <label style="display: inline-block">Organization </label><br>
-            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" name="organization" value="<%= @user.organization if @user.organization %>">
+            <label class="edit-profile-labels">Organization </label><br>
+            <input type="text" class="edit-profile-inputs" name="organization" value="<%= @user.organization if @user.organization %>">
         </p>
         <p>
-            <label style="display: inline-block">Date of Birth </label><br>
-            <input type="date" style="width: 325px; height: 20px; padding: 2px 5px" id="dob" name="date_of_birth" value="<%= @user.date_of_birth.to_s.gsub(" 00:00:00 UTC", "") %>">
+            <label class="edit-profile-labels">Date of Birth </label><br>
+            <input type="date" class="edit-profile-inputs" id="dob" name="date_of_birth" value="<%= @user.date_of_birth.to_s.gsub(" 00:00:00 UTC", "") %>">
         </p>
         <p>
-            <label for="gender" style="display: inline-block">Gender </label><br>
-            <select style="width: 340px; height: 30px; padding: 2px 5px" name="gender">
+            <label for="gender" class="edit-profile-labels">Gender </label><br>
+            <select id="edit-profile-gender" name="gender">
                 <% if @other_gender.size == 2 %>
                     <option value=" " selected> </option>
                 <% end %>
@@ -38,19 +39,18 @@
                 <option value="<%=@user.gender%>" selected><%=@user.gender%></option>
             </select>
         </p>
-        <p style="margin-bottom: 40px">
-            <label style="width: 120px; display: inline-block">Email </label><br>
-            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" name="email" value="<%= @user.email.downcase %>">
+        <p>
+            <label class="edit-profile-labels">Email </label><br>
+            <input type="text" class="edit-profile-inputs" name="email" value="<%= @user.email.downcase %>">
         </p>
 
-        <p style="margin-top: 25px">
-            <button class="button" style="width:320px; height:35px; background: #3572d4; color: #fff; cursor: pointer">Save</button>
-        </p>
-        <p style="margin-top: 0px">
-            <a href="/users/<%=current_user.slug%>" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 145px; height: 25px; margin-right: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">My Profile</a>
-            <a href="/users/<%=current_user.slug%>/change_password" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: inline-block; width: 145px; height: 25px; margin: 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Change Password</a>
+        <button id="edit-profile-save-btn" class="button">Save</button>
+
+        <p>
+            <a href="/users/<%=current_user.slug%>" class="user-buttons blue-white-buttons">My Profile</a>
+            <a href="/users/<%=current_user.slug%>/change_password" class="user-buttons blue-white-buttons">Change Password</a>
             <br>
-            <a href="/projects" style="background: #fff; color: #0000ff; text-decoration:none; text-align: center; display: inline-block; width: 305px; height: 25px; margin: 25px 0px; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">My Project<%= + "s" if current_user.projects.size > 1 %></a>
+            <a href="/projects" class="user-buttons white-blue-buttons user-myprojs">My Project<%= + "s" if current_user.projects.size > 1 %></a>
         </p>
     </form>
 </div>
