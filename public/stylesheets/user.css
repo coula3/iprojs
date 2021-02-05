@@ -91,4 +91,10 @@
     #user-profile-div {
         width: 300px;
     }
+
+    .user-buttons {
+        width: 60%;
+        height: 15px;
+        padding: 5px 5px 6px 5px;
+    }
 }
