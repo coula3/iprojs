@@ -48,8 +48,8 @@
     </p>
 
     <div id="proj-show-controls-div">
-        <a href="/projects/<%=@project.slug%>/edit" id="proj-show-edit-btn" class="projects-buttons">Edit</a>
-        <a href="/projects" id="proj-show-myprojs-btn" class="projects-buttons">My Project<%= + "s" if current_user.projects.size > 1 %></a>
+        <a href="/projects/<%=@project.slug%>/edit" id="proj-show-edit-btn" class="projects-link-buttons">Edit</a>
+        <a href="/projects" id="proj-show-myprojs-btn" class="projects-link-buttons">My Project<%= + "s" if current_user.projects.size > 1 %></a>
 
         <form onsubmit="return confirm('Project will be deleted?')" action="/projects/<%=@project.id%>/delete" method="POST">
             <input type="hidden" id=hidden name="_method" value="delete">
