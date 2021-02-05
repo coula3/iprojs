@@ -6,8 +6,9 @@
     color: red;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 600px) {
     #about-msg-div {
-        padding: 0 15px;
+        padding: 0 20px;
+        font-size: 13px;
     }
 }

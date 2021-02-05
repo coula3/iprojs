@@ -40,3 +40,9 @@
 .proj.idx-td {
     margin-right: 10px;
 }
+
+@media screen and (max-width: 600px) {
+    #proj-idx-div {
+        font-size: 13px;
+    }
+}

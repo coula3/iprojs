@@ -224,4 +224,15 @@
     font-size: 18px;
     line-height: 24px;
   }
+
+  #main-nav, #signout-nav {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #main-nav {
+    display: flex;
+    flex-flow: column;
+  }
 }

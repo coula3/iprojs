@@ -3,7 +3,7 @@
 
 <% if flash.has?(:message) %>
     <p id="user-profile-msg"><%= flash[:message] %></p>
-<% end %><br>
+<% end %><br><br>
 
 <div id="profile-card">
     <div id="user-profile-div">
@@ -55,6 +55,6 @@
         <a href="/users/<%=current_user.slug%>/edit" class="user-buttons blue-white-buttons">Edit Profile</a>
         <a href="/users/<%=current_user.slug%>/change_password" class="user-buttons blue-white-buttons">Change Password</a>
 
-        <a href="/projects" id="user-myprojs" class="user-buttons white-blue-buttons">My Project<%= + "s" if current_user.projects.size > 1 %></a>
+        <a href="/projects" class="user-buttons white-blue-buttons user-myprojs">My Project<%= + "s" if current_user.projects.size > 1 %></a>
     </p>
 </div>

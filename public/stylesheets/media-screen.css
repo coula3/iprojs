@@ -1,6 +1,0 @@
-@media screen and (max-width: 750px) {
-    #main-nav {
-        display: flex;
-        flex-flow: column;
-    }
-}
