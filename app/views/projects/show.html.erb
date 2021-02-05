@@ -1,66 +1,77 @@
-<br><h2><label style="width: 75px; color: blue">Title: </label><%= @project.title %></h2>
+<br>
+<h2>
+    <label id="proj-show-h2">
+        Title:
+    </label>
+    <%= @project.title %>
+</h2>
 
 <div id="project-show">
-    <table style="width:90%; margin: auto">
+    <table id="project-show-table">
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Domain</td>
-            <td style="text-align: left; width: 80%"><%=@project.domain%></td>
+            <td class="proj-show-td-label">Domain</td>
+            <td id="proj-show-td-value-width" class="proj-show-td-value"><%=@project.domain%></td>
+        </tr>
+
+        <tr>
+            <td class="proj-show-td-label">Classification</td>
+            <td class="proj-show-td-value"><%=@project.classification%></td>
         </tr>
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Classification</td>
-            <td style="text-align: left"><%=@project.classification%></td>
+            <td class="proj-show-td-label">Type</td>
+            <td class="proj-show-td-value"><%=@project.project_type%></td>
         </tr>
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Type</td>
-            <td style="text-align: left"><%=@project.project_type%></td>
+            <td class="proj-show-td-label">Language(s)</td>
+            <td class="proj-show-td-value"><%=@project.languages%></td>
         </tr>
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Language(s)</td>
-            <td style="text-align: left"><%=@project.languages%></td>
+            <td class="proj-show-td-label">Frameworks and Libraries</td>
+            <td class="proj-show-td-value"><%=@project.libraries%></td>
         </tr>
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Frameworks and Libraries</td>
-            <td style="text-align: left"><%=@project.libraries%></td>
+            <td class="proj-show-td-label">Phase</td>
+            <td class="proj-show-td-value"><%=@project.phase%></td>
         </tr>
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Phase</td>
-            <td style="text-align: left"><%=@project.phase%></td>
+            <td class="proj-show-td-label">Start Date</td>
+            <td class="proj-show-td-value"><%= @project.format_dates(@project.start_date) %></td>
         </tr>
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Start Date</td>
-            <td style="text-align: left"><%= @project.format_dates(@project.start_date) %></td>
+            <td class="proj-show-td-label">Planned End Date</td>
+            <td class="proj-show-td-value"><%= @project.format_dates(@project.planned_end_date) %></td>
         </tr>
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Planned End Date</td>
-            <td style="text-align: left"><%= @project.format_dates(@project.planned_end_date) %></td>
+            <td class="proj-show-td-label">Actual End Date</td>
+            <td class="proj-show-td-value"><%= @project.format_dates(@project.actual_end_date) %></td>
         </tr>
         <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Actual End Date</td>
-            <td style="text-align: left"><%= @project.format_dates(@project.actual_end_date) %></td>
-        </tr>
-        <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue" title="Version Control System URL">VCS URL</td>
-            <td style="text-align: left"><a href="<%=@project.url%>" target="_blank"><%=@project.url%></a></td>
-        </tr>
-        <tr class="spacer"></tr>
-        <tr>
-            <td style="float: left; text-align: left; margin-right: 45px; color: blue">Notes</td>
-            <td style="text-align: justify"><%= @project.notes %></td>
+            <td class="proj-show-td-label" title="Version Control System URL">VCS URL</td>
+            <td class="proj-show-td-value"><a href="<%=@project.url%>" target="_blank"><%=@project.url%></a></td>
         </tr>
         <tr class="spacer"></tr>
+        <tr>
+            <td class="proj-show-td-label">Notes</td>
+            <td id="proj-show-notes-value"><%= @project.notes %></td>
+        </tr>
+        <tr class="spacer"></tr>
         <tr class="spacer"></tr>
         <tr>
-            <td style="float: left; text-align: left; margin: 10px 45px 0px 0px; color: blue">Last updated</td>
-            <td style="text-align: left"><span style="background-color: #008000; color: white; display: inline-block; padding: 3px 15px"><%= @project.format_dates(@project.updated_at) + @updated_at.to_s.slice(10..18) %></span></td>
+            <td id="proj-show-last-update-label">Last updated</td>
+            <td class="proj-show-td-value">
+                <span id="proj-show-last-update-span">
+                    <%= @project.format_dates(@project.updated_at) + @updated_at.to_s.slice(10..18) %>
+                </span>
+            </td>
         </tr>
     </table>
-    <div style="margin: 25px 0px">
-        <a href="/projects/<%=@project.slug%>/edit" style="background: #3572d4; color: #fff; text-decoration:none; text-align: center; display: block; width: 320px; height: 25px; margin: 10px auto; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">Edit</a>
-        <a href="/projects" style="background: #fff; color: #0000ff; text-decoration:none; text-align: center; display: block; width: 320px; height: 25px; margin: 10px auto; padding: 8px 5px 0px 5px; border: solid 2px grey; border-style: outset">My Project<%= + "s" if current_user.projects.size > 1 %></a>
+    <div id="proj-show-controls-div">
+        <a href="/projects/<%=@project.slug%>/edit" id="proj-show-edit-btn" class="projects-buttons">Edit</a>
+        <a href="/projects" id="proj-show-myprojs-btn" class="projects-buttons">My Project<%= + "s" if current_user.projects.size > 1 %></a>
 
         <form onsubmit="return confirm('Project will be deleted?')" action="/projects/<%=@project.id%>/delete" method="POST">
             <input type="hidden" id=hidden name="_method" value="delete">
-            <button class="button hoverable-btn" style="text-decoration:none; text-align: center; display: block; width: 250px; height: 38px; margin: 10px auto; padding: 5px 5px 0px 5px; border: solid 2px grey; border-style: outset; cursor: pointer">Delete Project</button>
+            <button id="proj-show-delete-btn" class="button hoverable-btn">Delete Project</button>
         </form>
     </div>
 </div>

@@ -7,6 +7,89 @@
     padding-top: 20px;
 }
 
+#proj-show-h2 {
+    width: 75px;
+    color: blue;
+}
+
+#proj-show-table {
+    width: 90%;
+    margin: auto;
+}
+
+.proj-show-td-label {
+    float: left;
+    text-align: left;
+    margin-right: 45px;
+    color: blue;
+}
+
+.proj-show-td-value {
+    text-align: left;
+}
+
+#proj-show-td-value-width {
+    width: 80%;
+}
+
+#proj-show-notes-value {
+    text-align: justify;
+}
+
+#proj-show-last-update-label {
+    float: left;
+    text-align: left;
+    margin: 10px 45px 0px 0px;
+    color: blue;
+    vertical-align: center;
+}
+
+#proj-show-last-update-span {
+    background-color: #008000;
+    color: white;
+    display: inline-block;
+    padding: 3px 15px;
+}
+
+.projects-buttons {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 75%;
+    height: 25px;
+    margin: 10px auto;
+    padding: 8px 5px 0px 5px;
+    border: solid 1px grey;
+    border-style: outset"
+}
+
+#proj-show-edit-btn {
+    background: #3572d4;
+    color: #fff;
+}
+
+#proj-show-myprojs-btn {
+    background: #fff;
+    color: #0000ff;
+}
+
+#proj-show-delete-btn {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 65%;
+    height: 38px;
+    margin: 10px auto;
+    padding: 5px 5px 0px 5px;
+    border: solid 1px grey;
+    border-style: outset;
+    cursor: pointer"
+}
+
+#proj-show-controls-div {
+    margin: 25px 0px;
+}
+
 #proj-idx-div {
     overflow-x: auto;
     margin-top: 50px;
@@ -43,7 +126,17 @@
 }
 
 @media screen and (max-width: 600px) {
+    #project-show {
+        width: 315px;
+        padding: 3%;
+        font-size: 13px;
+    }
+
     #proj-idx-div {
         font-size: 13px;
+    }
+
+    .proj-show-td-label {
+        margin-right: 20px;
     }
 }
