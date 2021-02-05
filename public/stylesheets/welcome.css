@@ -19,12 +19,6 @@
 
 #signin-div {
     width: 100%;
-    float: right;
-}
-
-#signin-form {
-    width: 100%;
-    float:right;
     margin-bottom: 10px;
 }
 
@@ -56,15 +50,15 @@
 #signin-button {
     cursor: pointer;
     width: 340px;
-    height: 30px;
+    height: 32px;
     background-color: #3572d4;
-    color: #fff"
+    color: #fff;
+    font-family: inherit;
 }
 
 #wel-signup-div {
     margin-bottom: 25px;
-    text-align: right;
-    clear:both;
+    clear: both;
 }
 
 #wel-signup-link {
@@ -81,9 +75,38 @@
     border: solid 2px #808080;
 }
 
+
 @media screen and (max-width: 860px) {
     #app-tagline {
         padding-left: 15px;
         margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #app-tagline, #signin-button, #wel-signup-link, .signin-inputs {
+        font-size: 13px;
+    }
+
+    .signin-inputs-p {
+        text-align: center;
+    }
+
+    .signin-inputs {
+        width: 275px;
+    }
+
+    #signin-button {
+        width: 290px;
+    }
+
+    #wel-signup-link {
+        width: 275.5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #app-tagline {
+        font-size: 11px;
     }
 }
