@@ -1,0 +1,24 @@
+#dashboard-div {
+    background-color: rgb(238, 232, 170, 0.2);
+    width: 650px;
+    margin: auto;
+    border: outset;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#dashboard-h2 {
+    color: #006400;
+}
+
+#dashboard-table {
+    width: 100%;
+}
+
+#table-col-1 {
+    width: 160px;
+}
+
+#table-col-2 {
+    width: 115px;
+}

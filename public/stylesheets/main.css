@@ -166,15 +166,6 @@
     color: red;
   }
 
-  #dashboard {
-    background-color: rgb(238, 232, 170, 0.2);
-    width: 650px;
-    margin: auto;
-    text-align: center;
-    border: outset;
-    padding-top: 20px;
-  }
-
   .flash-msg-span {
     display: block;
     text-align: center;

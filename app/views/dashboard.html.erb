@@ -1,18 +1,16 @@
 <br>
-<h2 style="color: #006400">My Dashboard</h2>
+<h2 id="dashboard-h2">My Dashboard</h2>
 
-<div id="dashboard" style="padding-left:15px">
-    <table style="width:90%; margin-bottom:25px;">
+<div id="dashboard-div">
+    <table id="dashbaord-table">
         <thead>
-            <tr>
-                <th style="text-align:left; padding: 0px"></th>
-                <th style="text-align:center; padding: 0px"></th>
-            </tr>
+            <tr></tr>
         </thead>
+
         <tbody>
             <tr>
-                <td>Total Projects</td>
-                <td><a href="/projects" title="Projects"><%= current_user.projects.size.to_words.titlecase %> (<%= current_user.projects.size %>)</a></td>
+                <td id="table-col-1">Total Projects</td>
+                <td id="table-col-2"><a href="/projects" title="Projects"><%= current_user.projects.size.to_words.titlecase %> (<%= current_user.projects.size %>)</a></td>
             </tr>
             <tr class="spacer"></tr>
             <tr>
@@ -43,13 +41,13 @@
             <tr class="spacer"></tr>
             <% if @user.projects.any? {|p| p.actual_end_date} %>
                 <tr>
-                    <td><a href="/project_dates_analysis" title="Project Completion Analysis">On-Time Completion</a></td>
+                    <td><a href="/project_dates_analysis" title="Project Completion Analysis">Completed On-Time</a></td>
                     <td><%= @rate_of_timely_completion%>%</td>
                 </tr>
                 <tr class="spacer"></tr>
             <% end %>
             <tr>
-                <td>Last Project Registered</td>
+                <td>Last Project Created</td>
                 <td>Title</td>
                 <td><a href="/projects/<%= @last_project_created.slug %>" title="Date last project created"><%= @last_project_created.title %></a></td>
             </tr>
