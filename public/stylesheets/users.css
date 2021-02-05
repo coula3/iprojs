@@ -58,6 +58,10 @@
     margin: 25px 0px;
 }
 
+#user-myprofile {
+    margin-bottom: 25px;
+}
+
 #edit-profile-card {
     width: 425px;
     margin: auto;
@@ -71,7 +75,7 @@
     color: red;
 }
 
-.edit-profile-inputs {
+.user-edit-pw-inputs {
     width: 80%;
     height: 20px;
     padding: 2px 5px;
@@ -89,7 +93,7 @@
     padding: 2px 5px;
 }
 
-#edit-profile-save-btn {
+.edit-profile-save-btn {
     width: 78%;
     height: 35px;
     display: block;
@@ -124,6 +128,12 @@
         padding: 3%;
     }
 
+    #password-card {
+        width: 315px;
+        font-size: 13px;
+        padding: 3%;
+    }
+
     .user-profile-label {
         width: 90px;
     }
@@ -142,7 +152,7 @@
         font-size: 13px;
     }
 
-    #edit-profile-save-btn {
+    .edit-profile-save-btn {
         width: 63.75%;
         font-size: 13px;
     }
