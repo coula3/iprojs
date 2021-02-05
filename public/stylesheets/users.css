@@ -67,6 +67,10 @@
     padding-top: 3%;
 }
 
+.flash-msg-span {
+    color: red;
+}
+
 .edit-profile-inputs {
     width: 80%;
     height: 20px;
