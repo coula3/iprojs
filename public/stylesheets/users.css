@@ -118,21 +118,12 @@
 
 
 @media screen and (max-width: 600px) {
-    #profile-card {
-        width: 315px;
+    #profile-card, #edit-profile-card,  #password-card, .edit-profile-inputs, .edit-profile-save-btn, .flash-msg-span{
         font-size: 13px;
-        padding: 3%;
     }
 
-    #edit-profile-card {
+    #profile-card, #edit-profile-card, #password-card {
         width: 315px;
-        font-size: 13px;
-        padding: 3%;
-    }
-
-    #password-card {
-        width: 315px;
-        font-size: 13px;
         padding: 3%;
     }
 
@@ -150,16 +141,7 @@
         padding: 5px 5px 6px 5px;
     }
 
-    .edit-profile-inputs {
-        font-size: 13px;
-    }
-
     .edit-profile-save-btn {
         width: 63.75%;
-        font-size: 13px;
-    }
-
-    .flash-msg-span {
-        font-size: 13px;
     }
 }
