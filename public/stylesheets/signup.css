@@ -1,0 +1,85 @@
+#signup-msg-div {
+    margin: 0px 0px 25px 15px;
+    text-align: center;
+}
+
+#signup-msg-li {
+    color: red;
+}
+
+#signup-div {
+    width: 100%;
+    margin-bottom: 25px;
+    float: right;
+}
+
+#signup-form {
+    width: 100%; 
+    margin-bottom: 10px;
+    float: right;
+}
+
+.signup-inputs-p {
+    text-align: right;
+}
+
+#signup-dob-label-p {
+    width: 340px;
+    margin-bottom: 0px;
+    float: right;
+}
+
+#signup-dob-input-p {
+    clear: both;
+}
+
+.signup-inputs {
+    width: 325px;
+    height: 20px;
+    padding: 2px 5px;
+}
+
+#signup-dob-label {
+    margin-left: 7.5px;
+    font-size: 16px;
+}
+
+.signup-gender-select {
+    width: 340px; 
+    height: 28px;
+    padding: 2px 5px;
+    display: inline-block;
+}
+
+.signup-dob-input {
+    width: 325px;
+    height: 22.5px;
+    padding: 2px 5px;
+}
+
+#signup-btn {
+    width: 340px;
+    height: 30px;
+    background: #ed404c; 
+    color: #FFF;
+    cursor: pointer;
+}
+
+#signup-back-link {
+    background: #ADFF2F;
+    color: #808080;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    width: 325px;
+    height: 25px;
+    padding: 4px 5px 0px 5px;
+    margin-right: 0px;
+    border: solid 2px #808080;
+}
+
+#signup-back-p {
+    text-align: right;
+    clear: both;
+}

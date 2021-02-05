@@ -1,10 +1,11 @@
-<a href="/">Home</a><br><br>
+<a href="/">Home</a>
+<br><br>
 
 <% if flash.has?(:message) %>
-    <div style="margin: 0px 0px 25px 15px ">
+    <div id="signup-msg-div">
         <ul>
             <% flash[:message].split(", ").each do |message| %>
-                <li><span style="padding-right: 10px">*</span><span style="color:red"><%= message %></span></li>
+                <li id="signup-msg-li"><%= message %></span></li>
             <% end %>
         </ul>
     </div>
@@ -12,47 +13,47 @@
 
 <% flash[:message].clear if flash[:message] %>
 
-<div style="width: 100%; margin-bottom: 25px; float: right">
-    <form action="/signup" method="POST" style="width: 100%; margin-bottom: 10px; float: right">
-        <p style="text-align: right">
-            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" id="first_name" name="first_name" placeholder="First name" />
+<div id="signup-div">
+    <form id="signup-form" action="/signup" method="POST">
+        <p class="signup-inputs-p">
+            <input type="text" class="signup-inputs" id="first_name" name="first_name" placeholder="First name" />
         </p>
-        <p style="text-align: right">
-            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" id="last_name" name="last_name" placeholder="Last name" />
+        <p class="signup-inputs-p">
+            <input type="text" class="signup-inputs" id="last_name" name="last_name" placeholder="Last name" />
         </p>
-        <p style="text-align: right">
-            <input type="text" style="width: 325px; height: 20px; padding: 2px 5px" id="organization" name="organization" placeholder="Organization" />
+        <p class="signup-inputs-p">
+            <input type="text" class="signup-inputs" id="organization" name="organization" placeholder="Organization" />
         </p>
-        <p style="width: 340px; margin-bottom: 0px; float: right">
-            <label for="dob" style="margin-left: 7.5px; font-size: 16px">Date of Birth</label>
+        <p id="signup-dob-label-p">
+            <label for="dob" id="signup-dob-label">Date of Birth</label>
         </p>
-        <p style="text-align: right; clear: both">
-            <input type="date" style="width: 325px; height: 22.5px; padding: 2px 5px" id="dob" name="date_of_birth">
+        <p id="signup-dob-input-p" class="signup-inputs-p">
+            <input type="date" id="dob" class="signup-dob-input" name="date_of_birth">
         </p>
-        <p style="text-align: right; clear: both">
-            <select id="gender" name="gender" style="width: 340px; height: 28px; padding: 2px 5px; display: inline-block">
+        <p class="signup-inputs-p">
+            <select id="gender" name="gender" class="signup-gender-select">
                 <option value="Female">Female</option>
                 <option value="Male">Male</option>
                 <option value="Non-Binary">Non-Binary</option>
                 <option value="" selected>--select your gender--</option>
             </select>
         </p>
-        <p style="text-align: right">
-            <input type="email" style="width: 325px; height: 20px; padding: 2px 5px" id="email" name="email" placeholder="Email" />
+        <p class="signup-inputs-p">
+            <input type="email" class="signup-inputs" id="email" name="email" placeholder="Email" />
         </p>
-        <p style="text-align: right">
-            <input type="password" style="width: 325px; height: 20px; padding: 2px 5px" id="password" name="password" placeholder="Password" />
+        <p class="signup-inputs-p">
+            <input type="password" class="signup-inputs" id="password" name="password" placeholder="Password" />
         </p>
-        <p style="text-align: right">
-            <input type="password" style="width: 325px; height: 20px; padding: 2px 5px" id="password_confirmation" name="password_confirmation" placeholder="Confirm password" />
+        <p class="signup-inputs-p">
+            <input type="password" class="signup-inputs" id="password_confirmation" name="password_confirmation" placeholder="Confirm password" />
         </p>
 
-        <p style="text-align: right">
-            <button class="button" style="cursor: pointer; width: 340px; height: 30px; background: #ed404c; color: #FFF">Sign Up</button>
+        <p class="signup-inputs-p">
+            <button class="button" id="signup-btn">Sign Up</button>
         </p>
     </form>
 
-    <p style="text-align: right; clear:both">
-        <a href="/" style="background: #ADFF2F; color: #808080; text-decoration:none; text-align: center; vertical-align: middle; display: inline-block; width: 325px; height: 25px; padding: 4px 5px 0px 5px; margin-right: 0px; border: solid 2px 	#808080">Back</a>
+    <p id="signup-back-p">
+        <a href="/" id="signup-back-link">Back</a>
     </p>
 </div>
