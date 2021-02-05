@@ -4,16 +4,15 @@
     margin: auto;
     text-align: center;
     border: outset;
-    padding-top: 20px;
+    padding: 10px 15px;
 }
 
 #proj-show-h2 {
-    width: 75px;
     color: blue;
 }
 
 #proj-show-table {
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -22,10 +21,12 @@
     text-align: left;
     margin-right: 45px;
     color: blue;
+    font-weight: bold;
 }
 
 .proj-show-td-value {
     text-align: left;
+    padding-left: 5%;
 }
 
 #proj-show-td-value-width {
@@ -34,20 +35,20 @@
 
 #proj-show-notes-value {
     text-align: justify;
+    padding-left: 5%;
 }
 
-#proj-show-last-update-label {
-    float: left;
-    text-align: left;
-    margin: 10px 45px 0px 0px;
+#proj-show-last-update-p {
+    text-align: center;
+    margin: 10px auto;
     color: blue;
-    vertical-align: center;
 }
 
 #proj-show-last-update-span {
     background-color: #008000;
     color: white;
     display: inline-block;
+    margin-left: 15px;
     padding: 3px 15px;
 }
 

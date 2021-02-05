@@ -1,70 +1,52 @@
 <br>
-<h2>
-    <label id="proj-show-h2">
-        Title:
-    </label>
-    <%= @project.title %>
-</h2>
+<h2 id="proj-show-h2"><%= @project.title %></h2>
 
 <div id="project-show">
     <table id="project-show-table">
-        <tr>
-            <td class="proj-show-td-label">Domain</td>
-            <td id="proj-show-td-value-width" class="proj-show-td-value"><%=@project.domain%></td>
-        </tr>
+        <tr><td class="proj-show-td-label">Domain</td</tr>
+        <tr><td class="proj-show-td-value"><%=@project.domain%></td></tr>
 
-        <tr>
-            <td class="proj-show-td-label">Classification</td>
-            <td class="proj-show-td-value"><%=@project.classification%></td>
-        </tr>
-        <tr>
-            <td class="proj-show-td-label">Type</td>
-            <td class="proj-show-td-value"><%=@project.project_type%></td>
-        </tr>
-        <tr>
-            <td class="proj-show-td-label">Language(s)</td>
-            <td class="proj-show-td-value"><%=@project.languages%></td>
-        </tr>
-        <tr>
-            <td class="proj-show-td-label">Frameworks and Libraries</td>
-            <td class="proj-show-td-value"><%=@project.libraries%></td>
-        </tr>
-        <tr>
-            <td class="proj-show-td-label">Phase</td>
-            <td class="proj-show-td-value"><%=@project.phase%></td>
-        </tr>
-        <tr>
-            <td class="proj-show-td-label">Start Date</td>
-            <td class="proj-show-td-value"><%= @project.format_dates(@project.start_date) %></td>
-        </tr>
-        <tr>
-            <td class="proj-show-td-label">Planned End Date</td>
-            <td class="proj-show-td-value"><%= @project.format_dates(@project.planned_end_date) %></td>
-        </tr>
-        <tr>
-            <td class="proj-show-td-label">Actual End Date</td>
-            <td class="proj-show-td-value"><%= @project.format_dates(@project.actual_end_date) %></td>
-        </tr>
-        <tr>
-            <td class="proj-show-td-label" title="Version Control System URL">VCS URL</td>
-            <td class="proj-show-td-value"><a href="<%=@project.url%>" target="_blank"><%=@project.url%></a></td>
-        </tr>
+        <tr><td class="proj-show-td-label">Classification</td></tr>
+        <tr><td class="proj-show-td-value"><%=@project.classification%></td></tr>
+
+        <tr><td class="proj-show-td-label">Type</td></tr>
+        <tr><td class="proj-show-td-value"><%=@project.project_type%></td></tr>
+
+        <tr><td class="proj-show-td-label">Language(s)</td></tr>
+        <tr><td class="proj-show-td-value"><%=@project.languages%></td></tr>
+
+        <tr><td class="proj-show-td-label">Frameworks and Libraries</td></tr>
+        <tr><td class="proj-show-td-value"><%=@project.libraries%></td></tr>
+
+        <tr><td class="proj-show-td-label">Phase</td></tr>
+        <tr><td class="proj-show-td-value"><%=@project.phase%></td></tr>
+
+        <tr><td class="proj-show-td-label">Start Date</td></tr>
+        <tr><td class="proj-show-td-value"><%= @project.format_dates(@project.start_date) %></td></tr>
+
+        <tr><td class="proj-show-td-label">Planned End Date</td></tr>
+        <tr><td class="proj-show-td-value"><%= @project.format_dates(@project.planned_end_date) %></td></tr>
+
+        <tr><td class="proj-show-td-label">Actual End Date</td></tr>
+        <tr><td class="proj-show-td-value"><%= @project.format_dates(@project.actual_end_date) %></td></tr>
+
+        <tr><td class="proj-show-td-label" title="Version Control System URL">VCS URL</td></tr>
+        <tr><td class="proj-show-td-value"><a href="<%=@project.url%>" target="_blank"><%=@project.url%></a></td></tr>
+
         <tr class="spacer"></tr>
-        <tr>
-            <td class="proj-show-td-label">Notes</td>
-            <td id="proj-show-notes-value"><%= @project.notes %></td>
-        </tr>
+        <tr><td class="proj-show-td-label">Notes</td></tr>
+        <tr><td id="proj-show-notes-value"><%= @project.notes %></td></tr>
+
         <tr class="spacer"></tr>
         <tr class="spacer"></tr>
-        <tr>
-            <td id="proj-show-last-update-label">Last updated</td>
-            <td class="proj-show-td-value">
-                <span id="proj-show-last-update-span">
-                    <%= @project.format_dates(@project.updated_at) + @updated_at.to_s.slice(10..18) %>
-                </span>
-            </td>
-        </tr>
     </table>
+
+    <p id="proj-show-last-update-p">Last updated
+        <span id="proj-show-last-update-span">
+            <%= @project.format_dates(@project.updated_at) + @updated_at.to_s.slice(10..18) %>
+        </span>
+    </p>
+
     <div id="proj-show-controls-div">
         <a href="/projects/<%=@project.slug%>/edit" id="proj-show-edit-btn" class="projects-buttons">Edit</a>
         <a href="/projects" id="proj-show-myprojs-btn" class="projects-buttons">My Project<%= + "s" if current_user.projects.size > 1 %></a>
