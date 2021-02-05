@@ -1,4 +1,4 @@
-<a href="/">Home</a>
+<a href="/" id="signup-home-link">Home</a>
 <br><br>
 
 <% if flash.has?(:message) %>
@@ -48,7 +48,7 @@
             <input type="password" class="signup-inputs" id="password_confirmation" name="password_confirmation" placeholder="Confirm password" />
         </p>
 
-        <p class="signup-inputs-p">
+        <p id="signup-btn-p" class="signup-inputs-p">
             <button class="button" id="signup-btn">Sign Up</button>
         </p>
     </form>

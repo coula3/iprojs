@@ -24,9 +24,13 @@
 }
 
 #signup-dob-label-p {
-    width: 340px;
+    text-align: right;
     margin-bottom: 0px;
-    float: right;
+}
+
+#signup-dob-label {
+    width: 340px;
+    text-align: center;
 }
 
 #signup-dob-input-p {
@@ -37,11 +41,6 @@
     width: 325px;
     height: 20px;
     padding: 2px 5px;
-}
-
-#signup-dob-label {
-    margin-left: 7.5px;
-    font-size: 16px;
 }
 
 .signup-gender-select {
@@ -55,6 +54,10 @@
     width: 325px;
     height: 22.5px;
     padding: 2px 5px;
+}
+
+#signup-btn-p {
+    margin-top: 25px;
 }
 
 #signup-btn {
@@ -82,4 +85,34 @@
 #signup-back-p {
     text-align: right;
     clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    #signup-home-link, #signup-btn, .signup-inputs, #signup-dob-label, .signup-dob-input, .signup-gender-select, #signup-back-link {
+        font-size: 13px;
+    }
+
+    .signup-inputs-p, #signup-back-p, #signup-dob-label-p {
+        text-align: center;
+    }
+
+    .signin-inputs, .signup-dob-input {
+        width: 275px;
+    }
+
+    .signup-gender-select, #signup-dob-label {
+        width: 290px;
+    }
+
+    .signup-inputs {
+        width: 275px;
+    }
+
+    #signup-btn {
+        width: 290px;
+    }
+
+    #signup-back-link {
+        width: 275.5px;
+    }
 }
