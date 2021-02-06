@@ -79,7 +79,7 @@
 @media screen and (max-width: 860px) {
     #app-tagline {
         padding-left: 15px;
-        margin-top: 15px;
+        margin-top: 10px;
     }
 }
 
@@ -88,6 +88,10 @@
         font-size: 10px;
     }
 
+    #auth-div {
+        margin-top: 50px;
+    }
+    
     #signin-button, #wel-signup-link, .signin-inputs {
         font-size: 13px;
     }
