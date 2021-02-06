@@ -26,9 +26,3 @@
 .col-set-width {
     width: 6%;
 }
-
-@media screen and (max-width: 600px) {
-    #analysis-table {
-       font-size: 13px;
-    }
-}

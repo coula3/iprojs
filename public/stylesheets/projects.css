@@ -75,6 +75,7 @@
 
 #proj-show-delete-btn {
     text-align: center;
+    font-family: inherit;
     display: block;
     width: 300px;
     height: 38px;
@@ -167,7 +168,7 @@ padding: 5px 5px;
 }
 
 @media screen and (max-width: 600px) {
-    #project-show, #proj-idx-div, .proj-new-edit-form, textarea, .inputs-width, .date-inputs, .select-inputs, .projects-buttons, #proj-show-delete-btn {
+    .inputs-width, .date-inputs, .select-inputs, .projects-buttons, #proj-show-delete-btn {
         font-size: 13px;
     }
 

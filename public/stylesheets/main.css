@@ -218,3 +218,9 @@
     flex-flow: column;
   }
 }
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 13px;
+  }
+}

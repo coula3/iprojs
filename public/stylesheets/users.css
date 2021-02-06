@@ -96,6 +96,7 @@
     margin: 25px auto;
     background: #3572d4;
     color: #fff;
+    font-family: inherit;
     cursor: pointer;
     border: solid 1px grey;
     border-style: outset"
@@ -112,7 +113,7 @@
 
 
 @media screen and (max-width: 600px) {
-    #profile-card, #edit-profile-card,  #password-card, #user-profile-msg, .edit-profile-inputs, .edit-profile-save-btn {
+    .user-edit-pw-inputs, .edit-profile-inputs, .edit-profile-save-btn {
         font-size: 13px;
     }
 
