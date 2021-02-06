@@ -207,7 +207,7 @@
     font-size: 11px;
   }
 
-  #main-nav, #signout-nav, .flash-msg-span {
+  #main-nav, #signout-nav, #signout-home-link, .flash-msg-span {
     font-size: 13px;
   }
 }
