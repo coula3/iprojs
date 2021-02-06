@@ -5,6 +5,7 @@
     border: outset;
     padding: 10px;
     box-sizing: border-box;
+    overflow-x: auto;
 }
 
 #dashboard-h2 {
@@ -13,12 +14,35 @@
 
 #dashboard-table {
     width: 100%;
+    min-width: 500px;
+    margin-bottom: 15px;
 }
 
 #table-col-1 {
-    width: 160px;
+    width: 175px;
 }
 
 #table-col-2 {
-    width: 115px;
+    width: 125px;
+}
+
+@media screen and (max-width: 750px) {
+    #dashboard-div {
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #dashboard-div {
+        width: 345px;
+        font-size: 13px;
+    }
+
+    #table-col-1 {
+        width: 130px;
+    }
+
+    #table-col-2 {
+        width: 90px;
+    }
 }
