@@ -113,7 +113,7 @@
 
 
 @media screen and (max-width: 600px) {
-    .user-edit-pw-inputs, .edit-profile-inputs, .edit-profile-save-btn {
+    #edit-profile-gender, .user-edit-pw-inputs, .edit-profile-inputs, .edit-profile-save-btn {
         font-size: 13px;
     }
 
