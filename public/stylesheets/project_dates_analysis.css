@@ -1,5 +1,10 @@
+#table-div {
+    overflow-x: auto;
+}
 #analysis-table {
     width: 100%;
+    min-width: 900px;
+    margin-bottom: 15px;
 }
 
 #title-th {
@@ -20,4 +25,10 @@
 
 .col-set-width {
     width: 6%;
+}
+
+@media screen and (max-width: 600px) {
+    #analysis-table {
+       font-size: 13px;
+    }
 }
