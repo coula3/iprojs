@@ -2,17 +2,17 @@
 <h2>Dates Analysis on Completed Projects</h2>
 
 <div>
-    <table style="width:100%">
+    <table id="analysis-table">
         <thead>
             <tr>
                 <th>PID</th>
-                <th style="width:40%; text-align:left">Title</th>
-                <th>Start</th>
-                <th>Planned End</th>
-                <th>Actual End</th>
-                <th style="width:6%">Duration (days)</th>
-                <th style="width:6%">On-Time</th>
-                <th style="width:6%">Days Delayed</th>
+                <th id="title-th" class="col-left-align">Title</th>
+                <th class="col-left-align">Start</th>
+                <th class="col-left-align">Planned End</th>
+                <th class="col-left-align">Actual End</th>
+                <th class="col-center-align col-set-width">Duration (days)</th>
+                <th class="col-center-align col-set-width">On-Time</th>
+                <th class="col-center-align col-set-width">Days Delayed</th>
             </tr>
         </thead>
         <tbody>
@@ -32,14 +32,14 @@
                 <% end %>
 
                 <tr>
-                    <td style="vertical-align:top; text-align:center"><%= project.id %></td>
-                    <td><a href="/projects/<%= project.slug %>" title="View Project Details"><%= project.title %></a></td>
-                    <td style="text-align:center"><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
-                    <td style="text-align:center"><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
-                    <td style="text-align:center"><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
-                    <td style="text-align:center"><%= ((project.actual_end_date - project.start_date)/86400).to_i %></td>
-                    <td style="text-align:center"><%= "✓" if project.actual_end_date <= project.planned_end_date %></td>
-                    <td style="text-align:center; <%= @color %>"><%= @days_delayed == 0 ? "-" : @days_delayed %></td>
+                    <td class="td-id col-center-align"><%= project.id %></td>
+                    <td class="col-left-align"><a href="/projects/<%= project.slug %>" title="View Project Details"><%= project.title %></a></td>
+                    <td class="col-left-align"><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
+                    <td class="col-left-align"><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
+                    <td class="col-left-align"><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+                    <td class="col-center-align"><%= ((project.actual_end_date - project.start_date)/86400).to_i %></td>
+                    <td class="col-center-align"><%= "✓" if project.actual_end_date <= project.planned_end_date %></td>
+                    <td class="col-center-align" style="<%= @color %>"><%= @days_delayed == 0 ? "-" : @days_delayed %></td>
                 </tr>
             <% end %>
         </tbody>

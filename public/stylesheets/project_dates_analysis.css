@@ -1,0 +1,23 @@
+#analysis-table {
+    width: 100%;
+}
+
+#title-th {
+    max-width: 40%;
+}
+
+.td-id {
+    vertical-align: top;
+}
+
+.col-left-align {
+    text-align: left;
+}
+
+.col-center-align {
+    text-align: center;
+}
+
+.col-set-width {
+    width: 6%;
+}
