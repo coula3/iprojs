@@ -96,23 +96,23 @@
         text-align: center;
     }
 
-    .signin-inputs, .signup-dob-input {
-        width: 275px;
+    .signup-inputs, .signup-dob-input {
+        width: 250px;
     }
 
     .signup-gender-select, #signup-dob-label {
-        width: 290px;
+        width: 265px;
     }
 
     .signup-inputs {
-        width: 275px;
+        width: 250px;
     }
 
     #signup-btn {
-        width: 290px;
+        width: 265px;
     }
 
     #signup-back-link {
-        width: 275.5px;
+        width: 250.5px;
     }
 }

@@ -84,7 +84,11 @@
 }
 
 @media screen and (max-width: 600px) {
-    #app-tagline, #signin-button, #wel-signup-link, .signin-inputs {
+    #app-tagline {
+        font-size: 10px;
+    }
+
+    #signin-button, #wel-signup-link, .signin-inputs {
         font-size: 13px;
     }
 
@@ -93,20 +97,24 @@
     }
 
     .signin-inputs {
-        width: 275px;
+        width: 250px;
     }
 
     #signin-button {
-        width: 290px;
+        width: 265px;
     }
 
     #wel-signup-link {
-        width: 275.5px;
+        width: 250.5px;
+    }
+
+    #p-signin-button {
+        margin-top: 25px;
     }
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
     #app-tagline {
         font-size: 11px;
     }
-}
+} */
