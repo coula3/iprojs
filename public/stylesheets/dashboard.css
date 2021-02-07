@@ -3,7 +3,7 @@
     width: 650px;
     margin: auto;
     border: outset;
-    padding: 10px;
+    padding: 25px;
     box-sizing: border-box;
     overflow-x: auto;
 }
@@ -12,18 +12,25 @@
     color: #006400;
 }
 
-#dashboard-table {
-    width: 100%;
-    min-width: 500px;
-    margin-bottom: 15px;
+.div-margin-top {
+    margin-top: 20px;
 }
 
-#table-col-1 {
-    width: 175px;
+.span-cell-padding {
+    display: table-cell;
+    padding: 3px;
 }
 
-#table-col-2 {
-    width: 125px;
+.min-width-col-span1 {
+    min-width: 180px;
+}
+
+.min-width-col-span2 {
+    min-width: 130px;
+}
+
+.min-width-col-span3 {
+    min-width: 260px;
 }
 
 @media screen and (max-width: 750px) {
@@ -35,13 +42,5 @@
 @media screen and (max-width: 600px) {
     #dashboard-div {
         width: 310px;
-    }
-
-    #table-col-1 {
-        width: 130px;
-    }
-
-    #table-col-2 {
-        width: 90px;
     }
 }
