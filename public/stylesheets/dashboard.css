@@ -25,12 +25,25 @@
     min-width: 180px;
 }
 
-.min-width-col-span2 {
+.min-width-col-span2a {
     min-width: 130px;
+}
+
+.min-width-col-span2b {
+    min-width: 400px;
 }
 
 .min-width-col-span3 {
     min-width: 260px;
+}
+
+.captions-span1 {
+    font-weight: bold;
+    color: blue
+}
+.col1-padding-left {
+    padding-left: 25px;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 750px) {
