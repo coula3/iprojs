@@ -26,3 +26,7 @@
 .col-set-width {
     width: 6%;
 }
+
+.date-col-width {
+    min-width: 110px;
+}

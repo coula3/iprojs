@@ -125,6 +125,18 @@
     margin-right: 10px;
 }
 
+#proj-idx-td-class {
+    min-width: 135px;
+}
+
+#proj-idx-td-phase {
+    min-width: 90px;
+}
+
+#proj-idx-td-date {
+    min-width: 110px;
+}
+
 .inputs-width {
     width: 98.5%;
     height: 20px;

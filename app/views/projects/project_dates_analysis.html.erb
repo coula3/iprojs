@@ -34,9 +34,9 @@
                 <tr>
                     <td class="td-id col-center-align"><%= project.id %></td>
                     <td class="col-left-align"><a href="/projects/<%= project.slug %>" title="View Project Details"><%= project.title %></a></td>
-                    <td class="col-left-align"><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
-                    <td class="col-left-align"><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
-                    <td class="col-left-align"><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+                    <td class="col-left-align date-col-width"><%= project.start_date.strftime("%b %d, %Y") if project.start_date %></td>
+                    <td class="col-left-align date-col-width"><%= project.planned_end_date.strftime("%b %d, %Y") if project.planned_end_date %></td>
+                    <td class="col-left-align date-col-width"><%= project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
                     <td class="col-center-align"><%= ((project.actual_end_date - project.start_date)/86400).to_i %></td>
                     <td class="col-center-align"><%= "✓" if project.actual_end_date <= project.planned_end_date %></td>
                     <td class="col-center-align" style="<%= @color %>"><%= @days_delayed == 0 ? "-" : @days_delayed %></td>

@@ -33,9 +33,9 @@
                 </tr>
                     <td id="proj-idx-td-pid" class="proj-idx-td"><%= project.id %></a> </td>
                     <td class="proj-idx-td"><a href="/projects/<%= project.slug %>" title="View Project Details"><%=project.title%></a></td>
-                    <td class="proj-idx-td"><%=project.classification%></td>
-                    <td class="proj-idx-td"><%=project.phase%></td>
-                    <td><%=project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
+                    <td id="proj-idx-td-class" class="proj-idx-td"><%=project.classification%></td>
+                    <td id="proj-idx-td-phase"  class="proj-idx-td"><%=project.phase%></td>
+                    <td id="proj-idx-td-date"><%=project.actual_end_date.strftime("%b %d, %Y") if project.actual_end_date %></td>
                     <td><a href="/projects/<%=project.slug%>/edit" title="Edit Project Details">edit</a></td>
                 </tr>
             <%end%>
