@@ -179,26 +179,33 @@ padding: 5px 5px;
     border-style: outset"
 }
 
+@media screen and (min-width: 601px) and (max-width: 850px) {
+    #project-show {
+        width: 475px;
+    }
+}
+
 @media screen and (max-width: 600px) {
+    #project-show {
+        width: 300px;
+        padding: 3%;
+        box-sizing: border-box;
+    }
+
     .inputs-width, .date-inputs, .select-inputs, .projects-buttons, #proj-show-delete-btn {
         font-size: 13px;
     }
 
     .projects-link-buttons {
-        width: 275px
+        width: 70%
     }
 
     .projects-buttons {
-        width: 285px
+        width: 270px
     }
 
     #proj-show-delete-btn {
-        width: 250px
-    }
-
-    #project-show {
-        width: 315px;
-        padding: 3%;
+        width: 60%
     }
 
     .proj-show-td-label {
@@ -211,11 +218,5 @@ padding: 5px 5px;
 
     .inputs-width {
         width: 96.5%;
-    }
-}
-
-@media screen and (min-width: 601px) and (max-width: 850px) {
-    #project-show {
-        width: 475px;
     }
 }
