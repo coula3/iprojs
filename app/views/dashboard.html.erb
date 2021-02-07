@@ -13,7 +13,7 @@
 
     <div class="div-margin-top">
         <div>
-            <span class="span-cell-padding min-width-col-span1 captions-span1">Phases</span>
+            <span class="span-cell-padding min-width-col-span1 captions-span1">Projects by Phase</span>
             <span class="span-cell-padding min-width-col-span2a">Planning</span>
             <span class="span-cell-padding min-width-col-span3">
                 <%= current_user.projects.where(phase: "Planning").size > 0 ? current_user.projects.where(phase: "Planning").size : "-" %>

@@ -5,7 +5,6 @@
     border: outset;
     padding: 25px;
     box-sizing: border-box;
-    overflow-x: auto;
 }
 
 #dashboard-h2 {
@@ -50,10 +49,39 @@
     #dashboard-div {
         width: 450px;
     }
+
+    .min-width-col-span3 {
+        min-width: 60px;
+    }
+
+    .min-width-col-span2b {
+        min-width: 180px;
+    }
 }
 
 @media screen and (max-width: 600px) {
     #dashboard-div {
         width: 310px;
+        padding: 10px;
+    }
+
+    .min-width-col-span1 {
+        min-width: 130px;
+    }
+
+    .min-width-col-span2a {
+        min-width: 90px;
+    }
+
+    .min-width-col-span2b {
+        min-width: 140px;
+    }
+
+    .min-width-col-span3 {
+        min-width: 40px;
+    }
+
+    .col1-padding-left {
+        padding-left: 15px;
     }
 }
