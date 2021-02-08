@@ -1,6 +1,7 @@
 #table-div {
     overflow-x: auto;
 }
+
 #analysis-table {
     width: 100%;
     min-width: 900px;
@@ -29,4 +30,10 @@
 
 .date-col-width {
     min-width: 110px;
+}
+
+@media screen and (max-width: 500px) {
+    #analysis-table {
+        width: 50%
+    }
 }
