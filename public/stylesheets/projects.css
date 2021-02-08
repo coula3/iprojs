@@ -17,16 +17,20 @@
 }
 
 .proj-show-td-label {
+    width: 225px;
     float: left;
     text-align: left;
-    margin-right: 45px;
-    color: blue;
+    background-color: #3572d4;
+    color: white;
     font-weight: bold;
+    padding: 3px 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 .proj-show-td-value {
     text-align: left;
-    padding-left: 5%;
+    padding-left: 30px;
 }
 
 #proj-show-td-value-width {
@@ -35,7 +39,7 @@
 
 #proj-show-notes-value {
     text-align: justify;
-    padding-left: 5%;
+    padding-left: 30px;
 }
 
 #proj-show-last-update-p {
@@ -182,13 +186,13 @@ padding: 5px 5px;
 
 @media screen and (min-width: 601px) and (max-width: 850px) {
     #project-show {
-        width: 475px;
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 600px) {
     #project-show {
-        width: 300px;
+        width: 90%;
         padding: 3%;
         box-sizing: border-box;
     }
@@ -210,7 +214,9 @@ padding: 5px 5px;
     }
 
     .proj-show-td-label {
-        margin-right: 20px;
+        font-weight: normal;
+        width: 170px;
+        padding: 1px 3px;
     }
 
     textarea {
@@ -219,5 +225,17 @@ padding: 5px 5px;
 
     .inputs-width {
         width: 96.5%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .proj-show-td-label {
+        font-weight: normal;
+        width: 140px;
+    }
+
+    #proj-show-last-update-span {
+        margin-left: 5px;
+        padding: 1.5px 5px;
     }
 }
