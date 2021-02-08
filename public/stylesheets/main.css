@@ -44,7 +44,8 @@
     float: right;
   }
 
-  #yield-div {
+  #main-container {
+    width: 100%;
     clear: both;
   }
 
