@@ -3,51 +3,56 @@
 
 <div id="dashboard-div">
     <div>
-        <span class="span-cell-padding min-width-col-span1 captions-span1">Total Projects</span>
-        <span class="span-cell-padding min-width-col-span2a">
+        <span class="span-cell-padding col-span1 captions-span1">Total Projects</span>
+        <span class="span-cell-padding col-span2"></span>
+    </div>
+
+    <div>
+        <span class="span-cell-padding col-span1 col1-padding-left"></span>
+        <span class="span-cell-padding col-span2">
             <a href="/projects" title="Projects">
-                <%= current_user.projects.size.to_words.titlecase %> (<%= current_user.projects.size %>)</a>
-            </span>
-        <span class="span-cell-padding min-width-col-span3"></span>
+                <%= current_user.projects.size.to_words.titlecase %> (<%= current_user.projects.size %>)
+            </a>
+        </span>
     </div>
 
     <div class="div-margin-top">
         <div>
-            <span class="span-cell-padding min-width-col-span1 captions-span1">Projects by Phase</span>
-            <span class="span-cell-padding min-width-col-span2a">Planning</span>
-            <span class="span-cell-padding min-width-col-span3">
+            <span class="span-cell-padding col-span1 captions-span1">Projects by Phase</span>
+            <span class="span-cell-padding col-span2"></span>
+        </div>
+
+        <div>
+            <span class="span-cell-padding col-span1 col1-padding-left">Planning</span>
+            <span class="span-cell-padding col-span2">
                 <%= current_user.projects.where(phase: "Planning").size > 0 ? current_user.projects.where(phase: "Planning").size : "-" %>
             </span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1"></span>
-            <span class="span-cell-padding min-width-col-span2a">Development</span>
-            <span class="span-cell-padding min-width-col-span3">
+            <span class="span-cell-padding col-span1 col1-padding-left">Development</span>
+            <span class="span-cell-padding col-span2">
                 <%= current_user.projects.where(phase: "Development").size > 0 ? current_user.projects.where(phase: "Development").size : "-" %>
             </span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1"></span>
-            <span class="span-cell-padding min-width-col-span2a">Testing</span>
-            <span class="span-cell-padding min-width-col-span3">
+            <span class="span-cell-padding col-span1 col1-padding-left">Testing</span>
+            <span class="span-cell-padding col-span2">
                 <%= current_user.projects.where(phase: "Testing").size > 0 ? current_user.projects.where(phase: "Testing").size : "-" %>
             </span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1"></span>
-            <span class="span-cell-padding min-width-col-span2a">Completed</span>
-            <span class="span-cell-padding min-width-col-span3">
+            <span class="span-cell-padding col-span1 col1-padding-left">Completed</span>
+            <span class="span-cell-padding col-span2">
                 <%= current_user.projects.where(phase: "Completed").size > 0 ? current_user.projects.where(phase: "Completed").size : "-" %>
             </span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1"></span>
-            <span class="span-cell-padding min-width-col-span2a">Production</span>
-            <span class="span-cell-padding min-width-col-span3">
+            <span class="span-cell-padding col-span1 col1-padding-left">Production</span>
+            <span class="span-cell-padding col-span2">
                 <%= current_user.projects.where(phase: "Production").size > 0 ? current_user.projects.where(phase: "Production").size  : "-" %>
             </span>
         </div>
@@ -55,10 +60,13 @@
 
     <div class="div-margin-top">
         <div>
-            <span class="span-cell-padding min-width-col-span1 captions-span1">
-                Completed On-Time
-            </span>
-            <span class="span-cell-padding min-width-col-span2b">
+            <span class="span-cell-padding col-span1 captions-span1">Completed On-Time</span>
+            <span class="span-cell-padding col-span2b"></span>
+        </div>
+
+        <div>
+            <span class="span-cell-padding col-span1 col1-padding-left"></span>
+            <span class="span-cell-padding col-span2">
                 <a href="/project_dates_analysis" title="Project Completion Analysis">
                     <%= @rate_of_timely_completion%>%
                 </a>
@@ -68,27 +76,27 @@
 
     <div class="div-margin-top">
         <div>
-                <span class="span-cell-padding min-width-col-span1 captions-span1">Project Last Created</span>
-                <span class="span-cell-padding min-width-col-span2b"></span>
+            <span class="span-cell-padding col-span1 captions-span1">Project Last Created</span>
+            <span class="span-cell-padding col-span2"></span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1 col1-padding-left">Title</span>
-            <span class="span-cell-padding min-width-col-span2b">
+            <span class="span-cell-padding col-span1 col1-padding-left">Title</span>
+            <span class="span-cell-padding col-span2">
                 <a href="/projects/<%= @last_project_created.slug %>" title="Project last created"><%= @last_project_created.title %></a>
             </span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1 col1-padding-left">Date</span>
-            <span class="span-cell-padding min-width-col-span2b">
+            <span class="span-cell-padding col-span1 col1-padding-left">Date</span>
+            <span class="span-cell-padding col-span2">
                 <%= current_user.projects.map(&:created_at).sort.last.strftime("%b %d, %Y") %>
             </span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1 col1-padding-left">Phase</span>
-            <span class="span-cell-padding min-width-col-span2b">
+            <span class="span-cell-padding col-span1 col1-padding-left">Phase</span>
+            <span class="span-cell-padding col-span2">
                 <%= current_user.projects.sort_by {|p| p.created_at}.last.phase %>
             </span>
         </div>
@@ -96,26 +104,26 @@
 
     <div class="div-margin-top">
         <div>
-            <span class="span-cell-padding min-width-col-span1 captions-span1">Project Last Edited</span>
-            <span class="span-cell-padding min-width-col-span2b"></span>
+            <span class="span-cell-padding col-span1 captions-span1">Project Last Edited</span>
+            <span class="span-cell-padding col-span2"></span>
         </div>
         <div>
-            <span class="span-cell-padding min-width-col-span1 col1-padding-left">Title</span>
-            <span class="span-cell-padding min-width-col-span2b">
+            <span class="span-cell-padding col-span1 col1-padding-left">Title</span>
+            <span class="span-cell-padding col-span2">
                 <a href="/projects/<%= @last_project_updated.slug%>" title="Project last updated"><%=@last_project_updated.title%></a>
             </span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1 col1-padding-left">Date & Time</span>
-            <span class="span-cell-padding min-width-col-span2b">
+            <span class="span-cell-padding col-span1 col1-padding-left">Date & Time</span>
+            <span class="span-cell-padding col-span2">
                 <%= ((current_user.projects.map(&:updated_at).sort.last)- 60*60*4).strftime("%b %d, %Y %H:%M:%S") %>
             </span>
         </div>
 
         <div>
-            <span class="span-cell-padding min-width-col-span1 col1-padding-left">Phase</span>
-            <span class="span-cell-padding min-width-col-span2b">
+            <span class="span-cell-padding col-span1 col1-padding-left">Phase</span>
+            <span class="span-cell-padding col-span2">
                 <%= current_user.projects.sort_by {|p| p.updated_at}.last.phase %>
             </span>
         </div>

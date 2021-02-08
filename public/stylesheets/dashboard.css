@@ -1,6 +1,6 @@
 #dashboard-div {
     background-color: rgb(238, 232, 170, 0.2);
-    width: 650px;
+    max-width: 550px;
     margin: auto;
     border: outset;
     padding: 25px;
@@ -20,25 +20,21 @@
     padding: 3px;
 }
 
-.min-width-col-span1 {
-    min-width: 180px;
+.col-span1 {
+    width: 180px;
 }
 
-.min-width-col-span2a {
-    min-width: 130px;
-}
-
-.min-width-col-span2b {
-    min-width: 400px;
-}
-
-.min-width-col-span3 {
-    min-width: 260px;
+.col-span2 {
+    padding-left: 10px;
 }
 
 .captions-span1 {
+    background-color: #3572d4;
+    color: white;
     font-weight: bold;
-    color: blue
+    padding: 3px 5px;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 .col1-padding-left {
     padding-left: 25px;
@@ -47,41 +43,35 @@
 
 @media screen and (max-width: 750px) {
     #dashboard-div {
-        width: 450px;
-    }
-
-    .min-width-col-span3 {
-        min-width: 60px;
-    }
-
-    .min-width-col-span2b {
-        min-width: 180px;
+        width: 90%;
     }
 }
 
 @media screen and (max-width: 600px) {
     #dashboard-div {
-        width: 310px;
         padding: 10px;
     }
 
-    .min-width-col-span1 {
-        min-width: 130px;
+    .captions-span1 {
+        font-weight: normal;
     }
 
-    .min-width-col-span2a {
-        min-width: 90px;
+    .col-span1 {
+        width: 140px;
     }
 
-    .min-width-col-span2b {
-        min-width: 140px;
+    .div-margin-top {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #dashboard-div {
+        width: 95%;
+        padding: 15px 8px;
     }
 
-    .min-width-col-span3 {
-        min-width: 40px;
-    }
-
-    .col1-padding-left {
-        padding-left: 15px;
+    .col-span1 {
+        width: 105px;
     }
 }
