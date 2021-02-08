@@ -1,5 +1,5 @@
 #signup-msg-div {
-    margin: 0px 0px 25px 15px;
+    margin: 0px 0px 25px 0px;
     text-align: center;
 }
 
@@ -8,7 +8,7 @@
 }
 
 #signup-div {
-    width: 100%;
+    width: 90%;
     margin-bottom: 25px;
     float: right;
 }
@@ -96,23 +96,22 @@
         text-align: center;
     }
 
-    .signup-inputs, .signup-dob-input {
-        width: 250px;
+    #signup-dob-label {
+        width: 100%
     }
 
-    .signup-gender-select, #signup-dob-label {
-        width: 265px;
+    #signup-div {
+        float: none;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .signup-inputs, .signup-dob-input, #signup-back-link {
+        width: calc(100% - 20%);
     }
 
-    .signup-inputs {
-        width: 250px;
-    }
-
-    #signup-btn {
-        width: 265px;
-    }
-
-    #signup-back-link {
-        width: 250.5px;
+    .signup-gender-select, #signup-btn {
+        width: calc(100% - 15%);
     }
 }
