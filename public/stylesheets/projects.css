@@ -234,6 +234,10 @@ padding: 5px 5px;
 }
 
 @media screen and (max-width: 400px) {
+    .inputs-width, .date-inputs, .select-inputs, .projects-buttons, #proj-show-delete-btn {
+        font-size: 10px;
+    }
+
     .proj-show-td-label {
         font-weight: normal;
         width: 140px;

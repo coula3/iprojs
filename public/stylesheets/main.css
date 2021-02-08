@@ -64,7 +64,7 @@
     width: 130px;
     text-align: center;
     display: inline-block;
-    transition-duration: 0.4s;
+    /* transition-duration: 0.4s; */
   }
 
   .hoverable-btn {
@@ -187,7 +187,7 @@
     -webkit-box-shadow: none;
     box-shadow: none;
     width: auto;
-    padding: 3% 6%;
+    padding: 3%;
   }
 
   .content, .sidebar {
@@ -218,5 +218,16 @@
 
   body, #main-nav, #signout-nav, #signout-home-link, .flash-msg-span {
     font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body, #main-nav, #signout-nav, #signout-home-link, .flash-msg-span {
+    font-size: 10px;
+  }
+
+  h2 {
+    font-size: 15px;
+    line-height: 20px;
   }
 }

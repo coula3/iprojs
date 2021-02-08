@@ -107,6 +107,10 @@
 }
 
 @media screen and (max-width: 400px) {
+    #signup-home-link, #signup-btn, .signup-inputs, #signup-dob-label, .signup-dob-input, .signup-gender-select, #signup-back-link {
+        font-size: 10px;
+    }
+
     .signup-inputs, .signup-dob-input, #signup-back-link {
         width: calc(100% - 20%);
     }

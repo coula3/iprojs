@@ -119,6 +119,10 @@
         font-size: 8px;
     }
 
+    #signin-button, #wel-signup-link, .signin-inputs {
+        font-size: 10px;
+    }
+
     .signin-inputs, #wel-signup-link {
         width: calc(100% - 20%);
     }
