@@ -13,6 +13,10 @@
     font-family: 'Gloria Hallelujah', cursive, sans-serif;
 }
 
+#container {
+    width: 90%
+}
+
 #auth-div {
     margin-top: 75px;
 }
@@ -75,7 +79,6 @@
     border: solid 2px #808080;
 }
 
-
 @media screen and (max-width: 860px) {
     #app-tagline {
         padding-left: 15px;
@@ -85,7 +88,7 @@
 
 @media screen and (max-width: 600px) {
     #app-tagline {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     #auth-div {
@@ -100,25 +103,31 @@
         text-align: center;
     }
 
-    .signin-inputs {
-        width: 250px;
-    }
-
-    #signin-button {
-        width: 265px;
-    }
-
-    #wel-signup-link {
-        width: 250.5px;
-    }
-
     #p-signin-button {
         margin-top: 25px;
     }
+
+    #msg-p {
+        width: 100%;
+        font-size: 10px;
+    }
 }
 
-/* @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
     #app-tagline {
-        font-size: 11px;
+        padding-left: 5px;
+        font-size: 8px;
     }
-} */
+
+    .signin-inputs {
+        width: calc(100% - 20%);
+    }
+
+    #signin-button {
+        width: calc(100% - 16%);
+    }
+
+    #wel-signup-link {
+        width: calc(100% - 20%);
+    }
+}
