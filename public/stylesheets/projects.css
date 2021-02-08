@@ -152,10 +152,15 @@
 
 .notes {
 height: 135px;
+font-size: inherit;
+font-family: inherit;
+
 }
 
 .libraries {
 height: 40px;
+font-size: inherit;
+font-family: inherit;
 }
 
 .proj-frk-lib-label {
