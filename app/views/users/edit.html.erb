@@ -46,11 +46,8 @@
 
         <button class="button edit-profile-save-btn">Save</button>
 
-        <p>
-            <a href="/users/<%=current_user.slug%>" class="user-buttons blue-white-buttons">My Profile</a>
-            <a href="/users/<%=current_user.slug%>/change_password" class="user-buttons blue-white-buttons">Change Password</a>
-            <br>
+            <p style="margin: 0 0"><a href="/users/<%=current_user.slug%>" class="user-buttons blue-white-buttons">My Profile</a></p>
+            <p style="margin: 0 0"><a href="/users/<%=current_user.slug%>/change_password" class="user-buttons blue-white-buttons">Change Password</a></p>
             <a href="/projects" class="user-buttons white-blue-buttons user-myprojs">My Project<%= + "s" if current_user.projects.size > 1 %></a>
-        </p>
     </form>
 </div>

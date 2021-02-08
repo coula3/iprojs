@@ -1,5 +1,5 @@
 #profile-card {
-    width: 425px;
+    width: 500px;
     margin: auto;
     text-align: center;
     border: solid 1px grey;
@@ -9,7 +9,7 @@
 
 #user-profile-div {
     text-align: left;
-    width: 350px;
+    width: 90%;
     margin: auto;
 }
 
@@ -29,11 +29,13 @@
 }
 
 #user-profile-buttons-p {
+    width: 90%;
+    margin: auto;
     margin-top: 25px;
 }
 
 .user-buttons {
-    width: 75%;
+    width: 280px;
     height: 25px;
     text-decoration: none;
     text-align: center;
@@ -90,10 +92,10 @@
 }
 
 .edit-profile-save-btn {
-    width: 78%;
+    width: 290px;
     height: 35px;
     display: block;
-    margin: 25px auto;
+    margin: 15px auto;
     background: #3572d4;
     color: #fff;
     font-family: inherit;
@@ -117,26 +119,27 @@
         font-size: 13px;
     }
 
-    #profile-card, #edit-profile-card, #password-card {
-        width: 300px;
-        padding: 3%;
-    }
-
-    .user-profile-label {
-        width: 90px;
-    }
-
-    #user-profile-div {
-        width: 300px;
+    #profile-card, #edit-profile-card, #password-card, #user-profile-div {
+        width: calc(100% - 10%);
     }
 
     .user-buttons {
-        width: 60%;
+        width: 160px;
         height: 15px;
         padding: 5px 5px 6px 5px;
     }
 
     .edit-profile-save-btn {
-        width: 63.75%;
+        width: 170px;
+    }
+
+    #user-profile-update-span {
+        padding: 3px 5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .user-profile-label {
+        width: 75px;
     }
 }
