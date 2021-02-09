@@ -79,7 +79,7 @@ class ProjectsController < ApplicationController
       redirect "/projects/#{old_object.slug}"
     else
       flash[:message] = old_object.errors.full_messages.join(" ")
-      redirect "/projects/#{old_object.slug}/edit"
+      redirect "/projects/#{params[:slug]}/edit"
     end
   end
 
