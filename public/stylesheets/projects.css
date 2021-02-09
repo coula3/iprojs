@@ -20,8 +20,8 @@
     width: 225px;
     float: left;
     text-align: left;
-    background-color: #3572d4;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #3572d4;
     font-weight: bold;
     padding: 3px 5px;
     border-radius: 5px;
