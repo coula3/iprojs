@@ -33,20 +33,25 @@
   }
 
   #nav-div {
+    display: flex;
     margin-bottom: 20px;
   }
 
   #main-nav {
-    float: left;
+    flex: 4;
   }
 
   #signout-nav {
-    float: right;
+    flex: 1;
+    display: flex;
+  }
+
+  #signout-nav a {
+    margin-left: auto;
   }
 
   #main-container {
     width: 100%;
-    clear: both;
   }
 
   label {
