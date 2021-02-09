@@ -112,10 +112,14 @@ class ProjectsController < ApplicationController
 
   helpers do
     def check_complimentary_updates(object, original_old_object)
-      if !original_old_object.actual_end_date && params[:actual_end_date] && (original_old_object.phase != "Completed" || original_old_object.phase != "Production") && (object.phase != "Completed" || object.phase != "Production")
-        object.update(phase: params[:phase]) if object.actual_end_date
-      elsif original_old_object.actual_end_date && (object.phase != "Completed") && (params[:phase] != "Production")
+      if original_old_object.actual_end_date && (object.phase != "Completed") && (params[:phase] != "Production")
         object.update(actual_end_date: nil) if params[:actual_end_date].present?
+        flash[:message] = "The actual end date of #{original_old_object.actual_end_date.strftime("%b %d, %Y")} has been removed"
+        redirect "/projects/#{params[:slug]}/edit"
+      elsif params[:actual_end_date].present? && (object.phase == "Planning" || object.phase ==  "Development" || object.phase ==  "Testing")
+        object.phase = nil
+        flash[:message] = "Only projects at 'Completed' or 'Production' phases can have actual end dates"
+        redirect "/projects/#{params[:slug]}/edit"
       end
     end
   end
