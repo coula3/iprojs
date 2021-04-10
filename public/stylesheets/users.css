@@ -147,3 +147,9 @@
         width: 75px;
     }
 }
+
+@media (max-width: 280px) {
+    .user-profile-label {
+        width: 65px;
+    }
+}
