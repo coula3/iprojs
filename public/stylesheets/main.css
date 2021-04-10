@@ -179,14 +179,14 @@
   }
 }
 
-@media screen and (max-width: 750px) {
+@media (max-width: 750px) {
   #main-nav {
     display: flex;
     flex-flow: column;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   .wrapper {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -226,7 +226,7 @@
   }
 }
 
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
   body, #main-nav, #signout-nav, #signout-home-link, .flash-msg-span {
     font-size: 10px;
   }

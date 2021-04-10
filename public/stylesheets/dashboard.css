@@ -41,13 +41,13 @@
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 750px) {
+@media (max-width: 750px) {
     #dashboard-div {
         width: 90%;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     #dashboard-div {
         padding: 10px;
     }
@@ -65,7 +65,7 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
     #dashboard-div {
         width: 95%;
         padding: 15px 8px;

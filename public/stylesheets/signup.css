@@ -87,7 +87,7 @@
     clear: both;
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     #signup-home-link, #signup-btn, .signup-inputs, #signup-dob-label, .signup-dob-input, .signup-gender-select, #signup-back-link {
         font-size: 13px;
     }
@@ -106,7 +106,7 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media (max-width: 400px) {
     #signup-home-link, #signup-btn, .signup-inputs, #signup-dob-label, .signup-dob-input, .signup-gender-select, #signup-back-link {
         font-size: 10px;
     }
