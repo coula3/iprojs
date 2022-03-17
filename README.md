@@ -1,7 +1,7 @@
 iProjs is an app that provides software developers a platform to store key and frequently accessed data on their projects to facilitate ease of reference.
 
 ## Setup and installation
-The app requires Ruby and RubyGems. Fork the app repo from https://github.com/coula3/iprojs and git clone to your local environment. cd into the cloned directory and start the server with a call to port http://localhost:9393 
+The app requires Ruby and RubyGems. Fork the app repo from https://github.com/coula3/iprojs and git clone to your local environment. cd into the cloned directory, execute shotgun in the terminal and then in the address bar of your browser make a call to port http://localhost:9393.
 
 ## How to
 Create an account, a new user should click on “Sign up” on the welcome page. Sign in is also through the welcome page.
