@@ -56,6 +56,13 @@
                 <%= current_user.projects.where(phase: "Production").size > 0 ? current_user.projects.where(phase: "Production").size  : "-" %>
             </span>
         </div>
+
+        <div>
+            <span class="span-cell-padding col-span1 col1-padding-left">Canceled</span>
+            <span class="span-cell-padding col-span2">
+                <%= current_user.projects.where(phase: "Canceled").size > 0 ? current_user.projects.where(phase: "Canceled").size  : "-" %>
+            </span>
+        </div>
     </div>
 
     <div class="div-margin-top">
