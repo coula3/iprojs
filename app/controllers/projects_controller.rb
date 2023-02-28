@@ -56,7 +56,7 @@ class ProjectsController < ApplicationController
       if @project = current_user.projects.find_by_slug(params[:slug])
         @list_classification = ["CLI", "Multi Page App", "Native Mobile App", "Progressive Web App", "Single Page App"].delete_if {|c| c == @project.classification}
         @list_project_type = ["Colloboration", "Individual"].delete_if {|n| n == @project.project_type}
-        @list_phases = ["Planning", "Development", "Testing", "Completed", "Production"].sort.delete_if {|phase| phase == @project.phase}
+        @list_phases = ["Planning", "Development", "Testing", "Completed", "Production", "Canceled"].sort.delete_if {|phase| phase == @project.phase}
         erb :"/projects/edit.html"
       else
         redirect "/projects"
