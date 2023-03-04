@@ -2,7 +2,7 @@
 <h2>
     Dates Analysis on Completed Projects
     <span id="proj-idx-size-span">
-        (<%= current_user.projects.select { |project| project.phase == "Completed"}.size %>)
+        (<%= current_user.projects.select { |project| project.actual_end_date }.size %>)
     </span>
 </h2>
 
